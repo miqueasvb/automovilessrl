@@ -1,0 +1,744 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Panel de Vehículos | Automóviles SRL</title>
+<style>
+    :root {
+        --rojo: #e31b23;
+        --rojo-hover: #c2141c;
+        --negro: #111111;
+        --gris-bg: #f5f5f5;
+        --gris-borde: #e2e2e2;
+        --texto: #222;
+        --texto-suave: #777;
+    }
+    * { box-sizing: border-box; }
+    body {
+        margin: 0;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+        background: var(--gris-bg);
+        color: var(--texto);
+    }
+    header.panel_header {
+        background: var(--negro);
+        color: #fff;
+        padding: 18px 24px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+    header.panel_header h1 { font-size: 18px; margin: 0; font-weight: 700; }
+    header.panel_header .sub { color: #aaa; font-size: 12.5px; }
+    .btn {
+        display: inline-block;
+        border: none;
+        border-radius: 6px;
+        padding: 10px 18px;
+        font-weight: 700;
+        font-size: 13.5px;
+        cursor: pointer;
+        text-decoration: none;
+        transition: 0.2s;
+    }
+    .btn-primary { background: var(--rojo); color: #fff; }
+    .btn-primary:hover { background: var(--rojo-hover); }
+    .btn-secondary { background: #fff; color: var(--texto); border: 1px solid var(--gris-borde); }
+    .btn-secondary:hover { background: #f0f0f0; }
+    .btn-danger { background: #fff; color: #c2141c; border: 1px solid #f0c4c4; }
+    .btn-danger:hover { background: #fff0f0; }
+    .btn:disabled { opacity: 0.5; cursor: not-allowed; }
+
+    .contenedor { max-width: 960px; margin: 0 auto; padding: 30px 20px 80px; }
+    .card {
+        background: #fff;
+        border-radius: 10px;
+        padding: 28px;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        margin-bottom: 24px;
+    }
+    .card h2 { font-size: 17px; margin: 0 0 18px; }
+    .campo { margin-bottom: 16px; }
+    .campo label { display: block; font-size: 13px; font-weight: 700; margin-bottom: 6px; color: #444; }
+    .campo small { display: block; color: var(--texto-suave); font-size: 12px; margin-top: 4px; }
+    .campo input[type=text], .campo input[type=number], .campo input[type=password],
+    .campo select, .campo textarea {
+        width: 100%;
+        padding: 10px 12px;
+        border: 1px solid var(--gris-borde);
+        border-radius: 6px;
+        font-size: 14px;
+        font-family: inherit;
+    }
+    .campo textarea { resize: vertical; min-height: 80px; }
+    .fila2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .fila3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; }
+    @media (max-width: 640px) { .fila2, .fila3 { grid-template-columns: 1fr; } }
+
+    #loginView { max-width: 420px; margin: 80px auto 0; }
+    .aviso {
+        background: #fff8e1; border: 1px solid #ffe28a; color: #8a6d00;
+        padding: 12px 14px; border-radius: 6px; font-size: 13px; margin-bottom: 16px; line-height: 1.5;
+    }
+    .aviso.error { background: #fdecea; border-color: #f5b8b3; color: #a12b25; }
+    .aviso.ok { background: #eafaf0; border-color: #bfe8cf; color: #1c7a41; }
+
+    .tabla_vehiculos { width: 100%; border-collapse: collapse; }
+    .tabla_vehiculos th, .tabla_vehiculos td { text-align: left; padding: 10px 8px; border-bottom: 1px solid #eee; font-size: 13.5px; }
+    .tabla_vehiculos th { color: var(--texto-suave); font-size: 11.5px; text-transform: uppercase; letter-spacing: 0.5px; }
+    .tabla_vehiculos img.miniatura { width: 54px; height: 40px; object-fit: cover; border-radius: 4px; background: #eee; }
+    .acciones_fila { display: flex; gap: 8px; }
+    .acciones_fila button { padding: 6px 12px; font-size: 12.5px; }
+
+    .miniaturas_preview { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 10px; }
+    .miniaturas_preview .item { position: relative; }
+    .miniaturas_preview .item.es_portada img { border-color: var(--rojo); box-shadow: 0 0 0 2px var(--rojo); }
+    .miniaturas_preview img { width: 84px; height: 64px; object-fit: cover; border-radius: 6px; border: 1px solid var(--gris-borde); display: block; }
+    .miniaturas_preview .etiqueta_portada {
+        position: absolute; bottom: -8px; left: 50%; transform: translateX(-50%);
+        background: var(--rojo); color: #fff; font-size: 9.5px; font-weight: 700; text-transform: uppercase;
+        padding: 2px 7px; border-radius: 10px; white-space: nowrap;
+    }
+    .miniaturas_preview .quitar {
+        position: absolute; top: -6px; right: -6px; width: 20px; height: 20px; border-radius: 50%;
+        background: #c2141c; color: #fff; border: none; font-size: 12px; cursor: pointer; line-height: 1;
+    }
+    .miniaturas_preview .btn_portada {
+        position: absolute; top: -6px; left: -6px; width: 20px; height: 20px; border-radius: 50%;
+        background: #fff; color: #999; border: 1px solid var(--gris-borde); font-size: 11px; cursor: pointer; line-height: 1;
+    }
+    .miniaturas_preview .btn_portada:hover { background: #fff5cc; color: #c99a00; }
+    .barra_progreso_wrap { background: #eee; border-radius: 6px; height: 8px; overflow: hidden; margin-top: 10px; }
+    .barra_progreso { background: var(--rojo); height: 100%; width: 0%; transition: width 0.2s; }
+    .oculto { display: none !important; }
+    #logoutBtn { background: transparent; color: #ccc; border: 1px solid #444; }
+    #logoutBtn:hover { background: #222; color: #fff; }
+</style>
+</head>
+<body>
+
+<!-- ============== VISTA DE LOGIN ============== -->
+<div id="loginView">
+    <div class="card" style="margin-top: 80px;">
+        <h2>Acceso al panel</h2>
+        <div id="loginError" class="aviso error oculto"></div>
+
+        <div class="campo">
+            <label>Usuario</label>
+            <input type="text" id="usuarioInput" placeholder="Usuario" autocomplete="username">
+        </div>
+        <div class="campo">
+            <label>Contraseña</label>
+            <input type="password" id="passwordInput" placeholder="Contraseña" autocomplete="current-password">
+        </div>
+
+        <button class="btn btn-primary" id="btnEntrar" style="width:100%;">Entrar</button>
+    </div>
+</div>
+
+<!-- ============== VISTA PRINCIPAL DEL PANEL ============== -->
+<div id="panelView" class="oculto">
+    <header class="panel_header">
+        <div>
+            <h1>Panel de Vehículos — Automóviles SRL</h1>
+            <div class="sub" id="repoInfoTxt"></div>
+        </div>
+        <div style="display:flex; gap:10px; align-items:center;">
+            <a href="/catalogo.html" target="_blank" class="btn btn-secondary">Ver catálogo</a>
+            <button id="logoutBtn" class="btn">Cerrar sesión</button>
+        </div>
+    </header>
+    <div class="contenedor">
+
+        <div id="mensajeGlobal" class="oculto"></div>
+
+        <!-- Formulario alta/edición -->
+        <div class="card">
+            <h2 id="formTituloCard">Agregar vehículo</h2>
+
+            <div class="fila3">
+                <div class="campo">
+                    <label>Marca</label>
+                    <select id="fMarca"></select>
+                </div>
+                <div class="campo">
+                    <label>Modelo</label>
+                    <input type="text" id="fModelo" placeholder="ej: Amarok V6 Highline">
+                </div>
+                <div class="campo">
+                    <label>Año</label>
+                    <input type="number" id="fAnio" placeholder="2018">
+                </div>
+            </div>
+
+            <div class="fila3">
+                <div class="campo">
+                    <label>Estado</label>
+                    <select id="fEstado">
+                        <option value="usado">Usado</option>
+                        <option value="0km">0KM</option>
+                    </select>
+                </div>
+                <div class="campo">
+                    <label>Kilometraje</label>
+                    <input type="number" id="fKm" placeholder="138000">
+                </div>
+                <div class="campo">
+                    <label>Transmisión</label>
+                    <input type="text" id="fTransmision" placeholder="Automática / Manual">
+                </div>
+            </div>
+
+            <div class="fila2">
+                <div class="campo">
+                    <label>Combustible</label>
+                    <input type="text" id="fCombustible" placeholder="Nafta / Diesel / Híbrido / Eléctrico">
+                </div>
+                <div class="campo">
+                    <label>ID interno (se genera solo, no tocar salvo que sepas lo que hacés)</label>
+                    <input type="text" id="fId" readonly style="background:#f2f2f2; color:#888;">
+                </div>
+            </div>
+
+            <div class="campo">
+                <label>Descripción</label>
+                <textarea id="fDescripcion" placeholder="Un par de líneas sobre el vehículo..."></textarea>
+            </div>
+
+            <div class="campo">
+                <label>Fotos</label>
+                <input type="file" id="fFotos" accept="image/*" multiple>
+                <small>Las fotos se comprimen automáticamente al elegirlas, para que el sitio cargue rápido. La foto marcada como "Portada" es la que se muestra en la tarjeta del catálogo. Pasá el mouse sobre cualquier otra foto y tocá la ★ para hacerla portada.</small>
+                <div class="miniaturas_preview" id="previewFotos"></div>
+            </div>
+
+            <div id="progresoWrap" class="oculto">
+                <div class="barra_progreso_wrap"><div class="barra_progreso" id="barraProgreso"></div></div>
+                <small id="progresoTexto"></small>
+            </div>
+
+            <div style="display:flex; gap:10px; margin-top: 20px;">
+                <button class="btn btn-primary" id="btnGuardar">Publicar vehículo</button>
+                <button class="btn btn-secondary oculto" id="btnCancelarEdicion">Cancelar edición</button>
+            </div>
+        </div>
+
+        <!-- Listado -->
+        <div class="card">
+            <h2>Vehículos publicados</h2>
+            <div id="listadoWrap">Cargando…</div>
+        </div>
+
+    </div>
+</div>
+
+<script>
+/* =========================================================
+   CONFIG / CONSTANTES
+   ========================================================= */
+const MARCAS = ["Ford","Volkswagen","Ram","Toyota","Jeep","Fiat","Chevrolet","Peugeot","BMW","Mercedes-Benz","Nissan","Citroen","Honda"];
+const RUTA_API = "/.netlify/functions/admin-api";
+
+// Ajustes de optimización automática de fotos
+const FOTO_MAX_DIM = 1600;   // ancho/alto máximo en píxeles (las fotos de auto no necesitan más para verse bien)
+const FOTO_CALIDAD = 0.82;   // calidad JPEG (0 a 1). 0.82 es un buen equilibrio nitidez/peso
+
+let estado = {
+    usuario: "", password: "",
+    vehiculos: [], jsonSha: null,
+    editandoId: null,
+    // Lista única y ordenada de fotos. La posición 0 es la portada.
+    // Cada item: { tipo: "existing", url } o { tipo: "new", file, dataUrl }
+    fotos: [],
+    // Fotos que tenía el vehículo AL EMPEZAR a editarlo (solo se usa durante
+    // una edición). Al guardar, comparamos esta lista contra las fotos que
+    // quedaron, y las que ya no están las borramos de GitHub para que no
+    // queden huérfanas.
+    fotosOriginales: []
+};
+
+/* =========================================================
+   UTILIDADES
+   ========================================================= */
+function slugify(v) {
+    return `${v.marca}-${v.modelo}-${v.anio || 's-n'}`
+        .toLowerCase()
+        .normalize("NFD").replace(/[\u0300-\u036f]/g, "")
+        .replace(/[^a-z0-9]+/g, '-')
+        .replace(/(^-|-$)/g, '');
+}
+
+function mostrarMensaje(texto, tipo) {
+    const el = document.getElementById("mensajeGlobal");
+    el.className = `aviso ${tipo}`;
+    el.textContent = texto;
+    el.scrollIntoView({ behavior: "smooth", block: "start" });
+    if (tipo === "ok") setTimeout(() => { el.classList.add("oculto"); }, 6000);
+}
+
+// Única puerta de entrada a todas las operaciones: le habla a la función de Netlify,
+// que es quien realmente tiene el token de GitHub guardado (nunca viaja al navegador).
+async function llamarApi(accion, extra = {}) {
+    const resp = await fetch(RUTA_API, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ usuario: estado.usuario, password: estado.password, accion, ...extra })
+    });
+    let data = {};
+    try { data = await resp.json(); } catch (e) {}
+    if (!resp.ok) throw new Error(data.error || `Error del servidor (${resp.status})`);
+    return data;
+}
+
+function fileToBase64(file) {
+    return new Promise((resolve, reject) => {
+        const reader = new FileReader();
+        reader.onload = () => resolve(reader.result.split(",")[1]);
+        reader.onerror = reject;
+        reader.readAsDataURL(file);
+    });
+}
+
+function fileToDataUrl(file) {
+    return new Promise((resolve, reject) => {
+        const reader = new FileReader();
+        reader.onload = () => resolve(reader.result);
+        reader.onerror = reject;
+        reader.readAsDataURL(file);
+    });
+}
+
+function formatBytes(bytes) {
+    if (bytes < 1024) return `${bytes} B`;
+    if (bytes < 1024 * 1024) return `${Math.round(bytes / 1024)} KB`;
+    return `${(bytes / (1024 * 1024)).toFixed(1)} MB`;
+}
+
+// Carga una imagen (File/Blob) como elemento dibujable en canvas, sea cual sea su formato de origen
+async function cargarComoImagen(file) {
+    if (window.createImageBitmap) {
+        try { return await createImageBitmap(file); } catch (e) { /* seguimos con el fallback */ }
+    }
+    const dataUrl = await fileToDataUrl(file);
+    return await new Promise((resolve, reject) => {
+        const img = new Image();
+        img.onload = () => resolve(img);
+        img.onerror = reject;
+        img.src = dataUrl;
+    });
+}
+
+// Redimensiona y comprime una foto en el navegador antes de subirla, para que el sitio quede liviano.
+// Si algo falla (formato raro, etc.), devuelve el archivo original sin tocar.
+async function optimizarImagen(file) {
+    try {
+        const img = await cargarComoImagen(file);
+        let { width, height } = img;
+        if (!width || !height) return file;
+
+        if (width > FOTO_MAX_DIM || height > FOTO_MAX_DIM) {
+            const ratio = Math.min(FOTO_MAX_DIM / width, FOTO_MAX_DIM / height);
+            width = Math.round(width * ratio);
+            height = Math.round(height * ratio);
+        }
+
+        const canvas = document.createElement("canvas");
+        canvas.width = width;
+        canvas.height = height;
+        const ctx = canvas.getContext("2d");
+        ctx.drawImage(img, 0, 0, width, height);
+
+        const blob = await new Promise(resolve => canvas.toBlob(resolve, "image/jpeg", FOTO_CALIDAD));
+        if (!blob) return file;
+
+        const nombreBase = file.name.replace(/\.[^.]+$/, "");
+        const archivoOptimizado = new File([blob], `${nombreBase}.jpg`, { type: "image/jpeg" });
+
+        // Si por algún motivo la "optimizada" quedó más pesada que la original, nos quedamos con la original
+        return archivoOptimizado.size < file.size ? archivoOptimizado : file;
+    } catch (e) {
+        console.warn("No se pudo optimizar la imagen, se sube la original:", e);
+        return file;
+    }
+}
+
+/* =========================================================
+   LOGIN — se guarda de verdad en este dispositivo (localStorage)
+   ========================================================= */
+async function iniciarSesion(usuario, password, mostrarErrorEnLogin) {
+    estado.usuario = usuario;
+    estado.password = password;
+    try {
+        const data = await llamarApi("listar");
+        estado.vehiculos = data.vehiculos;
+        estado.jsonSha = data.sha;
+    } catch (e) {
+        if (mostrarErrorEnLogin) {
+            const errorEl = document.getElementById("loginError");
+            errorEl.textContent = e.message || "Usuario o contraseña incorrectos.";
+            errorEl.classList.remove("oculto");
+        }
+        // Si las credenciales guardadas ya no sirven, las borramos para no reintentar en loop
+        localStorage.removeItem("automovilessrl_admin_session");
+        return false;
+    }
+
+    // Se guarda de verdad en este dispositivo: la próxima vez que entre a admin.html
+    // en este mismo navegador, va a entrar directo, sin pedir usuario/contraseña de nuevo.
+    localStorage.setItem("automovilessrl_admin_session", JSON.stringify({ usuario, password }));
+
+    document.getElementById("loginView").classList.add("oculto");
+    document.getElementById("panelView").classList.remove("oculto");
+    document.getElementById("repoInfoTxt").textContent = `Conectado como ${usuario}`;
+
+    poblarSelectMarcas();
+    renderListado();
+    return true;
+}
+
+document.getElementById("btnEntrar").addEventListener("click", async () => {
+    const usuario = document.getElementById("usuarioInput").value.trim();
+    const password = document.getElementById("passwordInput").value;
+    const errorEl = document.getElementById("loginError");
+    errorEl.classList.add("oculto");
+
+    if (!usuario || !password) {
+        errorEl.textContent = "Completá usuario y contraseña.";
+        errorEl.classList.remove("oculto");
+        return;
+    }
+
+    const btn = document.getElementById("btnEntrar");
+    btn.disabled = true; btn.textContent = "Entrando…";
+    await iniciarSesion(usuario, password, true);
+    btn.disabled = false; btn.textContent = "Entrar";
+});
+
+document.getElementById("logoutBtn").addEventListener("click", () => {
+    if (!confirm("¿Cerrar sesión en este dispositivo?")) return;
+    localStorage.removeItem("automovilessrl_admin_session");
+    location.reload();
+});
+
+// Al abrir la página, si este dispositivo ya tiene una sesión guardada, entra directo
+(async function entradaAutomatica() {
+    try {
+        const guardado = JSON.parse(localStorage.getItem("automovilessrl_admin_session") || "null");
+        if (guardado && guardado.usuario && guardado.password) {
+            document.getElementById("usuarioInput").value = guardado.usuario;
+            await iniciarSesion(guardado.usuario, guardado.password, false);
+        }
+    } catch (e) {}
+})();
+
+/* =========================================================
+   CARGA DEL LISTADO
+   ========================================================= */
+async function cargarListado() {
+    const wrap = document.getElementById("listadoWrap");
+    wrap.textContent = "Cargando…";
+    try {
+        const data = await llamarApi("listar");
+        estado.vehiculos = data.vehiculos;
+        estado.jsonSha = data.sha;
+        renderListado();
+    } catch (e) {
+        wrap.innerHTML = `<div class="aviso error">No se pudo cargar el listado: ${e.message}</div>`;
+    }
+}
+
+function renderListado() {
+    const wrap = document.getElementById("listadoWrap");
+    if (estado.vehiculos.length === 0) {
+        wrap.innerHTML = `<p style="color:#888;">Todavía no hay vehículos cargados.</p>`;
+        return;
+    }
+    const filas = estado.vehiculos.map((v, i) => {
+        const id = v.id || slugify(v);
+        const img = (v.fotos && v.fotos[0]) || "";
+        const km = v.km == null ? "—" : v.km.toLocaleString("es-AR") + " km";
+        const etiquetaVendido = v.vendido
+            ? '<br><span style="color:#c0392b;font-weight:700;font-size:12px;">VENDIDO</span>'
+            : "";
+        const botonVendido = v.vendido
+            ? `<button class="btn btn-secondary" onclick="marcarVendido(${i})">Reactivar</button>`
+            : `<button class="btn" style="background:#c0392b;color:#fff;border:1px solid #c0392b;" onclick="marcarVendido(${i})">Marcar como VENDIDO</button>`;
+        return `
+        <tr>
+            <td>${img ? `<img class="miniatura" src="${img}" onerror="this.style.visibility='hidden'">` : ""}</td>
+            <td><strong>${v.marca}</strong><br>${v.modelo}</td>
+            <td>${v.anio || "—"}</td>
+            <td>${v.estado === "0km" ? "0KM" : "Usado"}${etiquetaVendido}</td>
+            <td>${km}</td>
+            <td>
+                <div class="acciones_fila">
+                    <button class="btn btn-secondary" onclick="editarVehiculo(${i})">Editar</button>
+                    ${botonVendido}
+                    <button class="btn btn-danger" onclick="eliminarVehiculo(${i})">Eliminar</button>
+                </div>
+            </td>
+        </tr>`;
+    }).join("");
+
+    wrap.innerHTML = `
+        <table class="tabla_vehiculos">
+            <thead><tr><th></th><th>Vehículo</th><th>Año</th><th>Estado</th><th>Km</th><th>Acciones</th></tr></thead>
+            <tbody>${filas}</tbody>
+        </table>`;
+}
+
+function poblarSelectMarcas() {
+    const sel = document.getElementById("fMarca");
+    sel.innerHTML = MARCAS.map(m => `<option value="${m}">${m}</option>`).join("");
+}
+
+/* =========================================================
+   FORMULARIO: fotos nuevas (preview)
+   ========================================================= */
+document.getElementById("fFotos").addEventListener("change", async (e) => {
+    const files = Array.from(e.target.files);
+    e.target.value = "";
+    if (files.length === 0) return;
+
+    const progresoWrap = document.getElementById("progresoWrap");
+    const barra = document.getElementById("barraProgreso");
+    const progresoTexto = document.getElementById("progresoTexto");
+    progresoWrap.classList.remove("oculto");
+
+    for (let i = 0; i < files.length; i++) {
+        progresoTexto.textContent = `Optimizando foto ${i + 1} de ${files.length}…`;
+        barra.style.width = `${Math.round((i / files.length) * 100)}%`;
+
+        const original = files[i];
+        const optimizada = await optimizarImagen(original);
+        const dataUrl = await fileToDataUrl(optimizada);
+        estado.fotos.push({ tipo: "new", file: optimizada, dataUrl, pesoOriginal: original.size });
+    }
+
+    barra.style.width = "100%";
+    progresoWrap.classList.add("oculto");
+    renderPreviewFotos();
+});
+
+function renderPreviewFotos() {
+    const wrap = document.getElementById("previewFotos");
+    wrap.innerHTML = estado.fotos.map((f, i) => {
+        const src = f.tipo === "new" ? f.dataUrl : f.url;
+        const esPortada = i === 0;
+        const infoPeso = (f.tipo === "new")
+            ? `<div style="font-size:10px; color:#888; text-align:center; margin-top:3px;">${formatBytes(f.pesoOriginal)} → <strong style="color:#2c8a4b;">${formatBytes(f.file.size)}</strong></div>`
+            : "";
+        return `
+        <div class="item ${esPortada ? 'es_portada' : ''}">
+            <img src="${src}">
+            ${!esPortada ? `<button type="button" class="btn_portada" title="Hacer portada" onclick="hacerPortada(${i})">★</button>` : ''}
+            <button type="button" class="quitar" title="Quitar" onclick="quitarFoto(${i})">×</button>
+            ${esPortada ? `<span class="etiqueta_portada">Portada</span>` : ''}
+            ${infoPeso}
+        </div>`;
+    }).join("");
+}
+
+function hacerPortada(i) {
+    const [item] = estado.fotos.splice(i, 1);
+    estado.fotos.unshift(item);
+    renderPreviewFotos();
+}
+
+function quitarFoto(i) {
+    estado.fotos.splice(i, 1);
+    renderPreviewFotos();
+}
+
+function limpiarFormulario() {
+    document.getElementById("fMarca").value = MARCAS[0];
+    document.getElementById("fModelo").value = "";
+    document.getElementById("fAnio").value = "";
+    document.getElementById("fEstado").value = "usado";
+    document.getElementById("fKm").value = "";
+    document.getElementById("fTransmision").value = "";
+    document.getElementById("fCombustible").value = "";
+    document.getElementById("fId").value = "";
+    document.getElementById("fDescripcion").value = "";
+    estado.fotos = [];
+    estado.fotosOriginales = [];
+    estado.editandoId = null;
+    renderPreviewFotos();
+    document.getElementById("formTituloCard").textContent = "Agregar vehículo";
+    document.getElementById("btnCancelarEdicion").classList.add("oculto");
+}
+
+document.getElementById("btnCancelarEdicion").addEventListener("click", limpiarFormulario);
+
+function editarVehiculo(indice) {
+    const v = estado.vehiculos[indice];
+    estado.editandoId = v.id || slugify(v);
+    document.getElementById("fMarca").value = v.marca;
+    document.getElementById("fModelo").value = v.modelo;
+    document.getElementById("fAnio").value = v.anio || "";
+    document.getElementById("fEstado").value = v.estado || "usado";
+    document.getElementById("fKm").value = v.km ?? "";
+    document.getElementById("fTransmision").value = v.transmision || "";
+    document.getElementById("fCombustible").value = v.combustible || "";
+    document.getElementById("fId").value = estado.editandoId;
+    document.getElementById("fDescripcion").value = v.descripcion || "";
+    estado.fotos = (v.fotos || []).map(url => ({ tipo: "existing", url }));
+    estado.fotosOriginales = (v.fotos || []).slice();
+    renderPreviewFotos();
+    document.getElementById("formTituloCard").textContent = `Editando: ${v.marca} ${v.modelo}`;
+    document.getElementById("btnCancelarEdicion").classList.remove("oculto");
+    window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
+async function eliminarVehiculo(indice) {
+    const v = estado.vehiculos[indice];
+    if (!confirm(`¿Eliminar "${v.marca} ${v.modelo}" del catálogo? Esta acción también borra sus fotos. No se puede deshacer.`)) return;
+
+    const id = v.id || slugify(v);
+    const nuevaLista = estado.vehiculos.filter((_, i) => i !== indice);
+    await guardarJsonEnGithub(nuevaLista, `Eliminar vehículo: ${v.marca} ${v.modelo}`);
+    estado.vehiculos = nuevaLista;
+    renderListado();
+
+    // El catálogo ya quedó guardado (lo importante). Ahora, de yapa, borramos
+    // también las fotos de este vehículo en GitHub. Si esto llegara a fallar,
+    // no lo tratamos como error grave ni se lo mostramos como fallo al
+    // usuario: el vehículo YA desapareció del sitio, que es lo que le importa.
+    try {
+        await llamarApi("eliminarFotos", { id });
+    } catch (e) {
+        console.warn("No se pudieron borrar las fotos del vehículo eliminado:", e.message);
+    }
+
+    mostrarMensaje("Vehículo eliminado y publicado.", "ok");
+}
+
+async function marcarVendido(indice) {
+    const v = estado.vehiculos[indice];
+    const marcandoComoVendido = !v.vendido;
+
+    const mensajeConfirm = marcandoComoVendido
+        ? `¿Marcar "${v.marca} ${v.modelo}" como VENDIDO? Va a dejar de aparecer en el catálogo normal (Todos / 0km / Usados) y va a pasar a la sección "Vendidos". Las fotos y los datos no se borran, y podés reactivarlo cuando quieras.`
+        : `¿Volver a publicar "${v.marca} ${v.modelo}"? Va a aparecer de nuevo en el catálogo normal.`;
+    if (!confirm(mensajeConfirm)) return;
+
+    const nuevaLista = estado.vehiculos.map((x, i) => i === indice ? { ...x, vendido: marcandoComoVendido } : x);
+    await guardarJsonEnGithub(
+        nuevaLista,
+        marcandoComoVendido ? `Marcar vendido: ${v.marca} ${v.modelo}` : `Reactivar publicación: ${v.marca} ${v.modelo}`
+    );
+    estado.vehiculos = nuevaLista;
+    renderListado();
+    mostrarMensaje(marcandoComoVendido ? "Vehículo marcado como vendido." : "Vehículo publicado de nuevo.", "ok");
+}
+
+/* =========================================================
+   GUARDAR (alta / edición) -> sube fotos + actualiza JSON
+   ========================================================= */
+document.getElementById("btnGuardar").addEventListener("click", async () => {
+    const marca = document.getElementById("fMarca").value;
+    const modelo = document.getElementById("fModelo").value.trim();
+    const anio = parseInt(document.getElementById("fAnio").value, 10) || null;
+    const estadoVeh = document.getElementById("fEstado").value;
+    const km = document.getElementById("fKm").value === "" ? null : parseInt(document.getElementById("fKm").value, 10);
+    const transmision = document.getElementById("fTransmision").value.trim();
+    const combustible = document.getElementById("fCombustible").value.trim();
+    const descripcion = document.getElementById("fDescripcion").value.trim();
+
+    if (!modelo) { mostrarMensaje("Completá al menos el modelo.", "error"); return; }
+    if (estado.fotos.length === 0) {
+        if (!confirm("No cargaste ninguna foto. ¿Publicar igual? Se va a mostrar el logo de la marca.")) return;
+    }
+
+    const btn = document.getElementById("btnGuardar");
+    btn.disabled = true;
+
+    try {
+        const id = estado.editandoId || slugify({ marca, modelo, anio });
+
+        // 1) Subir fotos nuevas a GitHub, manteniendo el ORDEN elegido (la posición 0 = portada)
+        const progresoWrap = document.getElementById("progresoWrap");
+        const barra = document.getElementById("barraProgreso");
+        const progresoTexto = document.getElementById("progresoTexto");
+        progresoWrap.classList.remove("oculto");
+
+        const totalNuevas = estado.fotos.filter(f => f.tipo === "new").length;
+        let subidas = 0;
+        const fotosFinal = [];
+
+        for (let i = 0; i < estado.fotos.length; i++) {
+            const f = estado.fotos[i];
+            if (f.tipo === "existing") {
+                fotosFinal.push(f.url);
+                continue;
+            }
+            subidas++;
+            progresoTexto.textContent = `Subiendo foto ${subidas} de ${totalNuevas}…`;
+            barra.style.width = `${Math.round(((subidas - 1) / Math.max(totalNuevas, 1)) * 100)}%`;
+
+            const ext = (f.file.name.split(".").pop() || "jpg").toLowerCase();
+            const nombreArchivo = `foto-${Date.now()}-${i}.${ext}`;
+            const base64 = await fileToBase64(f.file);
+
+            const data = await llamarApi("subirFoto", { id, nombreArchivo, base64, marca, modelo });
+            fotosFinal.push(data.path);
+        }
+        barra.style.width = "100%";
+        progresoTexto.textContent = "Fotos subidas. Actualizando catálogo…";
+
+        const vehiculoFinal = {
+            id, marca, modelo, anio, km, estado: estadoVeh,
+            combustible: combustible || undefined,
+            transmision: transmision || undefined,
+            descripcion: descripcion || undefined,
+            fotos: fotosFinal
+        };
+        // Limpiar campos undefined
+        Object.keys(vehiculoFinal).forEach(k => vehiculoFinal[k] === undefined && delete vehiculoFinal[k]);
+
+        // 2) Actualizar / insertar en el listado
+        let nuevaLista;
+        if (estado.editandoId) {
+            nuevaLista = estado.vehiculos.map(v => (v.id || slugify(v)) === estado.editandoId ? vehiculoFinal : v);
+        } else {
+            nuevaLista = [...estado.vehiculos, vehiculoFinal];
+        }
+
+        await guardarJsonEnGithub(nuevaLista, estado.editandoId ? `Editar vehículo: ${marca} ${modelo}` : `Agregar vehículo: ${marca} ${modelo}`);
+
+        // El catálogo ya quedó guardado (lo importante). Ahora, de yapa, si
+        // esto fue una edición y se sacaron o reemplazaron fotos, borramos
+        // esas fotos viejas de GitHub para que no queden huérfanas. Esto NO
+        // bloquea el guardado: si alguna falla, el vehículo ya se publicó bien.
+        const fotosBorradas = estado.fotosOriginales.filter(url => !fotosFinal.includes(url));
+        for (const path of fotosBorradas) {
+            try {
+                await llamarApi("eliminarFoto", { path });
+            } catch (e) {
+                console.warn("No se pudo borrar una foto vieja:", path, e.message);
+            }
+        }
+
+        estado.vehiculos = nuevaLista;
+        renderListado();
+        limpiarFormulario();
+        progresoWrap.classList.add("oculto");
+        mostrarMensaje("¡Listo! El vehículo se publicó. El sitio va a actualizarse en uno o dos minutos (tiempo de despliegue).", "ok");
+    } catch (e) {
+        mostrarMensaje("Ocurrió un error: " + e.message, "error");
+    } finally {
+        btn.disabled = false;
+    }
+});
+
+async function guardarJsonEnGithub(lista, mensajeCommit) {
+    const data = await llamarApi("guardarJson", { vehiculos: lista, sha: estado.jsonSha, mensaje: mensajeCommit });
+    estado.jsonSha = data.sha;
+}
+</script>
+</body>
+</html>

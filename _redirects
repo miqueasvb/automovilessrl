@@ -1,0 +1,7 @@
+# /ficha.html?id=algo  ->  /algo  (URL linda, sin duplicados)
+/ficha.html   id=:id   /:id   301
+
+# URL linda de cada vehículo: sirve ficha.html por detrás.
+# Va AL FINAL a propósito: si el path coincide con un archivo real
+# (catalogo.html, admin.html, img/...), Netlify sirve ese archivo primero.
+/:id   /ficha.html?id=:id   200

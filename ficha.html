@@ -1,0 +1,1452 @@
+<!doctype html>
+<html class="no-js" lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title id="pageTitle">Vehículo | Automóviles SRL</title>
+    <meta id="pageDescription" name="description" content="Autos 0km y usados seleccionados. Financiación y tasaciones.">
+    <link id="pageCanonical" rel="canonical" href="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
+
+    <!-- CSS here -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/magnific-popup.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/themify-icons.css">
+    <link rel="stylesheet" href="css/nice-select.css">
+    <link rel="stylesheet" href="css/flaticon.css">
+    <link rel="stylesheet" href="css/gijgo.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/slicknav.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;800&display=optional" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Estilos personalizados para el header agresivo multimarca -->
+    <style>
+        .main-header-area {
+            background-color: #111111 !important;
+            border-top: 3px solid #e31b23;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+        }
+        .main-menu nav ul li a {
+            color: #ffffff !important;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: 0.3s;
+        }
+        .main-menu nav ul li a:hover {
+            color: #e31b23 !important;
+        }
+        .main-menu nav ul li ul.submenu {
+            background: #1a1a1a !important;
+            border-top: 2px solid #e31b23;
+        }
+        .main-menu nav ul li ul.submenu li a {
+            color: #ffffff !important;
+        }
+        .main-menu nav ul li ul.submenu li a:hover {
+            color: #e31b23 !important;
+            background: #111111 !important;
+        }
+
+        /* ===================================================
+           CATÁLOGO — diseño simple y moderno
+           =================================================== */
+        * { box-sizing: border-box; }
+
+        .catalogo_hero {
+            background: #ffffff;
+            padding: 50px 0 28px;
+            border-bottom: 1px solid #ececec;
+        }
+        .catalogo_hero h1 {
+            color: #111111;
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 6px;
+            letter-spacing: -0.3px;
+        }
+        .catalogo_hero p {
+            color: #8a8a8a;
+            font-size: 14.5px;
+            margin: 0;
+        }
+        .catalogo_area {
+            background-color: #ffffff;
+            padding: 32px 0 90px;
+        }
+
+        /* Tabs de estado */
+        .estado_tabs {
+            display: flex;
+            gap: 26px;
+            margin-bottom: 30px;
+            border-bottom: 1px solid #ececec;
+        }
+        .estado_tab {
+            padding: 0 0 12px 0;
+            font-weight: 600;
+            font-size: 14px;
+            color: #999999;
+            cursor: pointer;
+            transition: color 0.2s ease;
+            user-select: none;
+            border-bottom: 2px solid transparent;
+            margin-bottom: -1px;
+        }
+        .estado_tab:hover {
+            color: #111111;
+        }
+        .estado_tab.active {
+            color: #111111;
+            border-bottom-color: #e31b23;
+        }
+
+        /* Sidebar de filtros — solo texto, sin íconos */
+        .filtros_box {
+            padding-right: 10px;
+        }
+        .filtros_box h5 {
+            font-size: 12.5px;
+            text-transform: uppercase;
+            letter-spacing: 0.6px;
+            font-weight: 700;
+            color: #111111;
+            margin: 0 0 12px 0;
+        }
+        .filtro_grupo {
+            margin-bottom: 28px;
+            padding-bottom: 28px;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        .filtro_grupo:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        .buscador_input {
+            width: 100%;
+            padding: 9px 0;
+            border: none;
+            border-bottom: 1px solid #dddddd;
+            font-size: 14px;
+            outline: none;
+            background: transparent;
+            transition: border-color 0.2s ease;
+        }
+        .buscador_input:focus {
+            border-color: #111111;
+        }
+        .marca_check {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 6px 0;
+            cursor: pointer;
+        }
+        .marca_check label {
+            display: flex;
+            align-items: center;
+            font-size: 14px;
+            color: #444444;
+            font-weight: 400;
+            cursor: pointer;
+            margin: 0;
+        }
+        .marca_check input {
+            accent-color: #111111;
+            width: 15px;
+            height: 15px;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+        .marca_check .cant {
+            font-size: 12px;
+            color: #bbbbbb;
+        }
+        .rango_flex {
+            display: flex;
+            gap: 12px;
+        }
+        .rango_flex select {
+            flex: 1;
+            padding: 8px 0;
+            border: none;
+            border-bottom: 1px solid #dddddd;
+            font-size: 13px;
+            color: #444444;
+            background: transparent;
+            border-radius: 0;
+        }
+        .btn_limpiar {
+            background: transparent;
+            border: none;
+            color: #999999;
+            font-size: 13px;
+            font-weight: 500;
+            padding: 0;
+            cursor: pointer;
+            text-decoration: underline;
+        }
+        .btn_limpiar:hover {
+            color: #e31b23;
+        }
+
+        /* Barra superior de resultados */
+        .resultados_bar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+        .resultados_count {
+            font-size: 14px;
+            color: #999999;
+        }
+        .resultados_count strong {
+            color: #111111;
+        }
+        .orden_select {
+            padding: 7px 4px;
+            border: none;
+            border-bottom: 1px solid #dddddd;
+            font-size: 13px;
+            color: #444444;
+            background: transparent;
+            border-radius: 0;
+        }
+        .btn_filtros_mobile {
+            display: none;
+            background: transparent;
+            color: #111111 !important;
+            border: 1px solid #dddddd;
+            padding: 7px 16px;
+            border-radius: 4px;
+            font-size: 13px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        /* Tarjetas de vehículo */
+        .vehiculo_card {
+            background: #ffffff;
+            border: 1px solid #ececec;
+            border-radius: 6px;
+            overflow: hidden;
+            transition: border-color 0.2s ease, box-shadow 0.2s ease;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        .vehiculo_card:hover {
+            border-color: #d8d8d8;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+        }
+        .vehiculo_img {
+            position: relative;
+            background: #fafafa;
+            height: 190px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 18px;
+            border-bottom: 1px solid #f2f2f2;
+        }
+        .vehiculo_img img {
+            max-height: 105px;
+            max-width: 75%;
+            object-fit: contain;
+            opacity: 0.9;
+        }
+        /* Tarjeta con foto real del vehículo (campo "foto"): ocupa todo el recuadro */
+        .vehiculo_img.con_foto { padding: 0; overflow: hidden; }
+        .vehiculo_img.con_foto img {
+            width: 100%;
+            height: 100%;
+            max-width: none;
+            max-height: none;
+            object-fit: cover;
+            opacity: 1;
+        }
+        .vehiculo_tag_vendido {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            z-index: 2;
+            background: #111111;
+            color: #ffffff;
+            font-size: 12px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 4px;
+            letter-spacing: 0.3px;
+        }
+        .vehiculo_card.es_vendido .vehiculo_img img { filter: grayscale(0.85); opacity: 0.75; }
+        .vehiculo_img_overlay {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(0,0,0,0);
+            opacity: 0;
+            transition: 0.25s ease;
+        }
+        .vehiculo_img:hover .vehiculo_img_overlay {
+            background: rgba(17,17,17,0.6);
+            opacity: 1;
+        }
+        .vehiculo_overlay_badge {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            background: #fff;
+            color: #111;
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.4px;
+            padding: 8px 16px;
+            border-radius: 30px;
+        }
+        .badge_estado {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            font-size: 10px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.4px;
+            padding: 3px 9px;
+            border-radius: 3px;
+            background: #ffffff;
+            border: 1px solid #ececec;
+        }
+        .badge_estado.nuevo { color: #1aa260; }
+        .badge_estado.usado { color: #777777; }
+        .vehiculo_body {
+            padding: 15px 17px 17px;
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+        }
+        .vehiculo_marca {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 0.6px;
+            color: #aaaaaa;
+            font-weight: 600;
+            margin-bottom: 3px;
+        }
+        .vehiculo_titulo {
+            font-size: 16px;
+            font-weight: 700;
+            color: #111111;
+            margin-bottom: 9px;
+            line-height: 1.3;
+        }
+        .vehiculo_specs {
+            font-size: 12.5px;
+            color: #999999;
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #f2f2f2;
+            line-height: 1.5;
+        }
+        .vehiculo_footer {
+            margin-top: auto;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            gap: 8px;
+        }
+        .btn_consultar {
+            background: #111111;
+            color: #fff !important;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.4px;
+            padding: 9px 14px;
+            border-radius: 4px;
+            text-decoration: none;
+            white-space: nowrap;
+            transition: background 0.2s ease;
+            width: 100%;
+            text-align: center;
+        }
+        .btn_consultar:hover {
+            background: #e31b23;
+            color: #fff !important;
+        }
+        .sin_resultados {
+            padding: 60px 20px;
+            text-align: center;
+        }
+        .sin_resultados h4 {
+            font-size: 17px;
+            color: #333333;
+            margin-bottom: 6px;
+        }
+        .sin_resultados p {
+            color: #999999;
+            font-size: 13.5px;
+            margin-bottom: 18px;
+        }
+
+        /* Grilla: 2 columnas desde mobile */
+        .grilla_vehiculos {
+            margin-left: -6px;
+            margin-right: -6px;
+        }
+        .grilla_vehiculos > div {
+            padding-left: 6px;
+            padding-right: 6px;
+        }
+
+        @media (max-width: 991px) {
+            .btn_filtros_mobile { display: inline-block; }
+            .filtros_col {
+                display: none;
+                margin-bottom: 20px;
+                padding-bottom: 20px;
+                border-bottom: 1px solid #ececec;
+            }
+            .filtros_col.abierto { display: block; }
+        }
+        @media (max-width: 576px) {
+            .catalogo_hero { padding: 34px 0 20px; }
+            .catalogo_hero h1 { font-size: 22px; }
+            .vehiculo_img { height: 125px; padding: 10px; }
+            .vehiculo_img img { max-height: 66px; }
+            .vehiculo_body { padding: 11px 12px 13px; }
+            .vehiculo_titulo { font-size: 13.5px; margin-bottom: 6px; }
+            .vehiculo_specs { font-size: 10.5px; margin-bottom: 10px; padding-bottom: 10px; }
+            .btn_consultar { padding: 7px 10px; font-size: 10px; }
+            .estado_tabs { gap: 18px; }
+        }
+    </style>
+
+<style>
+/* ===== Menú móvil — Automoviles SRL (panel original, glassmorphism + links numerados) ===== */
+
+/* Botón hamburguesa: círculo con blur, morfa a X (es el ÚNICO botón de cerrar) */
+.vision-mobile-btn {
+    position: relative;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: 1px solid rgba(255,255,255,.35);
+    background: rgba(255,255,255,.08);
+    -webkit-backdrop-filter: blur(6px);
+    backdrop-filter: blur(6px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+    padding: 0;
+    z-index: 100002;
+    transition: background .25s ease, border-color .25s ease, transform .2s ease;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+}
+.vision-mobile-btn:active { transform: scale(.92); }
+.vision-mobile-btn span {
+    display: block;
+    width: 20px;
+    height: 2px;
+    border-radius: 2px;
+    background: #fff;
+    transition: transform .32s cubic-bezier(.5,0,.2,1), opacity .22s ease, width .25s ease;
+}
+.vision-mobile-btn span:nth-child(2) { width: 14px; align-self: flex-end; margin-right: 10px; }
+.vision-mobile-btn.active { border-color: #ec171f; background: rgba(236, 23, 31,.16); }
+.vision-mobile-btn.active span { width: 20px; }
+.vision-mobile-btn.active span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.vision-mobile-btn.active span:nth-child(2) { opacity: 0; }
+.vision-mobile-btn.active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* Overlay con blur */
+.mobile-nav-overlay {
+    display: block;
+    position: fixed;
+    inset: 0;
+    background: rgba(8, 8, 10, 0);
+    -webkit-backdrop-filter: blur(0px);
+    backdrop-filter: blur(0px);
+    z-index: 100000;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity .4s ease, background .4s ease, backdrop-filter .4s ease, visibility .4s;
+}
+.mobile-nav-overlay.active {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    background: rgba(8, 8, 10, .55);
+    -webkit-backdrop-filter: blur(3px);
+    backdrop-filter: blur(3px);
+}
+
+/* Panel lateral */
+.mobile-nav-panel {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100%;
+    height: 100dvh;
+    width: min(380px, 86vw);
+    max-width: 86vw;
+    background: linear-gradient(165deg, #131315 0%, #0d0d0f 55%, #16110f 100%);
+    z-index: 100001;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    box-shadow: -18px 0 50px rgba(0,0,0,.5);
+    transform: translateX(100%);
+    transition: transform .45s cubic-bezier(.22,1,.36,1);
+    padding-top: env(safe-area-inset-top);
+    padding-bottom: env(safe-area-inset-bottom);
+}
+.mobile-nav-panel.active { transform: translateX(0); }
+
+/* Resplandor decorativo */
+.mnp-decor {
+    position: absolute;
+    top: -60px;
+    right: -80px;
+    width: 260px;
+    height: 260px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(236, 23, 31,.35), transparent 70%);
+    filter: blur(10px);
+    pointer-events: none;
+    z-index: 0;
+}
+.mnp-decor2 {
+    position: absolute;
+    bottom: -90px;
+    left: -70px;
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255,255,255,.06), transparent 70%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* Header interno del panel (solo logo; para cerrar se usa el mismo botón hamburguesa) */
+.mnp-top {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    padding: 24px 26px 18px;
+    border-bottom: 1px solid rgba(255,255,255,.08);
+}
+.mnp-logo img { max-height: 38px; width: auto; display: block; filter: brightness(0) invert(1); opacity: .95; }
+
+/* Contenedor que agrupa links + redes y los centra como bloque en el panel */
+.mnp-body {
+    position: relative;
+    z-index: 2;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding-top: 70px;
+    overflow-y: auto;
+}
+
+/* Links del menú — misma tipografía que el resto del sitio (Montserrat), alineados a la izquierda */
+.mnp-links {
+    display: flex;
+    flex-direction: column;
+    padding: 0 8px;
+}
+.mnp-link {
+    position: relative;
+    display: block;
+    padding: 15px 28px;
+    text-decoration: none !important;
+    text-align: left;
+    opacity: 0;
+    transform: translateX(28px);
+    transition: opacity .45s ease, transform .45s ease;
+    transition-delay: calc(var(--i) * 60ms);
+}
+.mobile-nav-panel.active .mnp-link {
+    opacity: 1;
+    transform: translateX(0);
+}
+.mnp-link::before {
+    content: "";
+    position: absolute;
+    left: 28px;
+    bottom: 6px;
+    width: 0;
+    height: 1px;
+    background: #ec171f;
+    transition: width .3s ease;
+}
+.mnp-link:active::before,
+.mnp-link:focus-visible::before { width: 26px; }
+.mnp-text {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 21px;
+    font-weight: 600;
+    letter-spacing: .35px;
+    color: #fff !important;
+    text-transform: uppercase;
+    transition: color .2s ease;
+    display: inline-block;
+}
+.mnp-link:active .mnp-text,
+.mnp-link:focus-visible .mnp-text { color: #ec171f !important; }
+.mnp-link.mnp-cta .mnp-text { color: #ec171f !important; }
+
+/* Redes sociales — justo debajo del último link (Contacto) */
+.mnp-social-wrap {
+    padding: 22px 26px 0;
+}
+.mnp-social {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 16px;
+}
+.mnp-social a {
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    border: 1px solid rgba(255,255,255,.18);
+    background: rgba(255,255,255,.05);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff !important;
+    font-size: 19px;
+    transition: background .25s ease, border-color .25s ease, transform .2s ease;
+}
+.mnp-social a:active { transform: scale(.92); }
+.mnp-social a:hover { background: #ec171f; border-color: #ec171f; }
+
+@media (min-width: 992px) {
+    .mobile-nav-panel,
+    .mobile-nav-overlay,
+    .vision-mobile-btn {
+        display: none !important;
+    }
+}
+@media (max-width: 380px) {
+    .mnp-text { font-size: 18px; }
+    .mnp-link { padding: 12px 22px; }
+}
+</style>
+
+<style>
+/* ===== Inicio inspirado en Vision Motors ===== */
+.vision-inspired-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    transition: background .3s ease, box-shadow .3s ease;
+}
+.vision-inspired-header.vision-header-scrolled {
+    background: rgba(15,15,15,.94);
+    -webkit-backdrop-filter: blur(6px);
+    backdrop-filter: blur(6px);
+    box-shadow: 0 6px 22px rgba(0,0,0,.25);
+}
+.vision-inspired-header .main-header-area {
+    background: transparent !important;
+    border: 0 !important;
+    box-shadow: none !important;
+    padding: 24px 0 !important;
+}
+.vision-nav-row {
+    min-height: 62px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 35px;
+}
+.vision-logo img {
+    display: block;
+    width: auto;
+    max-width: 220px;
+    max-height: 58px;
+    object-fit: contain;
+}
+.vision-desktop-nav {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 30px;
+}
+.vision-desktop-nav a {
+    position: relative;
+    color: #fff !important;
+    font-weight: 600;
+    font-size: 14.5px;
+    letter-spacing: .35px;
+    text-transform: uppercase;
+    text-decoration: none !important;
+    transition: color .25s ease, opacity .25s ease;
+    white-space: nowrap;
+}
+.vision-desktop-nav a::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -6px;
+    width: 0;
+    height: 1px;
+    background: #fff;
+    transition: width .3s ease, left .3s ease;
+}
+.vision-desktop-nav a:hover {
+    color: #fff !important;
+    opacity: .8;
+}
+.vision-desktop-nav a:hover::after {
+    width: 100%;
+    left: 0;
+}
+.vision-desktop-nav .vision-nav-contact::after {
+    content: none;
+}
+.vision-desktop-nav .vision-nav-contact {
+    background: #ec171f;
+    color: #fff !important;
+    padding: 11px 20px;
+    border-radius: 4px;
+    transition: background .25s ease, box-shadow .25s ease;
+}
+.vision-desktop-nav .vision-nav-contact:hover {
+    background: #c9141a;
+    color: #fff !important;
+    text-shadow: none;
+    box-shadow: 0 0 16px rgba(236, 23, 31,.75), 0 0 30px rgba(236, 23, 31,.4);
+}
+.vision-mobile-btn { display:none; }
+@media (max-width: 991px) {
+    .vision-inspired-header .main-header-area { padding: 17px 0 !important; }
+    .vision-logo img { max-width: 175px; max-height: 52px; }
+    .vision-desktop-nav { display: none; }
+    .vision-mobile-btn { display: flex; }
+}
+@media (max-width: 575px) {
+    .vision-logo img { max-width: 155px; max-height: 47px; }
+}
+
+/* Ajuste por header fijo (navbar copiado de index) */
+.catalogo_hero { padding-top: 160px; }
+@media (max-width: 991px) { .catalogo_hero { padding-top: 146px; } }
+@media (max-width: 576px) { .catalogo_hero { padding-top: 130px; } }
+</style>
+<style>
+    /* ===== Smooth scroll (Lenis) ===== */
+    html.lenis {
+        height: auto;
+    }
+    .lenis.lenis-smooth [data-aos] {
+        will-change: transform, opacity;
+    }
+    html {
+        scroll-behavior: auto !important;
+        scroll-padding-top: 90px;
+    }
+
+    /* ===== Botón flotante de WhatsApp con tooltip ===== */
+    .whatsapp-float {
+        position: fixed;
+        bottom: 25px;
+        right: 25px;
+        background-color: #25d366;
+        color: #fff;
+        width: 70px;
+        height: 70px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+        z-index: 1000;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .whatsapp-float:hover {
+        background-color: #20ba5a;
+        transform: scale(1.08);
+        box-shadow: 0 6px 20px rgba(37, 211, 102, 0.6);
+        color: #fff;
+    }
+    .whatsapp-float:active {
+        transform: scale(0.95);
+    }
+    .whatsapp-tooltip {
+        position: absolute;
+        right: calc(100% + 14px);
+        top: 50%;
+        transform: translateY(-50%) translateX(8px);
+        background-color: #ffffff;
+        color: #111111;
+        font-family: 'Barlow', sans-serif;
+        font-weight: 600;
+        font-size: 14px;
+        white-space: nowrap;
+        padding: 10px 16px;
+        border-radius: 8px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        transition: all 0.25s ease;
+    }
+    .whatsapp-tooltip::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 100%;
+        transform: translateY(-50%);
+        border-width: 6px;
+        border-style: solid;
+        border-color: transparent transparent transparent #ffffff;
+    }
+    .whatsapp-float:hover .whatsapp-tooltip {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(-50%) translateX(0);
+    }
+    @media (max-width: 480px) {
+        .whatsapp-tooltip {
+            display: none;
+        }
+    }
+</style>
+
+<style id="hover-css">
+/* Hovers en CSS puro: no dependen de JavaScript */
+.hv-bb4550:hover{opacity:0.8!important}
+.hv-f004bc:hover{background-color:#ec171f!important;border-color:#ec171f!important;transform:translateY(-2px)!important}
+.hv-fe0cf0:hover{color:#ec171f!important}
+</style>
+<style>
+.breadcrumb_vehicle { background-color: #111111; border-bottom: 3px solid #e31b23; padding: 40px 0; }
+        .breadcrumb_vehicle .badge_meta { display: inline-block; background: rgba(255,255,255,0.08); color: #fff; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; padding: 5px 14px; border-radius: 4px; margin-right: 8px; }
+        .breadcrumb_vehicle .badge_new { background: #e31b23; }
+        .breadcrumb_vehicle a.back_link { color: #aaa; font-size: 13px; text-decoration: none; }
+        .breadcrumb_vehicle a.back_link:hover { color: #e31b23; }
+
+        .vehicle_detail_area { padding: 70px 0; background: #f7f7f7; }
+        .gallery_main { width: 100%; border-radius: 10px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.1); margin-bottom: 15px; position: relative; }
+        .gallery_main img { width: 100%; height: 420px; object-fit: cover; display: block; }
+        .gallery_thumbs { display: flex; gap: 12px; flex-wrap: wrap; }
+        .gallery_thumbs img { width: 90px; height: 70px; object-fit: cover; border-radius: 6px; cursor: pointer; opacity: 0.7; transition: 0.25s; border: 2px solid transparent; }
+        .gallery_thumbs img:hover, .gallery_thumbs img.active { opacity: 1; border-color: #e31b23; }
+        .gallery_arrow { position: absolute; top: 50%; transform: translateY(-50%); width: 44px; height: 44px; border-radius: 50%; background: rgba(0,0,0,0.45); border: none; color: #fff; font-size: 18px; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: 0.25s; z-index: 2; }
+        .gallery_arrow:hover { background: #e31b23; }
+        .gallery_arrow.gallery_prev { left: 15px; }
+        .gallery_arrow.gallery_next { right: 15px; }
+
+        .vehicle_info_box { background: #fff; border-radius: 10px; padding: 35px; box-shadow: 0 5px 20px rgba(0,0,0,0.06); height: 100%; }
+        .vehicle_info_box h1 { font-size: 28px; font-weight: 700; color: #111; margin-bottom: 4px; }
+        .vehicle_info_box .brand_tag { color: #e31b23; font-weight: 600; text-transform: uppercase; font-size: 14px; letter-spacing: 1px; }
+        .spec_list { list-style: none; padding: 0; margin: 25px 0; }
+        .spec_list li { display: flex; justify-content: space-between; padding: 12px 0; border-bottom: 1px solid #eee; font-size: 14px; color: #444; }
+        .spec_list li span:first-child { color: #888; }
+        .spec_list li span:last-child { font-weight: 600; color: #111; }
+        .vehicle_desc { font-size: 14px; line-height: 1.9; color: #555; margin-bottom: 25px; }
+        .whatsapp_btn_detail { display: flex; align-items: center; justify-content: center; gap: 10px; background-color: #25D366; color: #fff !important; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; padding: 15px 20px; border-radius: 6px; text-decoration: none; transition: 0.3s; width: 100%; }
+        .whatsapp_btn_detail:hover { background-color: #1ebd5a; color: #fff !important; }
+        .share_btn_detail { display: flex; align-items: center; justify-content: center; gap: 10px; background-color: transparent; color: #333; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; padding: 15px 20px; border-radius: 6px; border: 2px solid #e2e2e2; text-decoration: none; transition: 0.3s; width: 100%; margin-top: 12px; cursor: pointer; }
+        .share_btn_detail:hover { background-color: #f5f5f5; border-color: #ccc; color: #333; }
+        .share_link_box { display: none; align-items: center; gap: 8px; margin-top: 12px; background: #f5f5f5; border: 1px solid #e2e2e2; border-radius: 6px; padding: 10px 12px; }
+        .share_link_box.active { display: flex; }
+        .share_link_box input { flex: 1; border: none; background: transparent; font-size: 13px; color: #555; outline: none; min-width: 0; }
+        .share_copy_btn { flex-shrink: 0; background-color: #e31b23; color: #fff; border: none; padding: 8px 14px; border-radius: 4px; font-size: 13px; font-weight: 700; text-transform: uppercase; cursor: pointer; transition: 0.3s; }
+        .share_copy_btn:hover { background-color: #c8151c; }
+        .share_copy_btn.copied { background-color: #25D366; }
+        .related_title { text-align: center; margin-bottom: 45px; }
+        .related_title .related_kicker { font-family: 'Barlow', sans-serif; font-size: 14px; text-transform: uppercase; letter-spacing: 3px; color: #e31b23; font-weight: 600; display: block; margin-bottom: 12px; }
+        .related_title h3 { font-family: 'Montserrat', sans-serif; text-transform: uppercase; letter-spacing: 0.5px; color: #1a1a1a; font-size: 30px; font-weight: 700; margin: 0; }
+
+        #estadoCarga { padding: 120px 0; text-align: center; font-family: 'Barlow', sans-serif; color: #888; }
+        #estadoCarga a { color: #e31b23; font-weight: 700; }
+    
+        .breadcrumb_vehicle .badge_sold { background: #111; border: 1px solid #555; }
+        .aviso_vendido { background: #111; color: #fff; border-radius: 6px; padding: 12px 16px; font-size: 14px; font-weight: 600; margin-bottom: 16px; text-align: center; }
+        .gallery_main.es_vendido img { filter: grayscale(0.85); opacity: 0.8; }
+        #estadoCarga { font-family: 'Montserrat', sans-serif; }
+
+    </style>
+</head>
+
+<body>
+
+<header class="vision-inspired-header vision-header-scrolled">
+    <div class="header-area">
+        <div id="sticky-header" class="main-header-area">
+            <div class="container">
+                <div class="vision-nav-row">
+                    <div class="vision-logo">
+                        <a href="index.html" aria-label="Automoviles SRL - Inicio">
+                            <img src="img/logo automovilessrl.png" alt="Automoviles SRL">
+                        </a>
+                    </div>
+
+                    <nav class="vision-desktop-nav" aria-label="Navegación principal">
+                        <a href="index.html">Inicio</a>
+                        <a href="catalogo.html?estado=0km">0km</a>
+                        <a href="catalogo.html?estado=usado">Usados</a>
+                        <a href="clientes.html">Clientes</a>
+                        <a href="nosotros.html">Nosotros</a>
+                        <a href="#contacto" class="vision-nav-contact">Contacto</a>
+                    </nav>
+
+                    <button type="button" id="mobileMenuBtn" class="vision-mobile-btn" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobileNavPanel">
+                        <span></span><span></span><span></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div id="mobileNavOverlay" class="mobile-nav-overlay"></div>
+        <div id="mobileNavPanel" class="mobile-nav-panel" role="dialog" aria-modal="true" aria-label="Menú de navegación">
+            <div class="mnp-decor" aria-hidden="true"></div>
+            <div class="mnp-decor2" aria-hidden="true"></div>
+
+            <div class="mnp-top">
+                <a href="index.html" class="mnp-logo" aria-label="Automoviles SRL - Inicio">
+                    <img src="img/logo automovilessrl.png" alt="Automoviles SRL">
+                </a>
+            </div>
+
+            <div class="mnp-body">
+                <nav class="mnp-links" aria-label="Navegación principal móvil">
+                    <a href="index.html" class="mnp-link" style="--i:0"><span class="mnp-text">Inicio</span></a>
+                    <a href="catalogo.html?estado=0km" class="mnp-link" style="--i:1"><span class="mnp-text">0km</span></a>
+                    <a href="catalogo.html?estado=usado" class="mnp-link" style="--i:2"><span class="mnp-text">Usados</span></a>
+                    <a href="clientes.html" class="mnp-link" style="--i:3"><span class="mnp-text">Clientes</span></a>
+                    <a href="nosotros.html" class="mnp-link" style="--i:4"><span class="mnp-text">Nosotros</span></a>
+                    <a href="#contacto" class="mnp-link mnp-cta" style="--i:5"><span class="mnp-text">Contacto</span></a>
+                </nav>
+
+                <div class="mnp-social-wrap">
+                    <div class="mnp-social">
+                        <a href="https://www.facebook.com/p/Automoviles-srl-100038759264349/" target="_blank" rel="noopener noreferrer" aria-label="Facebook Automoviles SRL">
+                            <i class="fa fa-facebook" aria-hidden="true"></i>
+                        </a>
+                        <a href="https://www.instagram.com/automovilessrl/" target="_blank" rel="noopener noreferrer" aria-label="Instagram Automoviles SRL">
+                            <i class="fa fa-instagram" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<div id="estadoCarga">Cargando información del vehículo…</div>
+
+<div id="contenidoFicha" style="display:none;">
+    <div class="breadcrumb_vehicle">
+        <div class="container">
+            <a href="/catalogo.html" class="back_link"><i class="fa fa-angle-left"></i> Volver al catálogo</a>
+            <h2 id="fBreadcrumbTitulo" style="color:#fff; font-weight:700; margin: 12px 0 10px 0;"></h2>
+            <div>
+                <span class="badge_meta badge_new" id="fBadgeAnio"></span>
+                <span class="badge_meta" id="fBadgeEstado"></span>
+                <span class="badge_meta badge_sold" id="fBadgeVendido" style="display:none;">VENDIDO</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="vehicle_detail_area">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-7 mb-4 mb-lg-0">
+                    <div class="gallery_main" id="galleryMain">
+                        <img id="gallery_main_img" src="" alt="">
+                        <button type="button" class="gallery_arrow gallery_prev" id="btnPrev" aria-label="Foto anterior">&#10094;</button>
+                        <button type="button" class="gallery_arrow gallery_next" id="btnNext" aria-label="Foto siguiente">&#10095;</button>
+                    </div>
+                    <div class="gallery_thumbs" id="gallery_thumbs"></div>
+                </div>
+                <div class="col-lg-5">
+                    <div class="vehicle_info_box">
+                        <span class="brand_tag" id="fMarca"></span>
+                        <h1 id="fModelo"></h1>
+                        <div class="aviso_vendido" id="fAvisoVendido" style="display:none;">Este vehículo ya fue vendido. ¿Buscás algo parecido? Consultanos.</div>
+                        <ul class="spec_list" id="fSpecList"></ul>
+                        <p class="vehicle_desc" id="fDescripcion"></p>
+                        <a href="#" target="_blank" rel="noopener noreferrer" class="whatsapp_btn_detail" id="fWhatsappBtn">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="22" height="22" fill="currentColor">
+                                <path d="M12.04 2c-5.52 0-10 4.48-10 10 0 1.77.46 3.45 1.28 4.9L2 22l5.25-1.35c1.4.75 3.01 1.15 4.79 1.15 5.52 0 10-4.48 10-10s-4.48-10-10-10zm0 18.15c-1.46 0-2.88-.39-4.11-1.13l-.3-.18-3.1.8.83-3.02-.2-.31c-.82-1.3-1.25-2.81-1.25-4.36 0-4.51 3.67-8.18 8.18-8.18s8.18 3.67 8.18 8.18-3.67 8.18-8.18 8.18zm4.48-6.15c-.25-.12-1.47-.72-1.69-.8-.22-.09-.38-.12-.54.12-.17.25-.62.8-.76.96-.14.17-.29.19-.54.06-.25-.12-1.05-.39-2-1.23-.74-.66-1.24-1.48-1.39-1.73-.15-.25-.02-.39.11-.51.11-.11.25-.29.38-.43.12-.14.17-.24.25-.4.09-.17.04-.31-.02-.43-.06-.12-.54-1.31-.74-1.8-.2-.48-.4-.41-.54-.42l-.46-.01c-.16 0-.42.06-.64.31-.22.25-.85.83-.85 2.02s.87 2.34.99 2.5c.12.17 1.72 2.62 4.17 3.67.58.25 1.03.4 1.38.51.58.18 1.11.15 1.53.09.47-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.15-1.18-.06-.11-.22-.17-.47-.29z"/>
+                            </svg>
+                            <span id="fWhatsappTxt">Consultar por WhatsApp</span>
+                        </a>
+                        <button type="button" class="share_btn_detail" id="fShareBtn">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+                                <path d="M18 8a3 3 0 1 0-2.83-4H15a3 3 0 0 0-.05.54l-6.06 3.5a3 3 0 1 0 0 3.92l6.06 3.5A3 3 0 1 0 15 16a3 3 0 0 0 .05-.54l-6.06-3.5a3 3 0 0 0 0-1.92l6.06-3.5A3 3 0 0 0 18 8z"/>
+                            </svg>
+                            Compartir
+                        </button>
+                        <div class="share_link_box" id="fShareLinkBox">
+                            <input type="text" id="fShareLinkInput" readonly>
+                            <button type="button" class="share_copy_btn" id="fShareCopyBtn">Copiar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="relacionadosArea" style="padding: 60px 0 80px; background: #fff;">
+        <div class="container">
+            <div class="related_title"><span class="related_kicker">Seguí mirando</span><h3>También te puede interesar</h3></div>
+            <div class="row grilla_vehiculos" id="relacionadosGrid"></div>
+        </div>
+    </div>
+</div>
+
+<div class="contact_anipat" id="contacto" style="position: relative; background-image: url('img/banner/contact_bg.png'); background-attachment: fixed; background-size: cover; background-position: center; padding: 100px 0; min-height: 800px; display: flex; align-items: center;">
+    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.78); z-index: 1;"></div>
+
+    <div class="container" style="position: relative; z-index: 2;">
+        <div class="row align-items-center">
+
+            <!-- Mapa a la izquierda (Invertimos posición respecto a la otra web) -->
+            <div class="col-lg-6 mb-5 mb-lg-0">
+                <div style="border-radius: 16px; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.6); height: 480px; width: 100%; border: 1px solid rgba(255,255,255,0.1);">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3562.040199355938!2d-60.44251599999999!3d-26.7749885!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94412dc9272b9fef%3A0x47713820f178ad6e!2sAutomoviles%20SRL!5e0!3m2!1ses!2sar!4v1784925190645!5m2!1ses!2sar"
+                        style="border:0; width: 100%; height: 100%;"
+                        allowfullscreen=""
+                        loading="lazy"
+                        referrerpolicy="strict-origin-when-cross-origin">
+                    </iframe>
+                </div>
+            </div>
+
+            <!-- Información a la derecha estilo editorial (Sin tarjetas ni cajas de cristal) -->
+            <div class="col-lg-5 offset-lg-1">
+<div class="section-heading" style="margin-bottom: 30px;">
+    <span style="font-family: 'Montserrat', sans-serif; color: #ffffff; background: rgba(255, 255, 255, 0.12); display: inline-block; padding: 6px 16px; border-radius: 6px; font-weight: 600; font-size: 13px; text-transform: uppercase; letter-spacing: 1.5px; border: 1px solid rgba(255,255,255,0.2);">Automóviles SRL</span>
+    <h2 style="font-family: 'Montserrat', sans-serif; color: #ffffff; font-size: 36px; font-weight: 800; margin-top: 15px; margin-bottom: 10px; line-height: 1.2;">
+        Hablemos de tu<br>próximo auto.
+    </h2>
+    <p style="font-family: 'Montserrat', sans-serif; color: #d0d0d0; font-size: 15px; margin: 0; line-height: 1.5;">
+        Mandanos un mensaje sin compromiso!
+    </p>
+</div>
+
+                <!-- Lista limpia con líneas divisorias finas -->
+                <div style="border-top: 1px solid rgba(255, 255, 255, 0.15);">
+
+                    <!-- WhatsApp -->
+                    <div style="padding: 20px 0; border-bottom: 1px solid rgba(255, 255, 255, 0.15); display: flex; align-items: center;">
+                        <div style="background: #ffffff; color: #000000; width: 44px; height: 44px; border-radius: 50%; margin-right: 18px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                            <i class="fa fa-whatsapp" style="font-size: 22px; color: #000000;"></i>
+                        </div>
+                        <div>
+                            <span style="font-family: 'Montserrat', sans-serif; color: #a0a0a0; font-size: 11px; text-transform: uppercase; letter-spacing: 1px; display: block; margin-bottom: 2px;">WhatsApp</span>
+                            <a class="hv-bb4550" href="https://wa.me/5493644220141" target="_blank" style="font-family: 'Montserrat', sans-serif; color: #ffffff; font-weight: 700; font-size: 17px; text-decoration: none; transition: opacity 0.2s;">
+                                +54 9 364 422-0141
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Horarios -->
+                    <div style="padding: 20px 0; border-bottom: 1px solid rgba(255, 255, 255, 0.15); display: flex; align-items: flex-start;">
+                        <div style="background: #ffffff; color: #000000; width: 44px; height: 44px; border-radius: 50%; margin-right: 18px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px;">
+                            <i class="fa fa-clock-o" style="font-size: 20px; color: #000000;"></i>
+                        </div>
+                        <div>
+                            <span style="font-family: 'Montserrat', sans-serif; color: #ffffff; font-weight: 700; font-size: 15px; display: block; margin-bottom: 4px;">Horarios de Atención</span>
+                            <span style="font-family: 'Montserrat', sans-serif; color: #d0d0d0; font-weight: 400; font-size: 14px; line-height: 1.5; display: block;">
+                                Lunes a Viernes: 8:00 a 12:00 y 16:30 a 20:00 hs<br>
+                                Sábados: 8:30 a 12:00 hs
+                            </span>
+                        </div>
+                    </div>
+
+                    <!-- Instagram -->
+                    <div style="padding: 20px 0; border-bottom: 1px solid rgba(255, 255, 255, 0.15); display: flex; align-items: center;">
+                        <div style="background: #ffffff; color: #000000; width: 44px; height: 44px; border-radius: 50%; margin-right: 18px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                            <i class="fa fa-instagram" style="font-size: 20px; color: #000000;"></i>
+                        </div>
+                        <div>
+                            <span style="font-family: 'Montserrat', sans-serif; color: #a0a0a0; font-size: 11px; text-transform: uppercase; letter-spacing: 1px; display: block; margin-bottom: 2px;">Redes Sociales</span>
+                            <a class="hv-bb4550" href="https://www.instagram.com/automovilessrl/" target="_blank" style="font-family: 'Montserrat', sans-serif; color: #ffffff; font-weight: 600; font-size: 15px; text-decoration: none; transition: opacity 0.2s;">
+                                Seguinos en Instagram
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<footer class="footer" style="background-color: #0c0c0e; color: #b0b0b0; font-family: 'Montserrat', sans-serif; border-top: 1px solid rgba(255, 255, 255, 0.08); position: relative;">
+    <div class="container" style="padding-top: 60px; padding-bottom: 50px;">
+
+        <!-- Fila Superior: Logo a la izquierda y menú horizontal "Secciones" a la derecha -->
+        <div class="row align-items-center mb-5 pb-4" style="border-bottom: 1px solid rgba(255, 255, 255, 0.08);">
+            <div class="col-md-4 mb-3 mb-md-0">
+                <a href="index.html" style="display: inline-block;">
+                    <img src="img/logo automovilessrl.png" alt="Automoviles SRL" style="max-height: 48px; width: auto; display: block;">
+                </a>
+            </div>
+            <div class="col-md-8 text-md-right">
+                <div style="display: inline-flex; align-items: center; gap: 20px; flex-wrap: wrap;">
+                    <span style="color: #ffffff; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; margin-right: 5px;">Secciones:</span>
+                    <a class="hv-fe0cf0" href="index.html" style="color: #aaa; text-decoration: none; font-size: 14px; transition: color 0.2s;">Inicio</a>
+                    <span style="color: rgba(255,255,255,0.15);">|</span>
+                    <a class="hv-fe0cf0" href="catalogo.html" style="color: #aaa; text-decoration: none; font-size: 14px; transition: color 0.2s;">Ver catálogo</a>
+                    <span style="color: rgba(255,255,255,0.15);">|</span>
+                    <a class="hv-fe0cf0" href="clientes.html" style="color: #aaa; text-decoration: none; font-size: 14px; transition: color 0.2s;">Clientes</a>
+                    <span style="color: rgba(255,255,255,0.15);">|</span>
+                    <a class="hv-fe0cf0" href="nosotros.html" style="color: #aaa; text-decoration: none; font-size: 14px; transition: color 0.2s;">Nosotros</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Fila Principal: Estructura Split de 2 Columnas -->
+        <div class="row">
+
+            <!-- Columna 1: Descripción + Redes Sociales -->
+            <div class="col-lg-6 mb-4 mb-lg-0 pr-lg-5">
+                <p class="address_text" style="color: #999; font-size: 14.5px; line-height: 1.7; margin-bottom: 25px; max-width: 480px;">
+                    Concesionaria de vehículos 0km y usados seleccionados. Financiación en cuotas. Tu próximo auto con la confianza que buscás.
+                </p>
+                <div class="socail_links">
+                    <ul style="margin: 0; padding: 0; list-style: none; display: flex; gap: 12px; align-items: center;">
+                        <li>
+                            <a class="hv-f004bc" href="https://www.facebook.com/p/Automoviles-srl-100038759264349/" target="_blank" style="width: 40px; height: 40px; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.1); display: flex; align-items: center; justify-content: center; border-radius: 50%; color: #fff; transition: all 0.3s ease;">
+                                <i class="fa fa-facebook"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="hv-f004bc" href="https://www.instagram.com/automovilessrl/" target="_blank" style="width: 40px; height: 40px; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.1); display: flex; align-items: center; justify-content: center; border-radius: 50%; color: #fff; transition: all 0.3s ease;">
+                                <i class="fa fa-instagram"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="hv-f004bc" href="https://wa.me/5493644220141" target="_blank" style="width: 40px; height: 40px; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.1); display: flex; align-items: center; justify-content: center; border-radius: 50%; color: #fff; transition: all 0.3s ease;">
+                                <i class="fa fa-whatsapp"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Columna 2: Ubicación y Horarios -->
+            <div class="col-lg-6 pl-lg-5">
+                <div class="footer_widget">
+                    <h3 class="footer_title" style="color: #fff; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 20px;">
+                        Ubicación y Horarios
+                    </h3>
+                    <ul class="address_line" style="margin: 0; padding: 0; list-style: none;">
+                        <li style="color: #aaa; font-size: 14px; margin-bottom: 16px; display: flex; align-items: flex-start; gap: 14px;">
+                            <i class="fa fa-map-marker" style="color: #ec171f; font-size: 17px; margin-top: 2px; flex-shrink: 0;"></i>
+                            <span style="line-height: 1.5;">Av. J. Domingo Peron Esquina Ameghino - Roque Saénz Peña - Chaco (Avenida 33 y 24)</span>
+                        </li>
+                        <li style="color: #aaa; font-size: 14px; display: flex; align-items: flex-start; gap: 14px;">
+                            <i class="fa fa-clock-o" style="color: #ec171f; font-size: 17px; margin-top: 2px; flex-shrink: 0;"></i>
+                            <span style="line-height: 1.5;">Lunes a Viernes: 8:00 a 12:00 y 16:30 a 20:00 hs<br>Sábados: 8:30 a 12:00 hs</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Barra Inferior de Copyright -->
+    <div class="copy-right_text" style="background-color: #050507; padding: 22px 0; border-top: 1px solid rgba(255,255,255,0.05);">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6 text-center text-md-left mb-2 mb-md-0">
+                    <p class="copy_right" style="margin: 0; color: #777; font-size: 13px;">
+                        &copy; <script>document.write(new Date().getFullYear());</script> <strong>Automóviles SRL</strong>. Todos los derechos reservados.
+                    </p>
+                </div>
+                <div class="col-md-6 text-center text-md-right">
+                    <div style="display: inline-flex; align-items: center; justify-content: flex-end; gap: 8px;">
+                        <span style="color: #777; font-size: 13px;">Sitio Web desarrollado por</span>
+                        <a href="https://www.instagram.com/rubit.studios/" target="_blank" style="display: inline-block;">
+                            <img class="hv-bb4550" src="img/rubit-studios.png" alt="Rubit Studios" style="max-height: 22px; width: auto; display: block; transition: opacity 0.3s;">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script src="js/vendor/modernizr-3.5.0.min.js"></script>
+<script src="js/vendor/jquery-1.12.4.min.js"></script>
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/owl.carousel.min.js"></script>
+<script src="js/isotope.pkgd.min.js"></script>
+<script src="js/waypoints.min.js"></script>
+<script src="js/imagesloaded.pkgd.min.js"></script>
+<script src="js/scrollIt.js"></script>
+<script src="js/jquery.scrollUp.min.js"></script>
+<script src="js/wow.min.js"></script>
+<script src="js/nice-select.min.js"></script>
+<script src="js/jquery.slicknav.min.js"></script>
+<script src="js/jquery.magnific-popup.min.js"></script>
+<script src="js/plugins.js"></script>
+
+<script>
+const marcasInfo = {
+    "Ford": "img/ford.png",
+    "Volkswagen": "img/volkswagen.png",
+    "Ram": "img/ram.png",
+    "Toyota": "img/toyota.png",
+    "Jeep": "img/jeep.png",
+    "Fiat": "img/fiat.webp",
+    "Chevrolet": "img/chevrolet.webp",
+    "Peugeot": "img/peugeot.png",
+    "BMW": "img/bmw.svg",
+    "Mercedes-Benz": "img/mercedes.svg",
+    "Nissan": "img/nissan.svg",
+    "Citroen": "img/Citroen-Logo.png",
+    "Honda": "img/honda.png"
+};
+const WHATSAPP = "5493644220141";
+const esc = (t) => String(t ?? "").replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+const slugify = (v) => `${v.marca}-${v.modelo}-${v.anio || 's-n'}`.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
+const idDe = (v) => v.id || slugify(v);
+const $ = (id) => document.getElementById(id);
+
+function tarjetaRelacionadaHTML(v) {
+    const foto = (v.fotos && v.fotos[0]) || "";
+    const nombre = esc(v.marca + " " + v.modelo);
+    const link = "/" + encodeURIComponent(idDe(v));
+    const kmTxt = v.km == null ? "" : (v.km === 0 ? "0 km" : v.km.toLocaleString("es-AR") + " km");
+    const specs = [v.anio, kmTxt, v.transmision, v.combustible].filter(x => x !== undefined && x !== null && x !== "").join(" · ");
+    return `
+    <div class="col-6 col-md-6 col-lg-4 mb-4">
+        <div class="vehiculo_card">
+            <div class="vehiculo_img${foto ? ' con_foto' : ''}">
+                <img src="${esc(foto || marcasInfo[v.marca] || '')}" alt="${nombre}" loading="lazy">
+                <a href="${link}" class="vehiculo_img_overlay" aria-label="Ver ${nombre}"><span class="vehiculo_overlay_badge">Ver más</span></a>
+            </div>
+            <div class="vehiculo_body">
+                <div class="vehiculo_marca">${esc(v.marca)}</div>
+                <div class="vehiculo_titulo">${esc(v.modelo)}</div>
+                <div class="vehiculo_specs">${esc(specs)}</div>
+                <div class="vehiculo_footer"><a class="btn_consultar" href="${link}">Ver más detalles</a></div>
+            </div>
+        </div>
+    </div>`;
+}
+
+function mostrarFoto(i) {
+    const thumbs = document.querySelectorAll(".gallery_thumbs img");
+    if (!thumbs.length) return;
+    const idx = (i + thumbs.length) % thumbs.length;
+    thumbs.forEach((t, k) => t.classList.toggle("active", k === idx));
+    $("gallery_main_img").src = thumbs[idx].getAttribute("src");
+}
+
+async function init() {
+    const params = new URLSearchParams(window.location.search);
+    const seg = window.location.pathname.replace(/^\/+|\/+$/g, "");
+    const id = params.get("id") || (seg && seg !== "ficha.html" ? decodeURIComponent(seg) : null);
+    const carga = $("estadoCarga");
+    if (!id) { carga.innerHTML = 'No se especificó ningún vehículo. <a href="/catalogo.html">Volver al catálogo</a>'; return; }
+
+    let vehiculos;
+    try { vehiculos = await (await fetch("data/vehiculos.json", { cache: "no-store" })).json(); }
+    catch (e) { carga.textContent = "No se pudo cargar la información. Probá recargar la página."; return; }
+
+    const v = vehiculos.find(x => idDe(x) === id);
+    if (!v) { carga.innerHTML = 'Este vehículo ya no está disponible. <a href="/catalogo.html">Ver catálogo completo</a>'; return; }
+
+    const nombre = `${v.marca} ${v.modelo}`;
+    const estadoTxt = v.estado === "0km" ? "0km" : "Usado";
+    const kmTexto = v.km == null ? "A confirmar" : (v.km === 0 ? "0 km" : v.km.toLocaleString("es-AR") + " km");
+    document.title = `${nombre} ${v.anio || ""} | Automóviles SRL, Sáenz Peña Chaco`;
+    $("pageDescription").setAttribute("content", `${nombre} ${v.anio || ""} ${estadoTxt}.${v.km == null ? "" : " " + kmTexto + "."} Venta en Automóviles SRL, Sáenz Peña, Chaco. Financiación y tasaciones.`);
+    $("pageCanonical").setAttribute("href", `${location.origin}/${encodeURIComponent(id)}`);
+
+    $("fBreadcrumbTitulo").textContent = nombre;
+    $("fBadgeAnio").textContent = v.anio || "A confirmar";
+    $("fBadgeEstado").textContent = v.estado === "0km" ? "0KM" : "USADO";
+    $("fMarca").textContent = v.marca;
+    $("fModelo").textContent = v.modelo;
+    $("fDescripcion").textContent = v.descripcion || "";
+    $("fSpecList").innerHTML = [["Año", v.anio || "A confirmar"], ["Kilometraje", kmTexto], ["Combustible", v.combustible || "Consultar"], ["Transmisión", v.transmision || "Consultar"]]
+        .map(s => `<li><span>${esc(s[0])}</span><span>${esc(s[1])}</span></li>`).join("");
+
+    const fotos = (v.fotos && v.fotos.length) ? v.fotos : [marcasInfo[v.marca] || ""];
+    $("gallery_main_img").src = fotos[0];
+    $("gallery_main_img").alt = nombre;
+    $("gallery_thumbs").innerHTML = fotos.map((f, i) => `<img src="${esc(f)}" class="${i === 0 ? "active" : ""}" alt="${esc(nombre)} foto ${i + 1}" data-i="${i}">`).join("");
+    $("gallery_thumbs").addEventListener("click", (e) => { if (e.target.dataset.i) mostrarFoto(+e.target.dataset.i); });
+    $("btnPrev").addEventListener("click", () => { const a = [...document.querySelectorAll(".gallery_thumbs img")].findIndex(t => t.classList.contains("active")); mostrarFoto(a - 1); });
+    $("btnNext").addEventListener("click", () => { const a = [...document.querySelectorAll(".gallery_thumbs img")].findIndex(t => t.classList.contains("active")); mostrarFoto(a + 1); });
+
+    if (v.vendido) {
+        $("fBadgeVendido").style.display = "";
+        $("fAvisoVendido").style.display = "";
+        $("galleryMain").classList.add("es_vendido");
+        $("fWhatsappTxt").textContent = "Consultar por uno similar";
+    }
+    const msj = encodeURIComponent(v.vendido ? `Hola, vi que el ${nombre} ya se vendió. ¿Tienen algo parecido?` : `Hola, quiero consultar por el ${nombre} que vi en la web`);
+    $("fWhatsappBtn").href = `https://wa.me/${WHATSAPP}?text=${msj}`;
+
+    const box = $("fShareLinkBox"), input = $("fShareLinkInput"), copy = $("fShareCopyBtn");
+    input.value = location.origin + "/" + encodeURIComponent(id);
+    $("fShareBtn").addEventListener("click", () => { if (box.classList.toggle("active")) { input.focus(); input.select(); } });
+    copy.addEventListener("click", () => {
+        input.select();
+        const listo = () => { copy.textContent = "¡Copiado!"; copy.classList.add("copied"); setTimeout(() => { copy.textContent = "Copiar"; copy.classList.remove("copied"); }, 1800); };
+        if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(input.value).then(listo).catch(() => { document.execCommand("copy"); listo(); });
+        else { document.execCommand("copy"); listo(); }
+    });
+
+    const otros = vehiculos.filter(x => idDe(x) !== id && !x.vendido);
+    const rel = [...otros.filter(x => x.marca === v.marca), ...otros.filter(x => x.marca !== v.marca)].slice(0, 3);
+    if (rel.length === 0) $("relacionadosArea").style.display = "none";
+    else $("relacionadosGrid").innerHTML = rel.map(tarjetaRelacionadaHTML).join("");
+
+    carga.style.display = "none";
+    $("contenidoFicha").style.display = "block";
+}
+document.addEventListener("DOMContentLoaded", init);
+</script>
+
+
+<a href="https://wa.me/5493644220141?text=Hola,%20me%20gustaría%20más%20información" class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Abrir chat de WhatsApp">
+  <span class="whatsapp-tooltip">¿Necesitás ayuda? ¡Escribinos!</span>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="36" height="36" fill="currentColor">
+    <path d="M12.04 2c-5.52 0-10 4.48-10 10 0 1.77.46 3.45 1.28 4.9L2 22l5.25-1.35c1.4.75 3.01 1.15 4.79 1.15 5.52 0 10-4.48 10-10s-4.48-10-10-10zm0 18.15c-1.46 0-2.88-.39-4.11-1.13l-.3-.18-3.1.8.83-3.02-.2-.31c-.82-1.3-1.25-2.81-1.25-4.36 0-4.51 3.67-8.18 8.18-8.18s8.18 3.67 8.18 8.18-3.67 8.18-8.18 8.18zm4.48-6.15c-.25-.12-1.47-.72-1.69-.8-.22-.09-.38-.12-.54.12-.17.25-.62.8-.76.96-.14.17-.29.19-.54.06-.25-.12-1.05-.39-2-1.23-.74-.66-1.24-1.48-1.39-1.73-.15-.25-.02-.39.11-.51.11-.11.25-.29.38-.43.12-.14.17-.24.25-.4.09-.17.04-.31-.02-.43-.06-.12-.54-1.31-.74-1.8-.2-.48-.4-.41-.54-.42l-.46-.01c-.16 0-.42.06-.64.31-.22.25-.85.83-.85 2.02s.87 2.34.99 2.5c.12.17 1.72 2.62 4.17 3.67.58.25 1.03.4 1.38.51.58.18 1.11.15 1.53.09.47-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.15-1.18-.06-.11-.22-.17-.47-.29z"/>
+  </svg>
+</a>
+
+
+<script>
+(function () {
+    var btn = document.getElementById('mobileMenuBtn');
+    var panel = document.getElementById('mobileNavPanel');
+    var overlay = document.getElementById('mobileNavOverlay');
+    if (!btn || !panel || !overlay) return;
+
+    var scrollY = 0;
+
+    function openMenu() {
+        scrollY = window.scrollY || window.pageYOffset || 0;
+        btn.classList.add('active');
+        panel.classList.add('active');
+        overlay.classList.add('active');
+        btn.setAttribute('aria-expanded', 'true');
+        document.body.style.position = 'fixed';
+        document.body.style.top = (-scrollY) + 'px';
+        document.body.style.left = '0';
+        document.body.style.right = '0';
+        document.body.style.width = '100%';
+    }
+    function closeMenu() {
+        btn.classList.remove('active');
+        panel.classList.remove('active');
+        overlay.classList.remove('active');
+        btn.setAttribute('aria-expanded', 'false');
+        document.body.style.position = '';
+        document.body.style.top = '';
+        document.body.style.left = '';
+        document.body.style.right = '';
+        document.body.style.width = '';
+        window.scrollTo(0, scrollY);
+    }
+    function toggleMenu(e) {
+        if (e) e.preventDefault();
+        if (panel.classList.contains('active')) {
+            closeMenu();
+        } else {
+            openMenu();
+        }
+    }
+
+    btn.addEventListener('click', toggleMenu);
+    overlay.addEventListener('click', closeMenu);
+
+    Array.prototype.forEach.call(panel.querySelectorAll('a'), function (link) {
+        link.addEventListener('click', closeMenu);
+    });
+
+    document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && panel.classList.contains('active')) closeMenu();
+    });
+
+    window.addEventListener('resize', function () {
+        if (window.innerWidth >= 992 && panel.classList.contains('active')) {
+            closeMenu();
+        }
+    });
+})();
+</script>
+<script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.34/dist/lenis.min.js"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const lenis = new Lenis({
+            duration: 1.1,
+            easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+            direction: 'vertical',
+            gestureDirection: 'vertical',
+            smooth: true,
+            mouseMultiplier: 0.95,
+            smoothTouch: false
+        });
+
+        function raf(time) {
+            lenis.raf(time);
+            requestAnimationFrame(raf);
+        }
+        requestAnimationFrame(raf);
+
+        window.addEventListener('resize', () => lenis.resize());
+
+        document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+            anchor.addEventListener('click', function (e) {
+                const targetId = this.getAttribute('href');
+                if (!targetId || targetId.length < 2) return;
+                const targetElement = document.querySelector(targetId);
+
+                if (targetElement) {
+                    e.preventDefault();
+                    lenis.scrollTo(targetElement, {
+                        offset: -90,
+                        duration: 1.2
+                    });
+                }
+            });
+        });
+    });
+</script>
+
+</body>
+</html>

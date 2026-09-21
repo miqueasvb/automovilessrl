@@ -1,0 +1,2404 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Automoviles SRL | Autos 0km y Usados en Sáenz Peña, Chaco</title>
+    <meta name="description" content="Autos 0km y Usados seleccionados. Financiación y tasaciones.">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- 1. Google Fonts SIEMPRE PRIMERO -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700;800;900&display=block" rel="stylesheet">
+
+    <!-- 2. Favicon y CSS locales DESPUÉS -->
+    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/magnific-popup.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/themify-icons.css">
+    <link rel="stylesheet" href="css/nice-select.css">
+    <link rel="stylesheet" href="css/flaticon.css">
+    <link rel="stylesheet" href="css/gijgo.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/slicknav.css">
+    <link rel="stylesheet" href="css/style.css">
+
+
+    <style>
+        .main-header-area {
+            background-color: #111111 !important;
+            border-top: 3px solid #ec171f;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+        }
+.main-menu nav ul li a {
+    color: #ffffff !important;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-size: 17px !important;
+    transition: 0.3s;
+}
+        .main-menu nav ul li a:hover {
+            color: #ec171f !important;
+            text-shadow: 0 2px 7px rgba(0, 0, 0, 0.28);
+        }
+        .main-menu nav ul li ul.submenu {
+            background: #1a1a1a !important;
+            border-top: 2px solid #ec171f;
+        }
+        .main-menu nav ul li ul.submenu li a {
+            color: #ffffff !important;
+        }
+        .main-menu nav ul li ul.submenu li a:hover {
+            color: #ec171f !important;
+            text-shadow: 0 2px 7px rgba(0, 0, 0, 0.28);
+            background: #111111 !important;
+        }
+        .btn-sport-red {
+            background-color: #ec171f;
+            color: #ffffff !important;
+            padding: 10px 22px;
+            text-transform: uppercase;
+            font-weight: 700;
+            border-radius: 4px;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+        .btn-sport-red:hover {
+            background-color: #c9141a;
+            color: #ffffff !important;
+            box-shadow: 0 0 15px rgba(236, 23, 31, 0.6);
+        }
+
+        .vehicle_btn,
+        .boxed-btn3-red {
+            display: inline-block !important;
+            background-color: #ec171f !important;
+            text-shadow: 0 2px 7px rgba(0, 0, 0, 0.28);
+            color: #ffffff !important;
+            font-weight: 600 !important;
+            text-transform: uppercase !important;
+            font-size: 14px !important;
+            text-decoration: none !important;
+            padding: 8px 18px !important;
+            border-radius: 4px !important;
+            border: none !important;
+            transition: 0.3s !important;
+        }
+        .vehicle_btn:hover,
+        .boxed-btn3-red:hover {
+            background-color: #c9141a !important;
+            color: #ffffff !important;
+        }
+
+        .brand_card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            text-decoration: none;
+            text-align: center;
+            background: #ffffff;
+            padding: 30px 15px 26px;
+            border-radius: 14px;
+            border: 1px solid #ececec;
+            position: relative;
+            overflow: hidden;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+        .brand_card::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 3px;
+            background: #ec171f;
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.35s ease;
+        }
+        .brand_card:hover {
+            border-color: transparent;
+            box-shadow: 0 12px 28px rgba(0,0,0,0.08);
+            text-decoration: none;
+        }
+        .brand_card:hover::after {
+            transform: scaleX(1);
+        }
+        .brand_card_logo {
+            width: 84px;
+            height: 84px;
+            border-radius: 50%;
+            background: #f8f4f4;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 16px;
+            transition: background 0.3s ease;
+        }
+        .brand_card:hover .brand_card_logo {
+            background: #fbe9e9;
+        }
+        .brand_card_logo img {
+            max-height: 48px;
+            max-width: 70%;
+            object-fit: contain;
+        }
+        .brand_card_content h4 {
+            font-size: 16px;
+            margin-bottom: 6px;
+        }
+        .brand_card_link {
+            font-size: 11px;
+            color: #999;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            transition: color 0.3s ease;
+        }
+        .brand_card_link i {
+            font-size: 10px;
+            transition: transform 0.3s ease;
+        }
+        .brand_card:hover .brand_card_link {
+            color: #ec171f;
+        }
+        .brand_card:hover .brand_card_link i {
+            transform: translateX(3px);
+        }
+        @media (max-width: 576px) {
+            .brand_card {
+                padding: 22px 8px 18px;
+            }
+            .brand_card_logo {
+                width: 66px;
+                height: 66px;
+                margin-bottom: 10px;
+            }
+            .brand_card_logo img {
+                max-height: 36px;
+            }
+            .brand_card_content h4 {
+                font-size: 13px;
+                letter-spacing: 0.2px;
+            }
+            .brand_card_link {
+                font-size: 10px;
+            }
+        }
+
+        /* ---- Sección "Sobre Nosotros" ---- */
+        .historia_frame {
+            position: relative;
+        }
+        .historia_frame img {
+            width: 100%;
+            height: 420px;
+            object-fit: cover;
+            display: block;
+            border-radius: 16px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+        }
+        .historia_badge {
+            position: absolute;
+            bottom: -24px;
+            right: 24px;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background: #ec171f;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            box-shadow: 0 12px 25px rgba(236, 23, 31, 0.3);
+            border: 4px solid #ffffff;
+        }
+        .historia_badge strong {
+            font-size: 24px;
+            font-weight: 800;
+            line-height: 1;
+        }
+        .historia_badge span {
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-weight: 600;
+            margin-top: 2px;
+        }
+        @media (max-width: 767px) {
+            .historia_frame img {
+                height: 300px;
+            }
+            .historia_badge {
+                width: 84px;
+                height: 84px;
+                bottom: -16px;
+                right: 16px;
+            }
+            .historia_badge strong {
+                font-size: 19px;
+            }
+        }
+
+        /* =========================================================
+           "¿Por qué elegirnos?" — LA RUTA (auto en bucle)
+           ========================================================= */
+        .ruta_wrap { display: none; position: relative; margin-top: 45px; }
+        @media (min-width: 992px) {
+            .ruta_wrap { display: block; }
+            .ruta_mobile { display: none; }
+        }
+
+        /* --- Tarjetas (paradas) --- */
+        .ruta_cards {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 22px;
+        }
+        .ruta_card {
+            position: relative;
+            background: #ffffff;
+            border: 1px solid rgba(0,0,0,0.07);
+            border-radius: 10px;
+            padding: 28px 20px 26px;
+            text-align: center;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.05);
+            transition: transform .35s ease, box-shadow .35s ease, border-color .35s ease;
+            animation: ruta_hit 9s linear infinite;
+            animation-delay: var(--d);
+        }
+        .ruta_card::after {
+            content: "";
+            position: absolute;
+            left: 50%;
+            bottom: -28px;
+            transform: translateX(-50%);
+            width: 2px;
+            height: 28px;
+            background: repeating-linear-gradient(#d7d7d7 0 4px, transparent 4px 8px);
+        }
+        .ruta_card:hover { transform: translateY(-7px); box-shadow: 0 16px 32px rgba(0,0,0,0.10); }
+        .ruta_num {
+            position: absolute;
+            top: 14px;
+            right: 16px;
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: 1.5px;
+            color: #ededed;
+        }
+        .ruta_icon {
+            width: 58px;
+            height: 58px;
+            border-radius: 50%;
+            background: #ffffff;
+            border: 2px solid #f0f0f0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 16px;
+            transition: background .35s ease, border-color .35s ease, box-shadow .35s ease;
+            animation: ruta_hit_icon 9s linear infinite;
+            animation-delay: var(--d);
+        }
+        .ruta_icon i {
+            font-size: 22px;
+            color: #ec171f;
+            transition: color .35s ease;
+            animation: ruta_hit_i 9s linear infinite;
+            animation-delay: var(--d);
+        }
+        .ruta_card:hover .ruta_icon { background: #ec171f; border-color: #ec171f; box-shadow: 0 0 0 7px rgba(236, 23, 31,0.10); }
+        .ruta_card:hover .ruta_icon i { color: #ffffff; }
+        .ruta_card p { font-size: 14px; color: #555; line-height: 1.75; margin: 0; }
+        .ruta_card strong { color: #222; }
+
+        @keyframes ruta_hit {
+            0%, 100% { border-color: rgba(0,0,0,0.07); box-shadow: 0 6px 20px rgba(0,0,0,0.05); }
+            3%       { border-color: rgba(236, 23, 31,0.45); box-shadow: 0 12px 28px rgba(236, 23, 31,0.18); }
+            13%      { border-color: rgba(0,0,0,0.07); box-shadow: 0 6px 20px rgba(0,0,0,0.05); }
+        }
+        @keyframes ruta_hit_icon {
+            0%, 100% { background: #ffffff; border-color: #f0f0f0; }
+            3%       { background: #ec171f; border-color: #ec171f; }
+            13%      { background: #ffffff; border-color: #f0f0f0; }
+        }
+        @keyframes ruta_hit_i {
+            0%, 100% { color: #ec171f; }
+            3%       { color: #ffffff; }
+            13%      { color: #ec171f; }
+        }
+
+        /* --- Asfalto --- */
+        .ruta_pista {
+            position: relative;
+            height: 38px;
+            margin-top: 28px;
+            border-radius: 8px;
+            background: linear-gradient(180deg, #262626 0%, #151515 100%);
+            box-shadow: 0 12px 26px rgba(0,0,0,0.18);
+        }
+        .ruta_pista::before,
+        .ruta_pista::after {
+            content: "";
+            position: absolute;
+            left: 12px;
+            right: 12px;
+            height: 2px;
+            background: rgba(255,255,255,0.16);
+        }
+        .ruta_pista::before { top: 5px; }
+        .ruta_pista::after { bottom: 5px; }
+        .ruta_linea {
+            position: absolute;
+            top: 50%;
+            left: 14px;
+            right: 14px;
+            height: 3px;
+            margin-top: -1.5px;
+            border-radius: 2px;
+            background: repeating-linear-gradient(90deg, rgba(255,255,255,0.85) 0 28px, transparent 28px 56px);
+        }
+        .ruta_marcas {
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 22px;
+            align-items: center;
+            z-index: 2;
+        }
+        .ruta_marcas span {
+            justify-self: center;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #5a5a5a;
+            animation: ruta_pin 9s linear infinite;
+            animation-delay: var(--d);
+        }
+        @keyframes ruta_pin {
+            0%, 100% { background: #5a5a5a; box-shadow: 0 0 0 0 rgba(236, 23, 31,0); }
+            3%       { background: #ec171f; box-shadow: 0 0 0 0 rgba(236, 23, 31,0.65); }
+            16%      { background: #5a5a5a; box-shadow: 0 0 0 16px rgba(236, 23, 31,0); }
+        }
+
+        /* --- El auto --- */
+        .ruta_auto {
+            position: absolute;
+            bottom: 5px;
+            left: -12%;
+            width: 126px;
+            z-index: 3;
+            animation: ruta_drive 9s linear infinite;
+        }
+        @keyframes ruta_drive {
+            from { left: -12%; }
+            to   { left: 104%; }
+        }
+        .ruta_auto svg,
+        .ruta_v_auto svg {
+            display: block;
+            width: 100%;
+            height: auto;
+            filter: drop-shadow(0 6px 10px rgba(0,0,0,0.35));
+        }
+        .ruta_auto svg { animation: ruta_bump .5s ease-in-out infinite alternate; }
+        @keyframes ruta_bump {
+            from { transform: translateY(0); }
+            to   { transform: translateY(-1.5px); }
+        }
+        .ruta_rueda {
+            transform-box: view-box;
+            animation: ruta_gira .55s linear infinite;
+        }
+        @keyframes ruta_gira { to { transform: rotate(360deg); } }
+
+        /* --- Versión mobile / tablet: ruta vertical --- */
+        .ruta_mobile { position: relative; padding-left: 80px; margin-top: 40px; }
+        .ruta_v_pista {
+            position: absolute;
+            left: 14px;
+            top: 0;
+            bottom: 0;
+            width: 38px;
+            border-radius: 8px;
+            background: linear-gradient(90deg, #262626 0%, #151515 100%);
+            box-shadow: 0 10px 22px rgba(0,0,0,0.18);
+            overflow: hidden;
+        }
+        .ruta_v_linea {
+            position: absolute;
+            left: 50%;
+            top: 10px;
+            bottom: 10px;
+            width: 3px;
+            margin-left: -1.5px;
+            border-radius: 2px;
+            background: repeating-linear-gradient(180deg, rgba(255,255,255,0.85) 0 24px, transparent 24px 48px);
+        }
+        .ruta_v_auto {
+            position: absolute;
+            left: 50%;
+            width: 112px;
+            margin-left: -56px;
+            top: -14%;
+            animation: ruta_drive_v 8.5s linear infinite;
+        }
+        .ruta_v_auto svg { transform: rotate(90deg); }
+        @keyframes ruta_drive_v {
+            from { top: -16%; }
+            to   { top: 104%; }
+        }
+        .ruta_v_item {
+            position: relative;
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            background: #ffffff;
+            border: 1px solid rgba(0,0,0,0.07);
+            border-radius: 10px;
+            padding: 20px 18px;
+            margin-bottom: 18px;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.05);
+        }
+        .ruta_v_item::before {
+            content: "";
+            position: absolute;
+            left: -28px;
+            top: 42px;
+            width: 28px;
+            height: 2px;
+            background: repeating-linear-gradient(90deg, #d7d7d7 0 4px, transparent 4px 8px);
+        }
+        .ruta_v_item .ruta_icon {
+            width: 48px;
+            height: 48px;
+            margin: 0;
+            flex-shrink: 0;
+            animation: none;
+        }
+        .ruta_v_item .ruta_icon i { font-size: 19px; animation: none; }
+        .ruta_v_item p { font-size: 14px; color: #555; line-height: 1.7; margin: 0; padding-top: 4px; }
+        .ruta_v_item strong { color: #222; }
+        @media (max-width: 480px) {
+            .ruta_mobile { padding-left: 66px; }
+            .ruta_v_pista { left: 8px; width: 32px; }
+            .ruta_v_auto { width: 96px; margin-left: -48px; }
+            .ruta_v_item::before { left: -24px; width: 24px; }
+        }
+
+        /* =========================================================
+           "¿Por qué elegirnos?" — estilo revista, alineado a la izquierda
+           ========================================================= */
+        .why_kicker {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #ec171f;
+            font-weight: 700;
+            display: block;
+            margin-bottom: 10px;
+        }
+        .why_heading {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 30px;
+            font-weight: 800;
+            color: #222;
+            margin: 0;
+            line-height: 1.25;
+        }
+        .why_box {
+            border-top: 2px solid #1c1c1c;
+            padding-top: 22px;
+            text-align: left;
+        }
+        .why_num {
+            display: block;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 15px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            color: #ec171f;
+            margin-bottom: 12px;
+        }
+        .why_title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 21px;
+            font-weight: 700;
+            color: #222;
+            margin: 0 0 10px;
+            line-height: 1.3;
+        }
+        .why_text {
+            font-size: 14px;
+            color: #666;
+            line-height: 1.75;
+            margin: 0;
+            text-align: left;
+            max-width: 380px;
+        }
+        .why_text strong { color: #222; font-weight: 600; }
+        @media (max-width: 575px) {
+            .why_heading { font-size: 24px; }
+            .why_title { font-size: 18px; }
+            .why_text { font-size: 13px; max-width: none; }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .ruta_card, .ruta_icon, .ruta_icon i, .ruta_marcas span,
+            .ruta_auto, .ruta_auto svg, .ruta_v_auto, .ruta_rueda {
+                animation: none !important;
+            }
+            .ruta_auto { left: 45%; }
+            .ruta_v_auto { top: 42%; }
+        }
+    </style>
+
+<style>
+/* ===== Menú móvil — Automoviles SRL (panel original, glassmorphism + links numerados) ===== */
+
+/* Botón hamburguesa: círculo con blur, morfa a X (es el ÚNICO botón de cerrar) */
+.vision-mobile-btn {
+    position: relative;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: 1px solid rgba(255,255,255,.35);
+    background: rgba(255,255,255,.08);
+    -webkit-backdrop-filter: blur(6px);
+    backdrop-filter: blur(6px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+    padding: 0;
+    z-index: 100002;
+    transition: background .25s ease, border-color .25s ease, transform .2s ease;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+}
+.vision-mobile-btn:active { transform: scale(.92); }
+.vision-mobile-btn span {
+    display: block;
+    width: 20px;
+    height: 2px;
+    border-radius: 2px;
+    background: #fff;
+    transition: transform .32s cubic-bezier(.5,0,.2,1), opacity .22s ease, width .25s ease;
+}
+.vision-mobile-btn span:nth-child(2) { width: 14px; align-self: flex-end; margin-right: 10px; }
+.vision-mobile-btn.active { border-color: #ec171f; background: rgba(236, 23, 31,.16); }
+.vision-mobile-btn.active span { width: 20px; }
+.vision-mobile-btn.active span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.vision-mobile-btn.active span:nth-child(2) { opacity: 0; }
+.vision-mobile-btn.active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* Overlay con blur */
+.mobile-nav-overlay {
+    display: block;
+    position: fixed;
+    inset: 0;
+    background: rgba(8, 8, 10, 0);
+    -webkit-backdrop-filter: blur(0px);
+    backdrop-filter: blur(0px);
+    z-index: 100000;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity .4s ease, background .4s ease, backdrop-filter .4s ease, visibility .4s;
+}
+.mobile-nav-overlay.active {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    background: rgba(8, 8, 10, .55);
+    -webkit-backdrop-filter: blur(3px);
+    backdrop-filter: blur(3px);
+}
+
+/* Panel lateral */
+.mobile-nav-panel {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100%;
+    height: 100dvh;
+    width: min(380px, 86vw);
+    max-width: 86vw;
+    background: linear-gradient(165deg, #131315 0%, #0d0d0f 55%, #16110f 100%);
+    z-index: 100001;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    box-shadow: -18px 0 50px rgba(0,0,0,.5);
+    transform: translateX(100%);
+    transition: transform .45s cubic-bezier(.22,1,.36,1);
+    padding-top: env(safe-area-inset-top);
+    padding-bottom: env(safe-area-inset-bottom);
+}
+.mobile-nav-panel.active { transform: translateX(0); }
+
+/* Resplandor decorativo */
+.mnp-decor {
+    position: absolute;
+    top: -60px;
+    right: -80px;
+    width: 260px;
+    height: 260px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(236, 23, 31,.35), transparent 70%);
+    filter: blur(10px);
+    pointer-events: none;
+    z-index: 0;
+}
+.mnp-decor2 {
+    position: absolute;
+    bottom: -90px;
+    left: -70px;
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255,255,255,.06), transparent 70%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* Header interno del panel (solo logo; para cerrar se usa el mismo botón hamburguesa) */
+.mnp-top {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    padding: 24px 26px 18px;
+    border-bottom: 1px solid rgba(255,255,255,.08);
+}
+.mnp-logo img { max-height: 38px; width: auto; display: block; filter: brightness(0) invert(1); opacity: .95; }
+
+/* Contenedor que agrupa links + redes y los centra como bloque en el panel */
+.mnp-body {
+    position: relative;
+    z-index: 2;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding-top: 70px;
+    overflow-y: auto;
+}
+
+/* Links del menú — misma tipografía que el resto del sitio (Montserrat), alineados a la izquierda */
+.mnp-links {
+    display: flex;
+    flex-direction: column;
+    padding: 0 8px;
+}
+.mnp-link {
+    position: relative;
+    display: block;
+    padding: 15px 28px;
+    text-decoration: none !important;
+    text-align: left;
+    opacity: 0;
+    transform: translateX(28px);
+    transition: opacity .45s ease, transform .45s ease;
+    transition-delay: calc(var(--i) * 60ms);
+}
+.mobile-nav-panel.active .mnp-link {
+    opacity: 1;
+    transform: translateX(0);
+}
+.mnp-link::before {
+    content: "";
+    position: absolute;
+    left: 28px;
+    bottom: 6px;
+    width: 0;
+    height: 1px;
+    background: #ec171f;
+    transition: width .3s ease;
+}
+.mnp-link:active::before,
+.mnp-link:focus-visible::before { width: 26px; }
+.mnp-text {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 21px;
+    font-weight: 600;
+    letter-spacing: .35px;
+    color: #fff !important;
+    text-transform: uppercase;
+    transition: color .2s ease;
+    display: inline-block;
+}
+.mnp-link:active .mnp-text,
+.mnp-link:focus-visible .mnp-text { color: #ec171f !important; }
+.mnp-link.mnp-cta .mnp-text { color: #ec171f !important; }
+
+/* Redes sociales — justo debajo del último link (Contacto) */
+.mnp-social-wrap {
+    padding: 22px 26px 0;
+}
+.mnp-social {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 16px;
+}
+.mnp-social a {
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    border: 1px solid rgba(255,255,255,.18);
+    background: rgba(255,255,255,.05);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff !important;
+    font-size: 19px;
+    transition: background .25s ease, border-color .25s ease, transform .2s ease;
+}
+.mnp-social a:active { transform: scale(.92); }
+.mnp-social a:hover { background: #ec171f; border-color: #ec171f; }
+
+@media (min-width: 992px) {
+    .mobile-nav-panel,
+    .mobile-nav-overlay,
+    .vision-mobile-btn {
+        display: none !important;
+    }
+}
+@media (max-width: 380px) {
+    .mnp-text { font-size: 18px; }
+    .mnp-link { padding: 12px 22px; }
+}
+</style>
+
+<style>
+/* ===== Sección "Encontrá tu próximo vehículo" ===== */
+.vehicle_title_block {
+    text-align: left;
+}
+.vehicle_kicker {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 2.2px;
+    text-transform: uppercase;
+    color: #ec171f;
+    margin-bottom: 16px;
+}
+.vehicle_kicker_line {
+    width: 24px;
+    height: 2px;
+    border-radius: 2px;
+    background: #ec171f;
+    opacity: .55;
+}
+.vehicle_main_title {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    font-size: clamp(24px, 4vw, 44px);
+    line-height: 1.15;
+    letter-spacing: -0.8px;
+    color: #141414;
+    margin: 0;
+    white-space: nowrap;
+}
+.vehicle_main_title .accent {
+    color: inherit;
+    font-weight: 700;
+    position: relative;
+}
+@media (max-width: 480px) {
+    .vehicle_main_title { font-size: 6.2vw; }
+}
+
+/* Carrusel contenido hacia el centro (no de esquina a esquina) */
+.vehicle_area {
+    background-color: #ffffff;
+}
+.vehicle_marquee {
+    max-width: 1320px;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Brillo blanco leve en los extremos izquierdo y derecho */
+.vehicle_marquee::before,
+.vehicle_marquee::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 130px;
+    z-index: 5;
+    pointer-events: none;
+}
+.vehicle_marquee::before {
+    left: 0;
+    background: linear-gradient(to right, rgba(255,255,255,.85), rgba(255,255,255,0));
+}
+.vehicle_marquee::after {
+    right: 0;
+    background: linear-gradient(to left, rgba(255,255,255,.85), rgba(255,255,255,0));
+}
+@media (max-width: 767px) {
+    .vehicle_marquee::before,
+    .vehicle_marquee::after {
+        width: 45px;
+    }
+}
+
+/* El movimiento y el arrastre del carrusel ahora los controla el script
+   (más abajo), así se evita cualquier salto o reinicio de la animación CSS. */
+.vehicle_track {
+    animation: none !important;
+}
+.vehicle_marquee {
+    cursor: grab;
+    -webkit-user-select: none;
+    user-select: none;
+    touch-action: pan-y; /* deja scrollear vertical; el drag horizontal lo maneja el script */
+}
+.vehicle_marquee.vehicle_dragging {
+    cursor: grabbing;
+}
+.vehicle_marquee img {
+    -webkit-user-drag: none;
+    pointer-events: none;
+}
+.vehicle_marquee a {
+    -webkit-user-drag: none;
+    user-drag: none;
+    -khtml-user-drag: none;
+    -moz-user-drag: none;
+    -o-user-drag: none;
+}
+</style>
+<style>
+    /* ===== Smooth scroll (Lenis) ===== */
+    html.lenis {
+        height: auto;
+    }
+    .lenis.lenis-smooth [data-aos] {
+        will-change: transform, opacity;
+    }
+    html {
+        scroll-behavior: auto !important;
+        scroll-padding-top: 90px;
+    }
+
+    /* ===== Botón flotante de WhatsApp con tooltip ===== */
+    .whatsapp-float {
+        position: fixed;
+        bottom: 25px;
+        right: 25px;
+        background-color: #1bb14d;
+        color: #fff;
+        width: 70px;
+        height: 70px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 4px 15px rgba(26, 143, 107, 0.45);
+        z-index: 1000;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .whatsapp-float:hover {
+        background-color: #15863b;
+        transform: scale(1.08);
+        box-shadow: 0 6px 20px rgba(26, 143, 107, 0.65);
+        color: #fff;
+    }
+    .whatsapp-float:active {
+        transform: scale(0.95);
+    }
+    .whatsapp-tooltip {
+        position: absolute;
+        right: calc(100% + 14px);
+        top: 50%;
+        transform: translateY(-50%) scale(.7);
+        transform-origin: right center;
+        background-color: #ffffff;
+        color: #111111;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 600;
+        font-size: 14px;
+        white-space: nowrap;
+        padding: 10px 16px;
+        border-radius: 8px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        transition: opacity .25s ease, transform .4s cubic-bezier(0.34, 1.56, 0.64, 1), visibility .25s ease;
+    }
+    .whatsapp-tooltip::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 100%;
+        transform: translateY(-50%);
+        border-width: 6px;
+        border-style: solid;
+        border-color: transparent transparent transparent #ffffff;
+    }
+    .whatsapp-float:hover .whatsapp-tooltip {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(-50%) scale(1);
+    }
+    @media (max-width: 480px) {
+        .whatsapp-tooltip {
+            display: none;
+        }
+    }
+</style>
+
+
+<style>
+/* ===== Inicio inspirado en Vision Motors ===== */
+.vision-inspired-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    transition: background .3s ease, box-shadow .3s ease;
+}
+.vision-inspired-header.vision-header-scrolled {
+    background: rgba(15,15,15,.94);
+    -webkit-backdrop-filter: blur(6px);
+    backdrop-filter: blur(6px);
+    box-shadow: 0 6px 22px rgba(0,0,0,.25);
+}
+.vision-inspired-header .main-header-area {
+    background: transparent !important;
+    border: 0 !important;
+    box-shadow: none !important;
+    padding: 24px 0 !important;
+}
+.vision-nav-row {
+    min-height: 62px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 35px;
+}
+.vision-logo img {
+    display: block;
+    width: auto;
+    max-width: 220px;
+    max-height: 58px;
+    object-fit: contain;
+}
+.vision-desktop-nav {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 30px;
+}
+.vision-desktop-nav a {
+    position: relative;
+    color: #fff !important;
+    font-weight: 600;
+    font-size: 14.5px;
+    letter-spacing: .35px;
+    text-transform: uppercase;
+    text-decoration: none !important;
+    transition: color .25s ease, opacity .25s ease;
+    white-space: nowrap;
+}
+.vision-desktop-nav a::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -6px;
+    width: 0;
+    height: 1px;
+    background: #fff;
+    transition: width .3s ease, left .3s ease;
+}
+.vision-desktop-nav a:hover {
+    color: #fff !important;
+    opacity: .8;
+}
+.vision-desktop-nav a:hover::after {
+    width: 100%;
+    left: 0;
+}
+.vision-desktop-nav .vision-nav-contact::after {
+    content: none;
+}
+.vision-desktop-nav .vision-nav-contact {
+    background: #ec171f;
+    color: #fff !important;
+    padding: 11px 20px;
+    border-radius: 4px;
+    transition: background .25s ease, box-shadow .25s ease;
+}
+.vision-desktop-nav .vision-nav-contact:hover {
+    background: #c9141a;
+    color: #fff !important;
+    text-shadow: none;
+    box-shadow: 0 0 16px rgba(236, 23, 31,.75), 0 0 30px rgba(236, 23, 31,.4);
+}
+.vision-mobile-btn { display:none; }
+
+.vision-hero,
+.vision-hero .single_slider {
+    min-height: 100vh;
+    min-height: 100svh;
+    height: 100vh;
+    height: 100svh;
+    max-height: none;
+}
+.vision-hero .single_slider {
+    position: relative;
+    overflow: hidden;
+}
+.vision-hero-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    background: linear-gradient(90deg, rgba(0,0,0,.45) 0%, rgba(0,0,0,.45) 48%, rgba(0,0,0,.45) 100%), linear-gradient(180deg, rgba(0,0,0,.45), rgba(0,0,0,.45) 45%, rgba(0,0,0,.45));
+}
+.vision-hero .container { position: relative; z-index: 3; }
+.vision-hero-content {
+    width: min(900px, 100%);
+    margin: 0 auto;
+    padding: 115px 20px 45px;
+    text-align: center;
+}
+.vision-eyebrow {
+    color: rgba(255,255,255,.92);
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 1.8px;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+}
+.vision-hero .slider_text { text-align: center !important; }
+.vision-hero .slider_text .main-title {
+    color: #fff !important;
+    font-size: clamp(42px, 5.2vw, 72px) !important;
+    line-height: 1.03 !important;
+    font-weight: 700 !important;
+    letter-spacing: -1.8px;
+    margin: 0 0 22px !important;
+    text-shadow: 0 3px 20px rgba(0,0,0,.5);
+}
+.vision-hero .slider_text .highlight-line { color: #ec171f !important;
+            text-shadow: 0 2px 7px rgba(0, 0, 0, 0.28); }
+.vision-hero .slider_text > p {
+    max-width: 700px;
+    margin: 0 auto 28px !important;
+    color: rgba(255,255,255,.94) !important;
+    font-size: 17px !important;
+    line-height: 1.65 !important;
+    text-shadow: 0 2px 10px rgba(0,0,0,.55);
+}
+.vision-search {
+    width: min(760px, 100%);
+    margin: 0 auto;
+    display: flex;
+    align-items: stretch;
+    background: rgba(255, 255, 255, 0.18) !important;
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.35) !important;
+    border-radius: 50px !important;
+    padding: 6px 10px;
+    box-shadow: 0 12px 40px rgba(0,0,0,.24);
+    text-align: left;
+}
+.vision-search input {
+    min-width: 0;
+    flex: 1;
+    height: 48px;
+    border: 0 !important;
+    outline: 0 !important;
+    padding: 0 20px;
+    color: #fff;
+    background: transparent;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+}
+.vision-search input::placeholder { 
+    color: rgba(255, 255, 255, 0.75); 
+    opacity: 1; 
+}
+.vision-search button {
+    border: 0;
+    border-radius: 40px;
+    background: #ec171f;
+    color: #fff;
+    width: 52px;
+    min-width: 52px;
+    padding: 0 16px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background .25s ease, transform .2s ease, box-shadow .25s ease;
+}
+.vision-search button:hover {
+    background: #c9141a;
+    box-shadow: 0 0 16px rgba(236, 23, 31,.8), 0 0 30px rgba(236, 23, 31,.4);
+}
+.vision-search button i { margin: 0; font-size: 16px; }
+.vision-hero-actions {
+    justify-content: center !important;
+    margin-top: 22px !important;
+}
+.vision-hero-actions .btn-catalogo-hero {
+    border-color: rgba(255,255,255,.9) !important;
+    background: transparent !important;
+    color: #fff !important;
+}
+.vision-hero-actions .btn-catalogo-hero:hover {
+    background: #fff !important;
+    color: #111 !important;
+}
+.vision-scroll {
+    position: absolute;
+    bottom: 25px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3;
+    color: rgba(255,255,255,.9) !important;
+    text-decoration: none !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    transition: opacity .25s ease;
+}
+.vision-scroll:hover { opacity: .75; }
+.vision-mouse {
+    width: 25px;
+    height: 39px;
+    border: 1.5px solid rgba(255,255,255,.9);
+    border-radius: 15px;
+    position: relative;
+    box-sizing: border-box;
+}
+.vision-mouse-wheel {
+    position: absolute;
+    top: 7px;
+    left: 50%;
+    width: 3px;
+    height: 7px;
+    border-radius: 3px;
+    background: #fff;
+    transform: translateX(-50%);
+    animation: mouseWheel 1.6s ease-in-out infinite;
+}
+@keyframes mouseWheel {
+    0% { transform: translate(-50%, 0); opacity: 0; }
+    15% { opacity: 1; }
+    65% { transform: translate(-50%, 10px); opacity: 1; }
+    100% { transform: translate(-50%, 14px); opacity: 0; }
+}
+
+@media (max-width: 991px) {
+    .vision-inspired-header .main-header-area { padding: 17px 0 !important; }
+    .vision-logo img { max-width: 175px; max-height: 52px; }
+    .vision-desktop-nav { display:none; }
+    .vision-mobile-btn { display:flex; }
+    .vision-hero, .vision-hero .single_slider { min-height: 100svh; height: 100svh; }
+    .vision-hero-content { padding: 120px 15px 70px; }
+}
+@media (max-width: 575px) {
+    .vision-logo img { max-width: 155px; max-height: 47px; }
+    .vision-hero-content { padding-top: 105px; }
+    .vision-eyebrow { font-size: 11px; letter-spacing: 1.2px; }
+    .vision-hero .slider_text .main-title { font-size: 38px !important; letter-spacing:-1px; }
+    .vision-hero .slider_text > p { font-size: 17px !important; line-height:1.5 !important; }
+    .vision-search { padding:5px; }
+    .vision-search input { height:48px; font-size:14px; padding:0 12px; }
+    .vision-search button { min-width:52px; width:52px; padding:0; }
+    .vision-search button span { display:none; }
+    .vision-search button i { margin:0; }
+    .vision-scroll { bottom:17px; }
+}
+
+/* ===== Foto de fondo estática (sin zoom / sin parallax) ===== */
+.slider_bg_img,
+.slider_bg_img::after,
+.vision-hero .single_slider,
+.vision-hero .single_slider::after {
+    animation: none !important;
+    transform: none !important;
+    background-attachment: scroll !important;
+    background-position: center center !important;
+    background-size: cover !important;
+    transition: none !important;
+}
+
+/* ===== Segunda foto de fondo (crossfade) ===== */
+.vision-hero-bg2 {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    opacity: 0;
+    transition: opacity 1.6s ease;
+    pointer-events: none;
+}
+.vision-hero-bg2.is-active { opacity: 1; }
+.vision-hero-overlay { z-index: 2; }
+
+/* ===== Franjas indicadoras — solo visibles dentro del inicio ===== */
+.vision-hero-dots {
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 5;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+.vision-hero-dot {
+    width: 4px;
+    height: 34px;
+    border-radius: 2px;
+    background: rgba(255,255,255,.35);
+    cursor: pointer;
+    transition: background .35s ease, height .35s ease;
+}
+.vision-hero-dot.active {
+    background: #ec171f;
+    height: 46px;
+}
+@media (max-width: 575px) {
+    .vision-hero-dots { left: 10px; gap: 10px; }
+    .vision-hero-dot { width: 3px; height: 26px; }
+    .vision-hero-dot.active { height: 36px; }
+}
+</style>
+
+</head>
+
+<body>
+
+<header class="vision-inspired-header">
+    <div class="header-area">
+        <div id="sticky-header" class="main-header-area">
+            <div class="container">
+                <div class="vision-nav-row">
+                    <div class="vision-logo">
+                        <a href="index.html" aria-label="Automoviles SRL - Inicio">
+                            <img src="img/logo automovilessrl.png" alt="Automoviles SRL">
+                        </a>
+                    </div>
+
+                    <nav class="vision-desktop-nav" aria-label="Navegación principal">
+                        <a href="index.html">Inicio</a>
+                        <a href="catalogo.html?estado=0km">0km</a>
+                        <a href="catalogo.html?estado=usado">Usados</a>
+                        <a href="clientes.html">Clientes</a>
+                        <a href="nosotros.html">Nosotros</a>
+                        <a href="#contacto" class="vision-nav-contact">Contacto</a>
+                    </nav>
+
+                    <button type="button" id="mobileMenuBtn" class="vision-mobile-btn" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobileNavPanel">
+                        <span></span><span></span><span></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div id="mobileNavOverlay" class="mobile-nav-overlay"></div>
+        <div id="mobileNavPanel" class="mobile-nav-panel" role="dialog" aria-modal="true" aria-label="Menú de navegación">
+            <div class="mnp-decor" aria-hidden="true"></div>
+            <div class="mnp-decor2" aria-hidden="true"></div>
+
+            <div class="mnp-top">
+                <a href="index.html" class="mnp-logo" aria-label="Automoviles SRL - Inicio">
+                    <img src="img/logo automovilessrl.png" alt="Automoviles SRL">
+                </a>
+            </div>
+
+            <div class="mnp-body">
+                <nav class="mnp-links" aria-label="Navegación principal móvil">
+                    <a href="index.html" class="mnp-link" style="--i:0"><span class="mnp-text">Inicio</span></a>
+                    <a href="catalogo.html?estado=0km" class="mnp-link" style="--i:1"><span class="mnp-text">0km</span></a>
+                    <a href="catalogo.html?estado=usado" class="mnp-link" style="--i:2"><span class="mnp-text">Usados</span></a>
+                    <a href="clientes.html" class="mnp-link" style="--i:3"><span class="mnp-text">Clientes</span></a>
+                    <a href="nosotros.html" class="mnp-link" style="--i:4"><span class="mnp-text">Nosotros</span></a>
+                    <a href="#contacto" class="mnp-link mnp-cta" style="--i:5"><span class="mnp-text">Contacto</span></a>
+                </nav>
+
+                <div class="mnp-social-wrap">
+                    <div class="mnp-social">
+                        <a href="https://www.facebook.com/p/Automoviles-srl-100038759264349/" target="_blank" rel="noopener noreferrer" aria-label="Facebook Automoviles SRL">
+                            <i class="fa fa-facebook" aria-hidden="true"></i>
+                        </a>
+                        <a href="https://www.instagram.com/automovilessrl/" target="_blank" rel="noopener noreferrer" aria-label="Instagram Automoviles SRL">
+                            <i class="fa fa-instagram" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<div class="slider_area vision-hero" style="position: relative;">
+    <div class="vision-hero-dots" id="visionHeroDots" aria-hidden="true">
+        <span class="vision-hero-dot active" data-index="0"></span>
+        <span class="vision-hero-dot" data-index="1"></span>
+    </div>
+    <div class="single_slider slider_bg_img d-flex align-items-center">
+        <div class="vision-hero-bg2" id="visionHeroBg2"></div>
+        <div class="vision-hero-overlay"></div>
+        <div class="container">
+            <!-- Agregamos 'justify-content-start' para tirar la fila a la izquierda -->
+            <div class="row justify-content-start">
+                <div class="col-lg-8 col-xl-7">
+                    <!-- Cambiamos el texto y los elementos internos para que estén alineados a la izquierda -->
+                    <div class="vision-hero-content" style="text-align: left; margin: 0; padding-left: 0;">
+                        <div class="vision-eyebrow">Concesionaria multimarca · Sáenz Peña</div>
+                        <div class="slider_text" style="text-align: left !important;">
+                            <h3 class="main-title">Tu próximo auto, <br><span class="highlight-line">nuestro compromiso.</span></h3>
+                            <p>Vehículos 0km todas las marcas y usados seleccionados. Financiación a tu medida.</p>
+
+                            <form class="vision-search" action="catalogo.html" method="get" role="search">
+                                <label class="sr-only" for="visionSearchInput">Buscar vehículos</label>
+                                <input id="visionSearchInput" name="q" type="search" placeholder="Buscá por marca o modelo… ej: Toyota, Hilux" autocomplete="off">
+                                <button type="submit" aria-label="Buscar en el catálogo">
+                                    <i class="fa fa-search" aria-hidden="true"></i>
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a class="vision-scroll" href="#catalogo" aria-label="Desplazarse hacia abajo">
+            <span class="vision-mouse" aria-hidden="true"><span class="vision-mouse-wheel"></span></span>
+            <span>Scroll</span>
+        </a>
+    </div>
+</div>
+
+<div class="vehicle_area">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="section_title vehicle_title_block mb-95">
+                    <span class="vehicle_kicker"><span class="vehicle_kicker_line"></span>Alguno de nuestros vehículos</span>
+                    <h3 style="margin-bottom: 15px; font-size: 36px; font-weight: 800; color: #222;">Encontrá tu próximo vehículo.</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="vehicle_marquee">
+        <div class="vehicle_track">
+
+            <div class="single_vehicle">
+                <div class="vehicle_thumb">
+                    <img src="img/1.webp" alt="F-150 Raptor">
+                    <a href="ford-f150-raptor.html" class="vehicle_thumb_overlay">
+                        <span class="vehicle_overlay_badge">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                <circle cx="12" cy="12" r="3"></circle>
+                            </svg>
+                            Ver más
+                        </span>
+                    </a>
+                </div>
+                <div class="vehicle_content">
+                    <span class="vehicle_brand">Ford</span>
+                    <h4>F-150 Raptor</h4>
+                    <ul class="vehicle_meta">
+                        <li>2025</li>
+                        <li>NUEVO</li>
+                        <li>0 km</li>
+                    </ul>
+                    <a href="ford-f150-raptor.html" class="vehicle_btn">Ver más</a>
+                </div>
+            </div>
+
+            <div class="single_vehicle">
+                <div class="vehicle_thumb">
+                    <img src="img/2.webp" alt="Amarok">
+                    <a href="volkswagen-amarok-2023.html" class="vehicle_thumb_overlay">
+                        <span class="vehicle_overlay_badge">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                <circle cx="12" cy="12" r="3"></circle>
+                            </svg>
+                            Ver más
+                        </span>
+                    </a>
+                </div>
+                <div class="vehicle_content">
+                    <span class="vehicle_brand">Volkswagen</span>
+                    <h4>Amarok</h4>
+                    <ul class="vehicle_meta">
+                        <li>2023</li>
+                        <li>Usado</li>
+                        <li>48.000 km</li>
+                    </ul>
+                    <a href="volkswagen-amarok-2023.html" class="vehicle_btn">Ver más</a>
+                </div>
+            </div>
+
+            <div class="single_vehicle">
+                <div class="vehicle_thumb">
+                    <img src="img/3.webp" alt="Toyota Corolla Cross">
+                    <a href="toyota-corolla-cross.html" class="vehicle_thumb_overlay">
+                        <span class="vehicle_overlay_badge">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                <circle cx="12" cy="12" r="3"></circle>
+                            </svg>
+                            Ver más
+                        </span>
+                    </a>
+                </div>
+                <div class="vehicle_content">
+                    <span class="vehicle_brand">Toyota</span>
+                    <h4>Corolla Cross</h4>
+                    <ul class="vehicle_meta">
+                        <li>2023</li>
+                        <li>Usado</li>
+                        <li>44.800 km</li>
+                    </ul>
+                    <a href="toyota-corolla-cross.html" class="vehicle_btn">Ver más</a>
+                </div>
+            </div>
+
+            <div class="single_vehicle">
+                <div class="vehicle_thumb">
+                    <img src="img/4.webp" alt="Volkswagen Amarok">
+                    <a href="volkswagen-amarok-2024.html" class="vehicle_thumb_overlay">
+                        <span class="vehicle_overlay_badge">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                <circle cx="12" cy="12" r="3"></circle>
+                            </svg>
+                            Ver más
+                        </span>
+                    </a>
+                </div>
+                <div class="vehicle_content">
+                    <span class="vehicle_brand">Volkswagen</span>
+                    <h4>Amarok</h4>
+                    <ul class="vehicle_meta">
+                        <li>2024</li>
+                        <li>Usado</li>
+                        <li>1.000 km</li>
+                    </ul>
+                    <a href="volkswagen-amarok-2024.html" class="vehicle_btn">Ver más</a>
+                </div>
+            </div>
+
+            <div class="single_vehicle">
+                <div class="vehicle_thumb">
+                    <img src="img/5.webp" alt="Ford Territory">
+                    <a href="ford-territory.html" class="vehicle_thumb_overlay">
+                        <span class="vehicle_overlay_badge">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                <circle cx="12" cy="12" r="3"></circle>
+                            </svg>
+                            Ver más
+                        </span>
+                    </a>
+                </div>
+                <div class="vehicle_content">
+                    <span class="vehicle_brand">Ford</span>
+                    <h4>Ford Territory</h4>
+                    <ul class="vehicle_meta">
+                        <li>2026</li>
+                        <li>NUEVO</li>
+                        <li>0 km</li>
+                    </ul>
+                    <a href="ford-territory.html" class="vehicle_btn">Ver más</a>
+                </div>
+            </div>
+
+            <div class="single_vehicle">
+                <div class="vehicle_thumb">
+                    <img src="img/6.webp" alt="Toyota Corolla">
+                    <a href="toyota-corolla.html" class="vehicle_thumb_overlay">
+                        <span class="vehicle_overlay_badge">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                <circle cx="12" cy="12" r="3"></circle>
+                            </svg>
+                            Ver más
+                        </span>
+                    </a>
+                </div>
+                <div class="vehicle_content">
+                    <span class="vehicle_brand">Toyota</span>
+                    <h4>Toyota Corolla</h4>
+                    <ul class="vehicle_meta">
+                        <li>2023</li>
+                        <li>Usado</li>
+                        <li>77.000 km</li>
+                    </ul>
+                    <a href="toyota-corolla.html" class="vehicle_btn">Ver más</a>
+                </div>
+            </div>
+
+            <div class="single_vehicle">
+                <div class="vehicle_thumb">
+                    <img src="img/7.webp" alt="Toyota Hiace 2.8 Tdi Wagon 6at 10a">
+                    <a href="toyota-hiace.html" class="vehicle_thumb_overlay">
+                        <span class="vehicle_overlay_badge">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                <circle cx="12" cy="12" r="3"></circle>
+                            </svg>
+                            Ver más
+                        </span>
+                    </a>
+                </div>
+                <div class="vehicle_content">
+                    <span class="vehicle_brand">Toyota</span>
+                    <h4>Toyota Hiace</h4>
+                    <ul class="vehicle_meta">
+                        <li>2021</li>
+                        <li>Usado</li>
+                        <li>30.000 km</li>
+                    </ul>
+                    <a href="toyota-hiace.html" class="vehicle_btn">Ver más</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div id="catalogo" class="adapt_area" style="background-color: #f9f9f9; padding: 90px 0;">
+        <div class="container">
+            <!-- Encabezado -->
+            <div class="row justify-content-center mb-5">
+                <div class="col-lg-7 text-center">
+                    <div class="section_title">
+                        <span style="font-size: 14px; font-family: 'Montserrat', sans-serif; text-transform: uppercase; letter-spacing: 3px; color: #ec171f; font-weight: 700; display: block; margin-bottom: 12px;">Nuestras Marcas</span>
+                        <h3 style="margin-bottom: 15px; font-family: 'Montserrat', sans-serif; font-size: 36px; font-weight: 800; color: #222; letter-spacing: -0.5px;">0km todas las marcas y usados.</h3>
+                        <p style="color: #666; font-family: 'Montserrat', sans-serif; font-size: 16px; margin: 0; font-weight: 500;">Elegí la marca que estás buscando y conocé los modelos disponibles.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Cuadrícula de Marcas y Botón Ver Todo -->
+            <div class="row">
+                <!-- Ford -->
+                <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                    <a href="catalogo.html?marca=Ford" style="display: flex; flex-direction: column; align-items: center; justify-content: center; background: #f4f5f7; border-radius: 16px; padding: 35px 20px; text-decoration: none; border: 2px solid transparent; transition: all 0.3s ease;" onmouseover="this.style.background='#ffffff'; this.style.borderColor='#ec171f'; this.style.transform='translateY(-5px)'; this.style.boxShadow='0 15px 35px rgba(0,0,0,0.06)';" onmouseout="this.style.background='#f4f5f7'; this.style.borderColor='transparent'; this.style.transform='translateY(0)'; this.style.boxShadow='none';">
+                        <div style="height: 55px; display: flex; align-items: center; justify-content: center; margin-bottom: 15px;">
+                            <img src="img/ford.png" alt="Ford" style="max-height: 42px; max-width: 90px; object-fit: contain;">
+                        </div>
+                        <h4 style="font-family: 'Montserrat', sans-serif; font-size: 16px; font-weight: 700; color: #333; margin: 0;">Ford</h4>
+                    </a>
+                </div>
+
+                <!-- Volkswagen -->
+                <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                    <a href="catalogo.html?marca=Volkswagen" style="display: flex; flex-direction: column; align-items: center; justify-content: center; background: #f4f5f7; border-radius: 16px; padding: 35px 20px; text-decoration: none; border: 2px solid transparent; transition: all 0.3s ease;" onmouseover="this.style.background='#ffffff'; this.style.borderColor='#ec171f'; this.style.transform='translateY(-5px)'; this.style.boxShadow='0 15px 35px rgba(0,0,0,0.06)';" onmouseout="this.style.background='#f4f5f7'; this.style.borderColor='transparent'; this.style.transform='translateY(0)'; this.style.boxShadow='none';">
+                        <div style="height: 55px; display: flex; align-items: center; justify-content: center; margin-bottom: 15px;">
+                            <img src="img/volkswagen.png" alt="Volkswagen" style="max-height: 42px; max-width: 90px; object-fit: contain;">
+                        </div>
+                        <h4 style="font-family: 'Montserrat', sans-serif; font-size: 16px; font-weight: 700; color: #333; margin: 0;">Volkswagen</h4>
+                    </a>
+                </div>
+
+                <!-- Ram -->
+                <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                    <a href="catalogo.html?marca=Ram" style="display: flex; flex-direction: column; align-items: center; justify-content: center; background: #f4f5f7; border-radius: 16px; padding: 35px 20px; text-decoration: none; border: 2px solid transparent; transition: all 0.3s ease;" onmouseover="this.style.background='#ffffff'; this.style.borderColor='#ec171f'; this.style.transform='translateY(-5px)'; this.style.boxShadow='0 15px 35px rgba(0,0,0,0.06)';" onmouseout="this.style.background='#f4f5f7'; this.style.borderColor='transparent'; this.style.transform='translateY(0)'; this.style.boxShadow='none';">
+                        <div style="height: 55px; display: flex; align-items: center; justify-content: center; margin-bottom: 15px;">
+                            <img src="img/ram.png" alt="Ram" style="max-height: 42px; max-width: 90px; object-fit: contain;">
+                        </div>
+                        <h4 style="font-family: 'Montserrat', sans-serif; font-size: 16px; font-weight: 700; color: #333; margin: 0;">Ram</h4>
+                    </a>
+                </div>
+
+                <!-- Toyota -->
+                <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                    <a href="catalogo.html?marca=Toyota" style="display: flex; flex-direction: column; align-items: center; justify-content: center; background: #f4f5f7; border-radius: 16px; padding: 35px 20px; text-decoration: none; border: 2px solid transparent; transition: all 0.3s ease;" onmouseover="this.style.background='#ffffff'; this.style.borderColor='#ec171f'; this.style.transform='translateY(-5px)'; this.style.boxShadow='0 15px 35px rgba(0,0,0,0.06)';" onmouseout="this.style.background='#f4f5f7'; this.style.borderColor='transparent'; this.style.transform='translateY(0)'; this.style.boxShadow='none';">
+                        <div style="height: 55px; display: flex; align-items: center; justify-content: center; margin-bottom: 15px;">
+                            <img src="img/toyota.png" alt="Toyota" style="max-height: 42px; max-width: 90px; object-fit: contain;">
+                        </div>
+                        <h4 style="font-family: 'Montserrat', sans-serif; font-size: 16px; font-weight: 700; color: #333; margin: 0;">Toyota</h4>
+                    </a>
+                </div>
+
+                <!-- Jeep -->
+                <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                    <a href="catalogo.html?marca=Jeep" style="display: flex; flex-direction: column; align-items: center; justify-content: center; background: #f4f5f7; border-radius: 16px; padding: 35px 20px; text-decoration: none; border: 2px solid transparent; transition: all 0.3s ease;" onmouseover="this.style.background='#ffffff'; this.style.borderColor='#ec171f'; this.style.transform='translateY(-5px)'; this.style.boxShadow='0 15px 35px rgba(0,0,0,0.06)';" onmouseout="this.style.background='#f4f5f7'; this.style.borderColor='transparent'; this.style.transform='translateY(0)'; this.style.boxShadow='none';">
+                        <div style="height: 55px; display: flex; align-items: center; justify-content: center; margin-bottom: 15px;">
+                            <img src="img/jeep.png" alt="Jeep" style="max-height: 42px; max-width: 90px; object-fit: contain;">
+                        </div>
+                        <h4 style="font-family: 'Montserrat', sans-serif; font-size: 16px; font-weight: 700; color: #333; margin: 0;">Jeep</h4>
+                    </a>
+                </div>
+
+                <!-- Fiat -->
+                <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                    <a href="catalogo.html?marca=Fiat" style="display: flex; flex-direction: column; align-items: center; justify-content: center; background: #f4f5f7; border-radius: 16px; padding: 35px 20px; text-decoration: none; border: 2px solid transparent; transition: all 0.3s ease;" onmouseover="this.style.background='#ffffff'; this.style.borderColor='#ec171f'; this.style.transform='translateY(-5px)'; this.style.boxShadow='0 15px 35px rgba(0,0,0,0.06)';" onmouseout="this.style.background='#f4f5f7'; this.style.borderColor='transparent'; this.style.transform='translateY(0)'; this.style.boxShadow='none';">
+                        <div style="height: 55px; display: flex; align-items: center; justify-content: center; margin-bottom: 15px;">
+                            <img src="img/fiat.webp" alt="Fiat" style="max-height: 42px; max-width: 90px; object-fit: contain;">
+                        </div>
+                        <h4 style="font-family: 'Montserrat', sans-serif; font-size: 16px; font-weight: 700; color: #333; margin: 0;">Fiat</h4>
+                    </a>
+                </div>
+
+                <!-- Chevrolet -->
+                <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                    <a href="catalogo.html?marca=Chevrolet" style="display: flex; flex-direction: column; align-items: center; justify-content: center; background: #f4f5f7; border-radius: 16px; padding: 35px 20px; text-decoration: none; border: 2px solid transparent; transition: all 0.3s ease;" onmouseover="this.style.background='#ffffff'; this.style.borderColor='#ec171f'; this.style.transform='translateY(-5px)'; this.style.boxShadow='0 15px 35px rgba(0,0,0,0.06)';" onmouseout="this.style.background='#f4f5f7'; this.style.borderColor='transparent'; this.style.transform='translateY(0)'; this.style.boxShadow='none';">
+                        <div style="height: 55px; display: flex; align-items: center; justify-content: center; margin-bottom: 15px;">
+                            <img src="img/chevrolet.webp" alt="Chevrolet" style="max-height: 42px; max-width: 90px; object-fit: contain;">
+                        </div>
+                        <h4 style="font-family: 'Montserrat', sans-serif; font-size: 16px; font-weight: 700; color: #333; margin: 0;">Chevrolet</h4>
+                    </a>
+                </div>
+
+                <!-- Peugeot -->
+                <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                    <a href="catalogo.html?marca=Peugeot" style="display: flex; flex-direction: column; align-items: center; justify-content: center; background: #f4f5f7; border-radius: 16px; padding: 35px 20px; text-decoration: none; border: 2px solid transparent; transition: all 0.3s ease;" onmouseover="this.style.background='#ffffff'; this.style.borderColor='#ec171f'; this.style.transform='translateY(-5px)'; this.style.boxShadow='0 15px 35px rgba(0,0,0,0.06)';" onmouseout="this.style.background='#f4f5f7'; this.style.borderColor='transparent'; this.style.transform='translateY(0)'; this.style.boxShadow='none';">
+                        <div style="height: 55px; display: flex; align-items: center; justify-content: center; margin-bottom: 15px;">
+                            <img src="img/peugeot.png" alt="Peugeot" style="max-height: 42px; max-width: 90px; object-fit: contain;">
+                        </div>
+                        <h4 style="font-family: 'Montserrat', sans-serif; font-size: 16px; font-weight: 700; color: #333; margin: 0;">Peugeot</h4>
+                    </a>
+                </div>
+
+                <!-- BMW -->
+                <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                    <a href="catalogo.html?marca=BMW" style="display: flex; flex-direction: column; align-items: center; justify-content: center; background: #f4f5f7; border-radius: 16px; padding: 35px 20px; text-decoration: none; border: 2px solid transparent; transition: all 0.3s ease;" onmouseover="this.style.background='#ffffff'; this.style.borderColor='#ec171f'; this.style.transform='translateY(-5px)'; this.style.boxShadow='0 15px 35px rgba(0,0,0,0.06)';" onmouseout="this.style.background='#f4f5f7'; this.style.borderColor='transparent'; this.style.transform='translateY(0)'; this.style.boxShadow='none';">
+                        <div style="height: 55px; display: flex; align-items: center; justify-content: center; margin-bottom: 15px;">
+                            <img src="img/bmw.svg" alt="BMW" style="max-height: 42px; max-width: 90px; object-fit: contain;">
+                        </div>
+                        <h4 style="font-family: 'Montserrat', sans-serif; font-size: 16px; font-weight: 700; color: #333; margin: 0;">BMW</h4>
+                    </a>
+                </div>
+
+                <!-- Mercedes-Benz -->
+                <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                    <a href="catalogo.html?marca=Mercedes-Benz" style="display: flex; flex-direction: column; align-items: center; justify-content: center; background: #f4f5f7; border-radius: 16px; padding: 35px 20px; text-decoration: none; border: 2px solid transparent; transition: all 0.3s ease;" onmouseover="this.style.background='#ffffff'; this.style.borderColor='#ec171f'; this.style.transform='translateY(-5px)'; this.style.boxShadow='0 15px 35px rgba(0,0,0,0.06)';" onmouseout="this.style.background='#f4f5f7'; this.style.borderColor='transparent'; this.style.transform='translateY(0)'; this.style.boxShadow='none';">
+                        <div style="height: 55px; display: flex; align-items: center; justify-content: center; margin-bottom: 15px;">
+                            <img src="img/mercedes.svg" alt="Mercedes Benz" style="max-height: 42px; max-width: 90px; object-fit: contain;">
+                        </div>
+                        <h4 style="font-family: 'Montserrat', sans-serif; font-size: 16px; font-weight: 700; color: #333; margin: 0;">Mercedes Benz</h4>
+                    </a>
+                </div>
+
+                <!-- Nissan -->
+                <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                    <a href="catalogo.html?marca=Nissan" style="display: flex; flex-direction: column; align-items: center; justify-content: center; background: #f4f5f7; border-radius: 16px; padding: 35px 20px; text-decoration: none; border: 2px solid transparent; transition: all 0.3s ease;" onmouseover="this.style.background='#ffffff'; this.style.borderColor='#ec171f'; this.style.transform='translateY(-5px)'; this.style.boxShadow='0 15px 35px rgba(0,0,0,0.06)';" onmouseout="this.style.background='#f4f5f7'; this.style.borderColor='transparent'; this.style.transform='translateY(0)'; this.style.boxShadow='none';">
+                        <div style="height: 55px; display: flex; align-items: center; justify-content: center; margin-bottom: 15px;">
+                            <img src="img/nissan.svg" alt="Nissan" style="max-height: 42px; max-width: 90px; object-fit: contain;">
+                        </div>
+                        <h4 style="font-family: 'Montserrat', sans-serif; font-size: 16px; font-weight: 700; color: #333; margin: 0;">Nissan</h4>
+                    </a>
+                </div>
+
+                <!-- Citroen -->
+                <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                    <a href="catalogo.html?marca=Citroen" style="display: flex; flex-direction: column; align-items: center; justify-content: center; background: #f4f5f7; border-radius: 16px; padding: 35px 20px; text-decoration: none; border: 2px solid transparent; transition: all 0.3s ease;" onmouseover="this.style.background='#ffffff'; this.style.borderColor='#ec171f'; this.style.transform='translateY(-5px)'; this.style.boxShadow='0 15px 35px rgba(0,0,0,0.06)';" onmouseout="this.style.background='#f4f5f7'; this.style.borderColor='transparent'; this.style.transform='translateY(0)'; this.style.boxShadow='none';">
+                        <div style="height: 55px; display: flex; align-items: center; justify-content: center; margin-bottom: 15px;">
+                            <img src="img/Citroen-Logo.png" alt="Citroen" style="max-height: 42px; max-width: 90px; object-fit: contain;">
+                        </div>
+                        <h4 style="font-family: 'Montserrat', sans-serif; font-size: 16px; font-weight: 700; color: #333; margin: 0;">Citroen</h4>
+                    </a>
+                </div>
+
+                <!-- Honda -->
+                <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                    <a href="catalogo.html?marca=Honda" style="display: flex; flex-direction: column; align-items: center; justify-content: center; background: #f4f5f7; border-radius: 16px; padding: 35px 20px; text-decoration: none; border: 2px solid transparent; transition: all 0.3s ease;" onmouseover="this.style.background='#ffffff'; this.style.borderColor='#ec171f'; this.style.transform='translateY(-5px)'; this.style.boxShadow='0 15px 35px rgba(0,0,0,0.06)';" onmouseout="this.style.background='#f4f5f7'; this.style.borderColor='transparent'; this.style.transform='translateY(0)'; this.style.boxShadow='none';">
+                        <div style="height: 55px; display: flex; align-items: center; justify-content: center; margin-bottom: 15px;">
+                            <img src="img/honda.webp" alt="Honda" style="max-height: 42px; max-width: 90px; object-fit: contain;">
+                        </div>
+                        <h4 style="font-family: 'Montserrat', sans-serif; font-size: 16px; font-weight: 700; color: #333; margin: 0;">Honda</h4>
+                    </a>
+                </div>
+
+                <!-- Botón al lado de Honda: Barra horizontal transparente con bordes redondeados -->
+                <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                    <a href="catalogo.html" style="display: flex; align-items: center; justify-content: center; height: 100%; min-height: 140px; background: transparent; border: 2px dashed #ccc; border-radius: 16px; padding: 20px; text-decoration: none; transition: all 0.3s ease; box-sizing: border-box;" onmouseover="this.style.background='#222'; this.style.borderColor='#222'; this.style.transform='translateY(-5px)'; this.style.boxShadow='0 15px 35px rgba(0,0,0,0.1)';" onmouseout="this.style.background='transparent'; this.style.borderColor='#ccc'; this.style.transform='translateY(0)'; this.style.boxShadow='none';" onmouseenter="this.querySelector('h4').style.color='#fff'; this.querySelector('i').style.color='#ec171f';" onmouseleave="this.querySelector('h4').style.color='#333'; this.querySelector('i').style.color='#222';">
+                        <div style="display: flex; align-items: center; justify-content: center; gap: 10px; text-align: center;">
+                            <h4 style="font-family: 'Montserrat', sans-serif; font-size: 15px; font-weight: 700; color: #333; margin: 0; transition: color 0.3s ease;">Ver todo el catálogo</h4>
+                            <i class="fa fa-arrow-right" style="font-size: 14px; color: #222; font-weight: bold; transition: color 0.3s ease;"></i>
+                        </div>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+<div class="container">
+        <div class="row">
+            <div class="col-12">
+                <hr style="border: none; border-top: 1px solid rgba(0,0,0,0.08); margin: 0;">
+            </div>
+        </div>
+    </div>
+
+    <div class="nosotros_home_area" style="padding: 100px 0 90px; background-color: #fdfbfb;">
+        <div class="container">
+            <div class="row align-items-center mb-5">
+                <!-- Texto principal cercano -->
+                <div class="col-lg-7 mb-4 mb-lg-0">
+                    <span style="font-family: 'Montserrat', sans-serif; font-size: 13px; text-transform: uppercase; letter-spacing: 2px; color: #ec171f; font-weight: 700; display: block; margin-bottom: 10px;">Sobre Nosotros</span>
+                    <h3 style="font-family: 'Montserrat', sans-serif; font-size: 32px; font-weight: 800; color: #222; margin-bottom: 20px; line-height: 1.3;">Mucho más que un vehículo.</h3>
+                    <p style="font-family: 'Montserrat', sans-serif; font-size: 15px; color: #555; line-height: 1.8; margin-bottom: 15px;">
+                        Nuestro objetivo es que cada cliente encuentre mucho más que un vehículo: <strong>un lugar donde pueda comprar con confianza, transparencia y seguridad.</strong>
+                    </p>
+                    <p style="font-family: 'Montserrat', sans-serif; font-size: 15px; color: #555; line-height: 1.8; margin-bottom: 15px;">
+                        Buscamos constituir relaciones a largo plazo, brindando un correcto asesoramiento para la compra de tu vehículo.
+                    </p>
+                    <p style="font-family: 'Montserrat', sans-serif; font-size: 15px; color: #555; line-height: 1.8; margin: 0;">
+                        Somos una <strong>agencia multimarca</strong> consolidada en Presidencia Roque Sáenz Peña, con <strong>más de 10 años de trayectoria</strong> acompañando a nuestros clientes.
+                    </p>
+                </div>
+                <!-- Imagen ilustrativa limpia -->
+                <div class="col-lg-5">
+                    <div style="border-radius: 16px; overflow: hidden; box-shadow: 0 15px 35px rgba(0,0,0,0.08);">
+                        <img src="img/638080358_1761315018503790_7112799294363154862_n.jpg" alt="Automóviles SRL" style="width: 100%; height: 340px; object-fit: cover; display: block;">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Segunda línea (ancho completo de la container) -->
+            <div class="row" style="margin-top: 80px; padding-top: 55px; border-top: 1px solid rgba(0,0,0,0.08);">
+                <div class="col-lg-7">
+                    <span class="why_kicker">Ventajas</span>
+                    <h3 class="why_heading">¿Por qué elegirnos?</h3>
+                </div>
+            </div>
+            
+            <div class="row" style="margin-top: 40px;">
+                <div class="col-md-6 mb-5">
+                    <div class="why_box">
+                        <span class="why_num">01</span>
+                        <h4 class="why_title">Amplio stock</h4>
+                        <p class="why_text">Contamos con <strong>0km de todas las marcas</strong> y usados seleccionados, con entrega inmediata.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-5">
+                    <div class="why_box">
+                        <span class="why_num">02</span>
+                        <h4 class="why_title">Tu usado, parte de pago</h4>
+                        <p class="why_text">Recibimos tu vehículo como <strong>parte de pago</strong>, de forma ágil y transparente.</p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="why_box">
+                        <span class="why_num">03</span>
+                        <h4 class="why_title">Financiación a tu medida</h4>
+                        <p class="why_text">Ofrecemos distintas <strong>opciones de financiación</strong> para tu compra.</p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="why_box">
+                        <span class="why_num">04</span>
+                        <h4 class="why_title">Gestión y documentación</h4>
+                        <p class="why_text">Garantizamos la <strong>correcta documentación</strong> del vehículo, realizando toda la gestión.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<div class="contact_anipat" id="contacto" style="position: relative; background-image: url('img/banner/contact_bg.png'); background-attachment: fixed; background-size: cover; background-position: center; padding: 100px 0; min-height: 800px; display: flex; align-items: center;">
+    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.78); z-index: 1;"></div>
+
+    <div class="container" style="position: relative; z-index: 2;">
+        <div class="row align-items-center">
+
+            <!-- Mapa a la izquierda (Invertimos posición respecto a la otra web) -->
+            <div class="col-lg-6 mb-5 mb-lg-0">
+                <div style="border-radius: 16px; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.6); height: 480px; width: 100%; border: 1px solid rgba(255,255,255,0.1);">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3562.040199355938!2d-60.44251599999999!3d-26.7749885!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94412dc9272b9fef%3A0x47713820f178ad6e!2sAutomoviles%20SRL!5e0!3m2!1ses!2sar!4v1784925190645!5m2!1ses!2sar"
+                        style="border:0; width: 100%; height: 100%;"
+                        allowfullscreen=""
+                        loading="lazy"
+                        referrerpolicy="strict-origin-when-cross-origin">
+                    </iframe>
+                </div>
+            </div>
+
+            <!-- Información a la derecha estilo editorial (Sin tarjetas ni cajas de cristal) -->
+            <div class="col-lg-5 offset-lg-1">
+<div class="section-heading" style="margin-bottom: 30px;">
+    <span style="font-family: 'Montserrat', sans-serif; color: #ffffff; background: rgba(255, 255, 255, 0.12); display: inline-block; padding: 6px 16px; border-radius: 6px; font-weight: 600; font-size: 13px; text-transform: uppercase; letter-spacing: 1.5px; border: 1px solid rgba(255,255,255,0.2);">Automóviles SRL</span>
+    <h2 style="font-family: 'Montserrat', sans-serif; color: #ffffff; font-size: 36px; font-weight: 800; margin-top: 15px; margin-bottom: 10px; line-height: 1.2;">
+        Hablemos de tu<br>próximo auto.
+    </h2>
+    <p style="font-family: 'Montserrat', sans-serif; color: #d0d0d0; font-size: 15px; margin: 0; line-height: 1.5;">
+        Mandanos un mensaje sin compromiso!
+    </p>
+</div>
+
+                <!-- Lista limpia con líneas divisorias finas -->
+                <div style="border-top: 1px solid rgba(255, 255, 255, 0.15);">
+
+                    <!-- WhatsApp -->
+                    <div style="padding: 20px 0; border-bottom: 1px solid rgba(255, 255, 255, 0.15); display: flex; align-items: center;">
+                        <div style="background: #ffffff; color: #000000; width: 44px; height: 44px; border-radius: 50%; margin-right: 18px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                            <i class="fa fa-whatsapp" style="font-size: 22px; color: #000000;"></i>
+                        </div>
+                        <div>
+                            <span style="font-family: 'Montserrat', sans-serif; color: #a0a0a0; font-size: 11px; text-transform: uppercase; letter-spacing: 1px; display: block; margin-bottom: 2px;">WhatsApp</span>
+                            <a href="https://wa.me/5493644220141" target="_blank" style="font-family: 'Montserrat', sans-serif; color: #ffffff; font-weight: 700; font-size: 17px; text-decoration: none; transition: opacity 0.2s;" onmouseover="this.style.opacity='0.8';" onmouseout="this.style.opacity='1';">
+                                +54 9 364 422-0141
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Horarios -->
+                    <div style="padding: 20px 0; border-bottom: 1px solid rgba(255, 255, 255, 0.15); display: flex; align-items: flex-start;">
+                        <div style="background: #ffffff; color: #000000; width: 44px; height: 44px; border-radius: 50%; margin-right: 18px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px;">
+                            <i class="fa fa-clock-o" style="font-size: 20px; color: #000000;"></i>
+                        </div>
+                        <div>
+                            <span style="font-family: 'Montserrat', sans-serif; color: #ffffff; font-weight: 700; font-size: 15px; display: block; margin-bottom: 4px;">Horarios de Atención</span>
+                            <span style="font-family: 'Montserrat', sans-serif; color: #d0d0d0; font-weight: 400; font-size: 14px; line-height: 1.5; display: block;">
+                                Lunes a Viernes: 8:00 a 12:00 y 16:30 a 20:00 hs<br>
+                                Sábados: 8:30 a 12:00 hs
+                            </span>
+                        </div>
+                    </div>
+
+                    <!-- Instagram -->
+                    <div style="padding: 20px 0; border-bottom: 1px solid rgba(255, 255, 255, 0.15); display: flex; align-items: center;">
+                        <div style="background: #ffffff; color: #000000; width: 44px; height: 44px; border-radius: 50%; margin-right: 18px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                            <i class="fa fa-instagram" style="font-size: 20px; color: #000000;"></i>
+                        </div>
+                        <div>
+                            <span style="font-family: 'Montserrat', sans-serif; color: #a0a0a0; font-size: 11px; text-transform: uppercase; letter-spacing: 1px; display: block; margin-bottom: 2px;">Redes Sociales</span>
+                            <a href="https://www.instagram.com/automovilessrl/" target="_blank" style="font-family: 'Montserrat', sans-serif; color: #ffffff; font-weight: 600; font-size: 15px; text-decoration: none; transition: opacity 0.2s;" onmouseover="this.style.opacity='0.8';" onmouseout="this.style.opacity='1';">
+                                Seguinos en Instagram
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<footer class="footer" style="background-color: #0c0c0e; color: #b0b0b0; font-family: 'Montserrat', sans-serif; border-top: 1px solid rgba(255, 255, 255, 0.08); position: relative;">
+    <div class="container" style="padding-top: 60px; padding-bottom: 50px;">
+
+        <!-- Fila Superior: Logo a la izquierda y menú horizontal "Secciones" a la derecha -->
+        <div class="row align-items-center mb-5 pb-4" style="border-bottom: 1px solid rgba(255, 255, 255, 0.08);">
+            <div class="col-md-4 mb-3 mb-md-0">
+                <a href="index.html" style="display: inline-block;">
+                    <img src="img/logo automovilessrl.png" alt="Automoviles SRL" style="max-height: 48px; width: auto; display: block;">
+                </a>
+            </div>
+            <div class="col-md-8 text-md-right">
+                <div style="display: inline-flex; align-items: center; gap: 20px; flex-wrap: wrap;">
+                    <span style="color: #ffffff; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; margin-right: 5px;">Secciones:</span>
+                    <a href="index.html" style="color: #aaa; text-decoration: none; font-size: 14px; transition: color 0.2s;" onmouseover="this.style.color='#ec171f'" onmouseout="this.style.color='#aaa'">Inicio</a>
+                    <span style="color: rgba(255,255,255,0.15);">|</span>
+                    <a href="catalogo.html" style="color: #aaa; text-decoration: none; font-size: 14px; transition: color 0.2s;" onmouseover="this.style.color='#ec171f'" onmouseout="this.style.color='#aaa'">Ver catálogo</a>
+                    <span style="color: rgba(255,255,255,0.15);">|</span>
+                    <a href="clientes.html" style="color: #aaa; text-decoration: none; font-size: 14px; transition: color 0.2s;" onmouseover="this.style.color='#ec171f'" onmouseout="this.style.color='#aaa'">Clientes</a>
+                    <span style="color: rgba(255,255,255,0.15);">|</span>
+                    <a href="nosotros.html" style="color: #aaa; text-decoration: none; font-size: 14px; transition: color 0.2s;" onmouseover="this.style.color='#ec171f'" onmouseout="this.style.color='#aaa'">Nosotros</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Fila Principal: Estructura Split de 2 Columnas -->
+        <div class="row">
+
+            <!-- Columna 1: Descripción + Redes Sociales -->
+            <div class="col-lg-6 mb-4 mb-lg-0 pr-lg-5">
+                <p class="address_text" style="color: #999; font-size: 14.5px; line-height: 1.7; margin-bottom: 25px; max-width: 480px;">
+                    Concesionaria de vehículos 0km y usados seleccionados. Financiación en cuotas. Tu próximo auto con la confianza que buscás.
+                </p>
+                <div class="socail_links">
+                    <ul style="margin: 0; padding: 0; list-style: none; display: flex; gap: 12px; align-items: center;">
+                        <li>
+                            <a href="https://www.facebook.com/p/Automoviles-srl-100038759264349/" target="_blank" style="width: 40px; height: 40px; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.1); display: flex; align-items: center; justify-content: center; border-radius: 50%; color: #fff; transition: all 0.3s ease;" onmouseover="this.style.backgroundColor='#ec171f'; this.style.borderColor='#ec171f'; this.style.transform='translateY(-2px)';" onmouseout="this.style.backgroundColor='rgba(255,255,255,0.04)'; this.style.borderColor='rgba(255,255,255,0.1)'; this.style.transform='translateY(0)';">
+                                <i class="fa fa-facebook"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.instagram.com/automovilessrl/" target="_blank" style="width: 40px; height: 40px; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.1); display: flex; align-items: center; justify-content: center; border-radius: 50%; color: #fff; transition: all 0.3s ease;" onmouseover="this.style.backgroundColor='#ec171f'; this.style.borderColor='#ec171f'; this.style.transform='translateY(-2px)';" onmouseout="this.style.backgroundColor='rgba(255,255,255,0.04)'; this.style.borderColor='rgba(255,255,255,0.1)'; this.style.transform='translateY(0)';">
+                                <i class="fa fa-instagram"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://wa.me/5493644220141" target="_blank" style="width: 40px; height: 40px; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.1); display: flex; align-items: center; justify-content: center; border-radius: 50%; color: #fff; transition: all 0.3s ease;" onmouseover="this.style.backgroundColor='#ec171f'; this.style.borderColor='#ec171f'; this.style.transform='translateY(-2px)';" onmouseout="this.style.backgroundColor='rgba(255,255,255,0.04)'; this.style.borderColor='rgba(255,255,255,0.1)'; this.style.transform='translateY(0)';">
+                                <i class="fa fa-whatsapp"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Columna 2: Ubicación y Horarios -->
+            <div class="col-lg-6 pl-lg-5">
+                <div class="footer_widget">
+                    <h3 class="footer_title" style="color: #fff; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 20px;">
+                        Ubicación y Horarios
+                    </h3>
+                    <ul class="address_line" style="margin: 0; padding: 0; list-style: none;">
+                        <li style="color: #aaa; font-size: 14px; margin-bottom: 16px; display: flex; align-items: flex-start; gap: 14px;">
+                            <i class="fa fa-map-marker" style="color: #ec171f; font-size: 17px; margin-top: 2px; flex-shrink: 0;"></i>
+                            <span style="line-height: 1.5;">Av. J. Domingo Peron Esquina Ameghino - Roque Saénz Peña - Chaco (Avenida 33 y 24)</span>
+                        </li>
+                        <li style="color: #aaa; font-size: 14px; display: flex; align-items: flex-start; gap: 14px;">
+                            <i class="fa fa-clock-o" style="color: #ec171f; font-size: 17px; margin-top: 2px; flex-shrink: 0;"></i>
+                            <span style="line-height: 1.5;">Lunes a Viernes: 8:00 a 12:00 y 16:30 a 20:00 hs<br>Sábados: 8:30 a 12:00 hs</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Barra Inferior de Copyright -->
+    <div class="copy-right_text" style="background-color: #050507; padding: 22px 0; border-top: 1px solid rgba(255,255,255,0.05);">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6 text-center text-md-left mb-2 mb-md-0">
+                    <p class="copy_right" style="margin: 0; color: #777; font-size: 13px;">
+                        &copy; <script>document.write(new Date().getFullYear());</script> <strong>Automóviles SRL</strong>. Todos los derechos reservados.
+                    </p>
+                </div>
+                <div class="col-md-6 text-center text-md-right">
+                    <div style="display: inline-flex; align-items: center; justify-content: flex-end; gap: 8px;">
+                        <span style="color: #777; font-size: 13px;">Sitio Web desarrollado por</span>
+                        <a href="https://www.instagram.com/rubit.studios/" target="_blank" style="display: inline-block;">
+                            <img src="img/rubit-studios.png" alt="Rubit Studios" style="max-height: 22px; width: auto; display: block; transition: opacity 0.3s;" onmouseover="this.style.opacity='0.8'" onmouseout="this.style.opacity='1'">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+    <script src="js/vendor/modernizr-3.5.0.min.js"></script>
+    <script src="js/vendor/jquery-1.12.4.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/isotope.pkgd.min.js"></script>
+    <script src="js/ajax-form.js"></script>
+    <script src="js/waypoints.min.js"></script>
+    <script src="js/jquery.counterup.min.js"></script>
+    <script src="js/imagesloaded.pkgd.min.js"></script>
+    <script src="js/scrollIt.js"></script>
+    <script src="js/jquery.scrollUp.min.js"></script>
+    <script src="js/wow.min.js"></script>
+    <script src="js/nice-select.min.js"></script>
+    <script src="js/jquery.slicknav.min.js"></script>
+    <script src="js/jquery.magnific-popup.min.js"></script>
+    <script src="js/plugins.js"></script>
+    <script src="js/gijgo.min.js"></script>
+
+    <script src="js/contact.js"></script>
+    <script src="js/jquery.ajaxchimp.min.js"></script>
+    <script src="js/jquery.form.js"></script>
+    <script src="js/jquery.validate.min.js"></script>
+    <script src="js/mail-script.js"></script>
+
+    <script src="js/main.js"></script>
+    <script>
+    /* ===== Carrusel de vehículos: movimiento propio (sin animación CSS) + arrastre ===== */
+    (function () {
+        function initVehicleMarquee() {
+            var marquee = document.querySelector('.vehicle_marquee');
+            var track = document.querySelector('.vehicle_track');
+            if (!marquee || !track) return;
+
+            var speed = 40;      // px por segundo. Más alto = más rápido.
+            var offset = 0;      // posición actual (siempre <= 0)
+            var half = 0;        // ancho de una "vuelta" completa
+            var dragging = false;
+            var pointerId = null;
+            var startX = 0;
+            var startY = 0;
+            var startOffset = 0;
+            var lastX = 0;
+            var lastMoveTime = 0;
+            var velocity = 0;    // px por ms, para la inercia al soltar
+            var moved = 0;
+            var directionLocked = null; // 'x' (arrastre) | 'y' (scroll de la página) | null
+            var lastTime = null;
+
+            function measure() {
+                // main.js duplica las tarjetas, así que la mitad del ancho total
+                // es exactamente una vuelta completa: el loop queda perfecto.
+                half = track.scrollWidth / 2;
+            }
+            measure();
+            window.addEventListener('resize', measure);
+            window.addEventListener('load', measure);
+
+            function applyTransform() {
+                track.style.transform = 'translateX(' + offset + 'px)';
+            }
+
+            function wrap() {
+                if (half <= 0) return;
+                while (offset <= -half) offset += half;
+                while (offset > 0) offset -= half;
+            }
+
+            function step(time) {
+                if (lastTime === null) lastTime = time;
+                var dt = time - lastTime; // ms
+                lastTime = time;
+                if (!dragging) {
+                    if (Math.abs(velocity) > 0.01) {
+                        // Inercia: sigue deslizando y frena de a poco al soltar
+                        offset += velocity * dt;
+                        velocity *= 0.94;
+                        wrap();
+                    } else if (half > 0) {
+                        velocity = 0;
+                        offset -= speed * (dt / 1000);
+                        wrap();
+                    }
+                }
+                applyTransform();
+                requestAnimationFrame(step);
+            }
+
+            track.style.willChange = 'transform';
+            requestAnimationFrame(step);
+
+            function onDown(e) {
+                // Solo botón izquierdo del mouse (o cualquier toque/lápiz)
+                if (e.pointerType === 'mouse' && e.button !== 0) return;
+                dragging = true;
+                pointerId = e.pointerId;
+                marquee.classList.add('vehicle_dragging');
+                startX = e.clientX;
+                startY = e.clientY;
+                startOffset = offset;
+                lastX = startX;
+                lastMoveTime = performance.now();
+                velocity = 0;
+                moved = 0;
+                directionLocked = null;
+                try { marquee.setPointerCapture(pointerId); } catch (err) {}
+            }
+
+            function onMove(e) {
+                if (!dragging || e.pointerId !== pointerId) return;
+                var x = e.clientX;
+                var y = e.clientY;
+                var dx = x - startX;
+                var dy = y - startY;
+
+                if (directionLocked === null) {
+                    if (Math.abs(dx) > 6 || Math.abs(dy) > 6) {
+                        directionLocked = Math.abs(dx) > Math.abs(dy) ? 'x' : 'y';
+                    }
+                }
+                // Si el gesto es más vertical que horizontal, se deja scrollear
+                // la página normalmente y no se mueve el carrusel.
+                if (directionLocked === 'y') return;
+
+                var now = performance.now();
+                var dt = now - lastMoveTime;
+                if (dt > 0) velocity = (x - lastX) / dt;
+                lastMoveTime = now;
+
+                moved += Math.abs(x - lastX);
+                lastX = x;
+                offset = startOffset + dx;
+                wrap();
+                applyTransform();
+                if (e.cancelable) e.preventDefault();
+            }
+
+            function onUp(e) {
+                if (!dragging || (pointerId !== null && e.pointerId !== pointerId)) return;
+                dragging = false;
+                marquee.classList.remove('vehicle_dragging');
+                try { marquee.releasePointerCapture(pointerId); } catch (err) {}
+                pointerId = null;
+            }
+
+            marquee.addEventListener('pointerdown', onDown);
+            marquee.addEventListener('pointermove', onMove);
+            marquee.addEventListener('pointerup', onUp);
+            marquee.addEventListener('pointercancel', onUp);
+            marquee.addEventListener('pointerleave', function (e) {
+                if (dragging && e.pointerId === pointerId) onUp(e);
+            });
+
+            // Evita que el navegador arrastre nativamente los links/imagenes
+            // (drag-and-drop nativo de <a>), que le ganaba a nuestro drag propio
+            // cuando el gesto arrancaba justo arriba de una tarjeta.
+            marquee.addEventListener('dragstart', function (e) {
+                e.preventDefault();
+            });
+
+            // Si hubo arrastre real, que no se dispare el click de "Ver más"
+            marquee.addEventListener('click', function (e) {
+                if (moved > 8) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                }
+            }, true);
+        }
+
+        if (document.readyState === 'complete') {
+            initVehicleMarquee();
+        } else {
+            window.addEventListener('load', initVehicleMarquee);
+        }
+    })();
+    </script>
+    <script>
+        $('#datepicker').datepicker({
+            iconsLibrary: 'fontawesome',
+            disableDaysOfWeek: [0, 0],
+        });
+        $('#datepicker2').datepicker({
+            iconsLibrary: 'fontawesome',
+            icons: {
+             rightIcon: '<span class="fa fa-caret-down"></span>'
+         }
+
+        });
+        var timepicker = $('#timepicker').timepicker({
+         format: 'HH.MM'
+     });
+    </script>
+
+    <script>
+        function toggleFaq(header) {
+            const item = header.parentElement;
+            const body = item.querySelector('.faq_body');
+            const icon = header.querySelector('fa-angle-down') || header.querySelector('i');
+            document.querySelectorAll('.faq_item').forEach(otherItem => {
+                if (otherItem !== item) {
+                    otherItem.querySelector('.faq_body').style.maxHeight = '0';
+                    otherItem.querySelector('.faq_body').style.padding = '0 25px';
+                    const otherIcon = otherItem.querySelector('.faq_header i');
+                    if(otherIcon) otherIcon.style.transform = 'rotate(0deg)';
+                }
+            });
+
+            if (body.style.maxHeight && body.style.maxHeight !== '0px') {
+                body.style.maxHeight = '0';
+                body.style.padding = '0 25px';
+                if(icon) icon.style.transform = 'rotate(0deg)';
+            } else {
+                body.style.maxHeight = body.scrollHeight + 'px';
+                body.style.padding = '0 25px 22px 25px';
+                if(icon) icon.style.transform = 'rotate(180deg)';
+            }
+        }
+    </script>
+
+ <a href="https://wa.me/5493644220141?text=Hola,%20me%20gustaría%20más%20información" class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Abrir chat de WhatsApp">
+  <span class="whatsapp-tooltip">Consultanos sin compromiso!</span>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="36" height="36" fill="currentColor">
+    <path d="M12.04 2c-5.52 0-10 4.48-10 10 0 1.77.46 3.45 1.28 4.9L2 22l5.25-1.35c1.4.75 3.01 1.15 4.79 1.15 5.52 0 10-4.48 10-10s-4.48-10-10-10zm0 18.15c-1.46 0-2.88-.39-4.11-1.13l-.3-.18-3.1.8.83-3.02-.2-.31c-.82-1.3-1.25-2.81-1.25-4.36 0-4.51 3.67-8.18 8.18-8.18s8.18 3.67 8.18 8.18-3.67 8.18-8.18 8.18zm4.48-6.15c-.25-.12-1.47-.72-1.69-.8-.22-.09-.38-.12-.54.12-.17.25-.62.8-.76.96-.14.17-.29.19-.54.06-.25-.12-1.05-.39-2-1.23-.74-.66-1.24-1.48-1.39-1.73-.15-.25-.02-.39.11-.51.11-.11.25-.29.38-.43.12-.14.17-.24.25-.4.09-.17.04-.31-.02-.43-.06-.12-.54-1.31-.74-1.8-.2-.48-.4-.41-.54-.42l-.46-.01c-.16 0-.42.06-.64.31-.22.25-.85.83-.85 2.02s.87 2.34.99 2.5c.12.17 1.72 2.62 4.17 3.67.58.25 1.03.4 1.38.51.58.18 1.11.15 1.53.09.47-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.15-1.18-.06-.11-.22-.17-.47-.29z"/>
+  </svg>
+</a>
+
+
+
+<script>
+(function () {
+    var header = document.querySelector('.vision-inspired-header');
+    if (!header) return;
+    function onScroll() {
+        if (window.scrollY > 60) {
+            header.classList.add('vision-header-scrolled');
+        } else {
+            header.classList.remove('vision-header-scrolled');
+        }
+    }
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+})();
+</script>
+<script>
+(function () {
+    var btn = document.getElementById('mobileMenuBtn');
+    var panel = document.getElementById('mobileNavPanel');
+    var overlay = document.getElementById('mobileNavOverlay');
+    if (!btn || !panel || !overlay) return;
+
+    var scrollY = 0;
+
+    function openMenu() {
+        scrollY = window.scrollY || window.pageYOffset || 0;
+        btn.classList.add('active');
+        panel.classList.add('active');
+        overlay.classList.add('active');
+        btn.setAttribute('aria-expanded', 'true');
+        document.body.style.position = 'fixed';
+        document.body.style.top = (-scrollY) + 'px';
+        document.body.style.left = '0';
+        document.body.style.right = '0';
+        document.body.style.width = '100%';
+    }
+    function closeMenu() {
+        btn.classList.remove('active');
+        panel.classList.remove('active');
+        overlay.classList.remove('active');
+        btn.setAttribute('aria-expanded', 'false');
+        document.body.style.position = '';
+        document.body.style.top = '';
+        document.body.style.left = '';
+        document.body.style.right = '';
+        document.body.style.width = '';
+        window.scrollTo(0, scrollY);
+    }
+    function toggleMenu(e) {
+        if (e) e.preventDefault();
+        if (panel.classList.contains('active')) {
+            closeMenu();
+        } else {
+            openMenu();
+        }
+    }
+
+    btn.addEventListener('click', toggleMenu);
+    overlay.addEventListener('click', closeMenu);
+
+    Array.prototype.forEach.call(panel.querySelectorAll('a'), function (link) {
+        link.addEventListener('click', closeMenu);
+    });
+
+    document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && panel.classList.contains('active')) closeMenu();
+    });
+
+    window.addEventListener('resize', function () {
+        if (window.innerWidth >= 992 && panel.classList.contains('active')) {
+            closeMenu();
+        }
+    });
+})();
+</script>
+<script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.34/dist/lenis.min.js"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const lenis = new Lenis({
+            duration: 1.1,
+            easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+            direction: 'vertical',
+            gestureDirection: 'vertical',
+            smooth: true,
+            mouseMultiplier: 0.95,
+            smoothTouch: false
+        });
+
+        function raf(time) {
+            lenis.raf(time);
+            requestAnimationFrame(raf);
+        }
+        requestAnimationFrame(raf);
+
+        window.addEventListener('resize', () => lenis.resize());
+
+        document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+            anchor.addEventListener('click', function (e) {
+                const targetId = this.getAttribute('href');
+                if (!targetId || targetId.length < 2) return;
+                const targetElement = document.querySelector(targetId);
+
+                if (targetElement) {
+                    e.preventDefault();
+                    lenis.scrollTo(targetElement, {
+                        offset: -90,
+                        duration: 1.2
+                    });
+                }
+            });
+        });
+    });
+</script>
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    // ⚠️ Reemplazá esta ruta por tu segunda foto (la primera ya es la que
+    // tenías puesta como fondo del inicio, no hay que tocarla).
+    var SEGUNDA_FOTO = 'img/banner/hero-3.webp';
+
+    var bg2 = document.getElementById('visionHeroBg2');
+    var dots = document.querySelectorAll('#visionHeroDots .vision-hero-dot');
+    if (!bg2 || !dots.length) return;
+
+    bg2.style.backgroundImage = "url('" + SEGUNDA_FOTO + "')";
+
+    var current = 0;
+    var INTERVALO = 6000; // milisegundos entre cambios de foto
+
+    function mostrar(index) {
+        current = index;
+        bg2.classList.toggle('is-active', index === 1);
+        dots.forEach(function (dot, i) {
+            dot.classList.toggle('active', i === index);
+        });
+    }
+
+    var timer = setInterval(function () {
+        mostrar(current === 0 ? 1 : 0);
+    }, INTERVALO);
+
+    dots.forEach(function (dot) {
+        dot.addEventListener('click', function () {
+            clearInterval(timer);
+            mostrar(parseInt(dot.getAttribute('data-index'), 10));
+            timer = setInterval(function () {
+                mostrar(current === 0 ? 1 : 0);
+            }, INTERVALO);
+        });
+    });
+});
+</script>
+
+</body>
+
+</html>
