@@ -1,1 +1,16 @@
-[]
+[
+  {
+    "id": "ford-123-132",
+    "marca": "Ford",
+    "modelo": "123",
+    "anio": 132,
+    "km": 312132,
+    "estado": "usado",
+    "combustible": "123312",
+    "transmision": "312",
+    "descripcion": "132312",
+    "fotos": [
+      "img/vehiculos/ford-123-132/foto-1790013307232-0.jpg"
+    ]
+  }
+]
