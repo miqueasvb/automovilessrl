@@ -1263,48 +1263,11 @@
     transition: none !important;
 }
 
-/* ===== Segunda foto de fondo (crossfade) ===== */
-.vision-hero-bg2 {
-    position: absolute;
-    inset: 0;
-    z-index: 1;
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
-    opacity: 0;
-    transition: opacity 1.6s ease;
-    pointer-events: none;
-}
-.vision-hero-bg2.is-active { opacity: 1; }
 .vision-hero-overlay { z-index: 2; }
 
-/* ===== Franjas indicadoras — solo visibles dentro del inicio ===== */
-.vision-hero-dots {
-    position: absolute;
-    left: 16px;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 5;
-    display: flex;
-    flex-direction: column;
-    gap: 14px;
-}
-.vision-hero-dot {
-    width: 4px;
-    height: 34px;
-    border-radius: 2px;
-    background: rgba(255,255,255,.35);
-    cursor: pointer;
-    transition: background .35s ease, height .35s ease;
-}
-.vision-hero-dot.active {
-    background: #ec171f;
-    height: 46px;
-}
 @media (max-width: 575px) {
-    .vision-hero-dots { left: 10px; gap: 10px; }
-    .vision-hero-dot { width: 3px; height: 26px; }
-    .vision-hero-dot.active { height: 36px; }
+    .brand-card { padding: 20px 10px !important; }
+    .brand-card h4 { font-size: 13px !important; }
 }
 </style>
 
@@ -1381,12 +1344,7 @@
 </header>
 
 <div class="slider_area vision-hero" style="position: relative;">
-    <div class="vision-hero-dots" id="visionHeroDots" aria-hidden="true">
-        <span class="vision-hero-dot active" data-index="0"></span>
-        <span class="vision-hero-dot" data-index="1"></span>
-    </div>
     <div class="single_slider slider_bg_img d-flex align-items-center">
-        <div class="vision-hero-bg2" id="visionHeroBg2"></div>
         <div class="vision-hero-overlay"></div>
         <div class="container">
             <!-- Agregamos 'justify-content-start' para tirar la fila a la izquierda -->
@@ -1627,7 +1585,7 @@
         <!-- Cuadrícula de Marcas y Botón Ver Todo -->
         <div class="row">
             <!-- Ford -->
-            <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+            <div class="col-6 col-lg-3 col-md-4 col-sm-6 mb-4">
                 <a href="catalogo.html?marca=Ford" style="display: flex; flex-direction: column; align-items: center; justify-content: center; background: #f4f5f7; border-radius: 16px; padding: 35px 20px; text-decoration: none; border: 2px solid transparent; transition: all 0.3s ease;" class="brand-card">
                     <div style="height: 55px; display: flex; align-items: center; justify-content: center; margin-bottom: 15px;">
                         <img src="img/ford.png" alt="Ford" style="max-height: 42px; max-width: 90px; object-fit: contain;">
@@ -1637,7 +1595,7 @@
             </div>
 
             <!-- Volkswagen -->
-            <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+            <div class="col-6 col-lg-3 col-md-4 col-sm-6 mb-4">
                 <a href="catalogo.html?marca=Volkswagen" style="display: flex; flex-direction: column; align-items: center; justify-content: center; background: #f4f5f7; border-radius: 16px; padding: 35px 20px; text-decoration: none; border: 2px solid transparent; transition: all 0.3s ease;" class="brand-card">
                     <div style="height: 55px; display: flex; align-items: center; justify-content: center; margin-bottom: 15px;">
                         <img src="img/volkswagen.png" alt="Volkswagen" style="max-height: 42px; max-width: 90px; object-fit: contain;">
@@ -1647,7 +1605,7 @@
             </div>
 
             <!-- Ram -->
-            <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+            <div class="col-6 col-lg-3 col-md-4 col-sm-6 mb-4">
                 <a href="catalogo.html?marca=Ram" style="display: flex; flex-direction: column; align-items: center; justify-content: center; background: #f4f5f7; border-radius: 16px; padding: 35px 20px; text-decoration: none; border: 2px solid transparent; transition: all 0.3s ease;" class="brand-card">
                     <div style="height: 55px; display: flex; align-items: center; justify-content: center; margin-bottom: 15px;">
                         <img src="img/ram.png" alt="Ram" style="max-height: 42px; max-width: 90px; object-fit: contain;">
@@ -1657,7 +1615,7 @@
             </div>
 
             <!-- Toyota -->
-            <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+            <div class="col-6 col-lg-3 col-md-4 col-sm-6 mb-4">
                 <a href="catalogo.html?marca=Toyota" style="display: flex; flex-direction: column; align-items: center; justify-content: center; background: #f4f5f7; border-radius: 16px; padding: 35px 20px; text-decoration: none; border: 2px solid transparent; transition: all 0.3s ease;" class="brand-card">
                     <div style="height: 55px; display: flex; align-items: center; justify-content: center; margin-bottom: 15px;">
                         <img src="img/toyota.png" alt="Toyota" style="max-height: 42px; max-width: 90px; object-fit: contain;">
@@ -1667,7 +1625,7 @@
             </div>
 
             <!-- Jeep -->
-            <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+            <div class="col-6 col-lg-3 col-md-4 col-sm-6 mb-4">
                 <a href="catalogo.html?marca=Jeep" style="display: flex; flex-direction: column; align-items: center; justify-content: center; background: #f4f5f7; border-radius: 16px; padding: 35px 20px; text-decoration: none; border: 2px solid transparent; transition: all 0.3s ease;" class="brand-card">
                     <div style="height: 55px; display: flex; align-items: center; justify-content: center; margin-bottom: 15px;">
                         <img src="img/jeep.png" alt="Jeep" style="max-height: 42px; max-width: 90px; object-fit: contain;">
@@ -1677,7 +1635,7 @@
             </div>
 
             <!-- Fiat -->
-            <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+            <div class="col-6 col-lg-3 col-md-4 col-sm-6 mb-4">
                 <a href="catalogo.html?marca=Fiat" style="display: flex; flex-direction: column; align-items: center; justify-content: center; background: #f4f5f7; border-radius: 16px; padding: 35px 20px; text-decoration: none; border: 2px solid transparent; transition: all 0.3s ease;" class="brand-card">
                     <div style="height: 55px; display: flex; align-items: center; justify-content: center; margin-bottom: 15px;">
                         <img src="img/fiat.webp" alt="Fiat" style="max-height: 42px; max-width: 90px; object-fit: contain;">
@@ -1687,7 +1645,7 @@
             </div>
 
             <!-- Chevrolet -->
-            <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+            <div class="col-6 col-lg-3 col-md-4 col-sm-6 mb-4">
                 <a href="catalogo.html?marca=Chevrolet" style="display: flex; flex-direction: column; align-items: center; justify-content: center; background: #f4f5f7; border-radius: 16px; padding: 35px 20px; text-decoration: none; border: 2px solid transparent; transition: all 0.3s ease;" class="brand-card">
                     <div style="height: 55px; display: flex; align-items: center; justify-content: center; margin-bottom: 15px;">
                         <img src="img/chevrolet.webp" alt="Chevrolet" style="max-height: 42px; max-width: 90px; object-fit: contain;">
@@ -1697,7 +1655,7 @@
             </div>
 
             <!-- Peugeot -->
-            <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+            <div class="col-6 col-lg-3 col-md-4 col-sm-6 mb-4">
                 <a href="catalogo.html?marca=Peugeot" style="display: flex; flex-direction: column; align-items: center; justify-content: center; background: #f4f5f7; border-radius: 16px; padding: 35px 20px; text-decoration: none; border: 2px solid transparent; transition: all 0.3s ease;" class="brand-card">
                     <div style="height: 55px; display: flex; align-items: center; justify-content: center; margin-bottom: 15px;">
                         <img src="img/peugeot.png" alt="Peugeot" style="max-height: 42px; max-width: 90px; object-fit: contain;">
@@ -1707,7 +1665,7 @@
             </div>
 
             <!-- BMW -->
-            <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+            <div class="col-6 col-lg-3 col-md-4 col-sm-6 mb-4">
                 <a href="catalogo.html?marca=BMW" style="display: flex; flex-direction: column; align-items: center; justify-content: center; background: #f4f5f7; border-radius: 16px; padding: 35px 20px; text-decoration: none; border: 2px solid transparent; transition: all 0.3s ease;" class="brand-card">
                     <div style="height: 55px; display: flex; align-items: center; justify-content: center; margin-bottom: 15px;">
                         <img src="img/bmw.svg" alt="BMW" style="max-height: 42px; max-width: 90px; object-fit: contain;">
@@ -1717,7 +1675,7 @@
             </div>
 
             <!-- Mercedes-Benz -->
-            <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+            <div class="col-6 col-lg-3 col-md-4 col-sm-6 mb-4">
                 <a href="catalogo.html?marca=Mercedes-Benz" style="display: flex; flex-direction: column; align-items: center; justify-content: center; background: #f4f5f7; border-radius: 16px; padding: 35px 20px; text-decoration: none; border: 2px solid transparent; transition: all 0.3s ease;" class="brand-card">
                     <div style="height: 55px; display: flex; align-items: center; justify-content: center; margin-bottom: 15px;">
                         <img src="img/mercedes.svg" alt="Mercedes Benz" style="max-height: 42px; max-width: 90px; object-fit: contain;">
@@ -1727,7 +1685,7 @@
             </div>
 
             <!-- Nissan -->
-            <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+            <div class="col-6 col-lg-3 col-md-4 col-sm-6 mb-4">
                 <a href="catalogo.html?marca=Nissan" style="display: flex; flex-direction: column; align-items: center; justify-content: center; background: #f4f5f7; border-radius: 16px; padding: 35px 20px; text-decoration: none; border: 2px solid transparent; transition: all 0.3s ease;" class="brand-card">
                     <div style="height: 55px; display: flex; align-items: center; justify-content: center; margin-bottom: 15px;">
                         <img src="img/nissan.svg" alt="Nissan" style="max-height: 42px; max-width: 90px; object-fit: contain;">
@@ -1737,7 +1695,7 @@
             </div>
 
             <!-- Citroen -->
-            <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+            <div class="col-6 col-lg-3 col-md-4 col-sm-6 mb-4">
                 <a href="catalogo.html?marca=Citroen" style="display: flex; flex-direction: column; align-items: center; justify-content: center; background: #f4f5f7; border-radius: 16px; padding: 35px 20px; text-decoration: none; border: 2px solid transparent; transition: all 0.3s ease;" class="brand-card">
                     <div style="height: 55px; display: flex; align-items: center; justify-content: center; margin-bottom: 15px;">
                         <img src="img/Citroen-Logo.png" alt="Citroen" style="max-height: 42px; max-width: 90px; object-fit: contain;">
@@ -1747,7 +1705,7 @@
             </div>
 
             <!-- Honda -->
-            <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+            <div class="col-6 col-lg-3 col-md-4 col-sm-6 mb-4">
                 <a href="catalogo.html?marca=Honda" style="display: flex; flex-direction: column; align-items: center; justify-content: center; background: #f4f5f7; border-radius: 16px; padding: 35px 20px; text-decoration: none; border: 2px solid transparent; transition: all 0.3s ease;" class="brand-card">
                     <div style="height: 55px; display: flex; align-items: center; justify-content: center; margin-bottom: 15px;">
                         <img src="img/honda.webp" alt="Honda" style="max-height: 42px; max-width: 90px; object-fit: contain;">
@@ -1757,7 +1715,7 @@
             </div>
 
 <!-- Botón Ver Todo -->
-            <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+            <div class="col-6 col-lg-3 col-md-4 col-sm-6 mb-4">
                 <a href="catalogo.html" class="btn-ver-todo" style="display: flex; align-items: center; justify-content: center; height: 100%; min-height: 140px; background: transparent; border: 2px dashed #ccc; border-radius: 16px; padding: 20px; text-decoration: none; transition: all 0.3s ease; box-sizing: border-box;">
                     <div style="display: flex; align-items: center; justify-content: center; gap: 10px; text-align: center;">
                         <h4 class="texto-ver-todo" style="font-family: 'Montserrat', sans-serif; font-size: 15px; font-weight: 700; color: #333; margin: 0; transition: color 0.3s ease;">Ver todo el catálogo</h4>
@@ -2364,45 +2322,6 @@
     });
 </script>
 
-
-<script>
-document.addEventListener('DOMContentLoaded', function () {
-    // ⚠️ Reemplazá esta ruta por tu segunda foto (la primera ya es la que
-    // tenías puesta como fondo del inicio, no hay que tocarla).
-    var SEGUNDA_FOTO = 'img/banner/hero-3.jpg';
-
-    var bg2 = document.getElementById('visionHeroBg2');
-    var dots = document.querySelectorAll('#visionHeroDots .vision-hero-dot');
-    if (!bg2 || !dots.length) return;
-
-    bg2.style.backgroundImage = "url('" + SEGUNDA_FOTO + "')";
-
-    var current = 0;
-    var INTERVALO = 6000; // milisegundos entre cambios de foto
-
-    function mostrar(index) {
-        current = index;
-        bg2.classList.toggle('is-active', index === 1);
-        dots.forEach(function (dot, i) {
-            dot.classList.toggle('active', i === index);
-        });
-    }
-
-    var timer = setInterval(function () {
-        mostrar(current === 0 ? 1 : 0);
-    }, INTERVALO);
-
-    dots.forEach(function (dot) {
-        dot.addEventListener('click', function () {
-            clearInterval(timer);
-            mostrar(parseInt(dot.getAttribute('data-index'), 10));
-            timer = setInterval(function () {
-                mostrar(current === 0 ? 1 : 0);
-            }, INTERVALO);
-        });
-    });
-});
-</script>
 
 </body>
 
