@@ -13,5 +13,25 @@
       "img/vehiculos/ford-asd-123/foto-1790264355410-0.jpg"
     ],
     "vendido": true
+  },
+  {
+    "id": "ford-f-150-raptor-2026",
+    "marca": "Ford",
+    "modelo": "F-150 Raptor",
+    "anio": 2026,
+    "km": 0,
+    "estado": "usado",
+    "combustible": "Nafta",
+    "transmision": "Automática",
+    "descripcion": "3.5L V6 Ecoboost Ho 4X4 AT",
+    "fotos": [
+      "img/vehiculos/ford-f-150-raptor-2026/foto-1790280305919-0.webp",
+      "img/vehiculos/ford-f-150-raptor-2026/foto-1790280309111-1.webp",
+      "img/vehiculos/ford-f-150-raptor-2026/foto-1790280310771-2.webp",
+      "img/vehiculos/ford-f-150-raptor-2026/foto-1790280312293-3.webp",
+      "img/vehiculos/ford-f-150-raptor-2026/foto-1790280314101-4.webp",
+      "img/vehiculos/ford-f-150-raptor-2026/foto-1790280315553-5.webp",
+      "img/vehiculos/ford-f-150-raptor-2026/foto-1790280317133-6.webp"
+    ]
   }
 ]
