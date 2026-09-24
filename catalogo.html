@@ -1297,7 +1297,7 @@ function ordenar(lista) {
 
 function tarjetaHTML(v) {
     const foto = (v.fotos && v.fotos[0]) || v.foto || "";
-    const imagen = foto || marcasInfo[v.marca];
+    const imagen = foto || marcasInfo[v.marca] || "img/logo automovilessrl.png";
     const enlace = esc(v.detalle || (v.id ? "/" + encodeURIComponent(v.id) : ""));
     const estadoLabel = v.estado === "0km" ? "0km" : "Usado";
     const badgeClass = v.estado === "0km" ? "nuevo" : "usado";
@@ -1348,7 +1348,10 @@ function render() {
         sinResultados.style.display = "block";
     } else {
         sinResultados.style.display = "none";
-        grilla.innerHTML = filtrados.map(tarjetaHTML).join("");
+        grilla.innerHTML = filtrados.map(v => {
+            try { return tarjetaHTML(v); }
+            catch (e) { console.error("[catálogo] Vehículo con datos inválidos:", v, e); return ""; }
+        }).join("");
     }
 }
 
@@ -1409,17 +1412,60 @@ function inicializarDesdeURL() {
 }
 
 // ---- Carga de datos ----
+// Normaliza un vehículo: si el panel guardó números como texto ("2020", "45000")
+// los convierte, y descarta entradas vacías o rotas para que una sola no tire abajo todo el catálogo.
+function normalizarVehiculo(v) {
+    if (!v || typeof v !== "object") return null;
+    const num = (x) => {
+        if (x === null || x === undefined || x === "") return null;
+        if (typeof x === "number") return Number.isFinite(x) ? x : null;
+        let t = String(x).trim();
+        if (/^\d{1,3}([.,]\d{3})+$/.test(t)) t = t.replace(/[.,]/g, ""); // "45.000" -> 45000
+        const n = Number(t.replace(/[^\d.-]/g, ""));
+        return Number.isFinite(n) ? n : null;
+    };
+    v.marca = String(v.marca ?? "").trim();
+    v.modelo = String(v.modelo ?? "").trim();
+    v.anio = num(v.anio);
+    v.km = num(v.km);
+    v.estado = String(v.estado ?? "").toLowerCase().trim() === "0km" ? "0km" : "usado";
+    v.vendido = v.vendido === true || v.vendido === "true";
+    if (!v.marca && !v.modelo) return null;
+    return v;
+}
+
 async function cargarVehiculos() {
-    try {
-        const resp = await fetch("data/vehiculos.json", { cache: "no-cache" });
-        if (!resp.ok) throw new Error("HTTP " + resp.status);
-        const datos = await resp.json();
-        vehiculos = Array.isArray(datos) ? datos : [];
-    } catch (e) {
-        console.error("No se pudo cargar data/vehiculos.json:", e);
-        vehiculos = [];
-        const sr = document.getElementById("sinResultados");
-        if (sr) sr.querySelector("h4").textContent = "No pudimos cargar el catálogo. Probá recargar la página.";
+    // Se prueba primero la ruta absoluta y después la relativa; ?v= evita que el navegador o la CDN sirvan una copia vieja.
+    const rutas = ["/data/vehiculos.json", "data/vehiculos.json"];
+    let ultimoError = null;
+
+    for (const ruta of rutas) {
+        try {
+            const resp = await fetch(ruta + "?v=" + Date.now(), { cache: "no-store" });
+            if (!resp.ok) throw new Error("HTTP " + resp.status + " en " + ruta);
+
+            let texto = (await resp.text()).replace(/^\uFEFF/, "").trim();
+            if (texto.startsWith("<")) {
+                throw new Error(ruta + " devolvió HTML en vez de JSON (probablemente una redirección o el archivo no existe)");
+            }
+
+            let datos = JSON.parse(texto);
+            if (!Array.isArray(datos) && datos && Array.isArray(datos.vehiculos)) datos = datos.vehiculos;
+            if (!Array.isArray(datos)) throw new Error("El JSON no es una lista de vehículos");
+
+            vehiculos = datos.map(normalizarVehiculo).filter(Boolean);
+            return;
+        } catch (e) {
+            ultimoError = e;
+            console.error("[catálogo] No se pudo cargar " + ruta + ":", e);
+        }
+    }
+
+    vehiculos = [];
+    const sr = document.getElementById("sinResultados");
+    if (sr) {
+        sr.querySelector("h4").textContent = "No pudimos cargar el catálogo. Probá recargar la página.";
+        sr.querySelector("p").textContent = "Detalle técnico: " + (ultimoError ? ultimoError.message : "desconocido");
     }
 }
 
