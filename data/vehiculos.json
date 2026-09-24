@@ -1,1 +1,16 @@
-[]
+[
+  {
+    "id": "ford-asd-123",
+    "marca": "Ford",
+    "modelo": "asd",
+    "anio": 123,
+    "km": 123123123,
+    "estado": "usado",
+    "combustible": "asd",
+    "transmision": "asd",
+    "descripcion": "asd",
+    "fotos": [
+      "img/vehiculos/ford-asd-123/foto-1790264355410-0.jpg"
+    ]
+  }
+]
