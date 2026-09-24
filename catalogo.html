@@ -1184,330 +1184,191 @@
 <script src="js/jquery.magnific-popup.min.js"></script>
 <script src="js/plugins.js"></script>
 
-<script>
-/* =========================================================
-   CATÁLOGO DE VEHÍCULOS
-   -----------------------------------------------------------
-   Los vehículos se cargan desde data/vehiculos.json, que se
-   edita desde el panel (admin.html). No hace falta tocar este
-   archivo para agregar, editar o sacar vehículos.
-   Para sumar una MARCA nueva: agregala abajo en "marcasInfo",
-   en el listado MARCAS de admin.html y subí su logo a /img.
-   ========================================================= */
+<script>/* Catálogo dinámico — independiente de plugins externos */
+(function () {
+    "use strict";
 
-const marcasInfo = {
-    "Ford": "img/ford.png",
-    "Volkswagen": "img/volkswagen.png",
-    "Ram": "img/ram.png",
-    "Toyota": "img/toyota.png",
-    "Jeep": "img/jeep.png",
-    "Fiat": "img/fiat.webp",
-    "Chevrolet": "img/chevrolet.webp",
-    "Peugeot": "img/peugeot.png",
-    "BMW": "img/bmw.svg",
-    "Mercedes-Benz": "img/mercedes.svg",
-    "Nissan": "img/nissan.svg",
-    "Citroen": "img/Citroen-Logo.png",
-    "Honda": "img/honda.png"
-};
+    const WHATSAPP = "5493644220141";
+    let vehiculos = [];
+    const filtros = { estado: "todos", marcas: new Set(), busqueda: "", anioDesde: "", anioHasta: "", orden: "relevancia" };
 
-let vehiculos = [];
+    const $ = (id) => document.getElementById(id);
+    const esc = (v) => String(v ?? "").replace(/[&<>"']/g, c => ({ "&":"&amp;", "<":"&lt;", ">":"&gt;", '"':"&quot;", "'":"&#39;" }[c]));
+    const marcasInfo = {
+        Ford:"img/ford.png", Volkswagen:"img/volkswagen.png", Ram:"img/ram.png", Toyota:"img/toyota.png",
+        Jeep:"img/jeep.png", Fiat:"img/fiat.webp", Chevrolet:"img/chevrolet.webp", Peugeot:"img/peugeot.png",
+        BMW:"img/bmw.svg", "Mercedes-Benz":"img/mercedes.svg", Nissan:"img/nissan.svg",
+        Citroen:"img/Citroen-Logo.png", Honda:"img/honda.png"
+    };
 
-// Estado de los filtros activos
-const filtros = {
-    estado: "todos",
-    marcas: new Set(),
-    busqueda: "",
-    anioDesde: "",
-    anioHasta: "",
-    orden: "relevancia"
-};
-
-// Escapa texto que viene de data/vehiculos.json antes de meterlo en el HTML
-const esc = (t) => String(t ?? "").replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
-
-const fmtPrecio = (n) => "$ " + n.toLocaleString("es-AR");
-
-function poblarMarcas() {
-    const cont = document.getElementById("marcasLista");
-    const marcasUnicas = Object.keys(marcasInfo);
-    cont.innerHTML = marcasUnicas.map(m => {
-        const cant = vehiculos.filter(v => v.marca === m && !v.vendido).length;
-        return `
-            <div class="marca_check">
-                <label>
-                    <input type="checkbox" class="chk-marca" value="${m}">
-                    ${m}
-                </label>
-                <span class="cant">${cant}</span>
-            </div>`;
-    }).join("");
-
-    document.querySelectorAll(".chk-marca").forEach(chk => {
-        chk.addEventListener("change", () => {
-            if (chk.checked) filtros.marcas.add(chk.value);
-            else filtros.marcas.delete(chk.value);
-            actualizarURL();
-            render();
-        });
-    });
-}
-
-function poblarRangos() {
-    const anios = vehiculos.map(v => v.anio).filter(a => Number.isFinite(a));
-    if (anios.length === 0) return;
-    const minAnio = Math.min(...anios), maxAnio = Math.max(...anios);
-
-    const anioDesde = document.getElementById("anioDesde");
-    const anioHasta = document.getElementById("anioHasta");
-    for (let y = maxAnio; y >= minAnio; y--) {
-        anioDesde.innerHTML += `<option value="${y}">${y}</option>`;
-        anioHasta.innerHTML += `<option value="${y}">${y}</option>`;
+    function normalizar(v) {
+        if (!v || typeof v !== "object") return null;
+        const numero = (x) => {
+            if (x === null || x === undefined || x === "") return null;
+            if (typeof x === "number") return Number.isFinite(x) ? x : null;
+            let s = String(x).trim();
+            if (/^\d{1,3}([.,]\d{3})+$/.test(s)) s = s.replace(/[.,]/g, "");
+            const n = Number(s.replace(/[^\d.-]/g, ""));
+            return Number.isFinite(n) ? n : null;
+        };
+        const marca = String(v.marca ?? "").trim();
+        const modelo = String(v.modelo ?? "").trim();
+        if (!marca && !modelo) return null;
+        return {
+            ...v, marca, modelo, anio: numero(v.anio), km: numero(v.km),
+            estado: String(v.estado ?? "").toLowerCase() === "0km" ? "0km" : "usado",
+            vendido: v.vendido === true || v.vendido === "true"
+        };
     }
-}
 
-function aplicarFiltros() {
-    return vehiculos.filter(v => {
-        if (filtros.estado === "vendido") {
-            if (!v.vendido) return false;
-        } else {
-            if (v.vendido) return false;
-            if (filtros.estado !== "todos" && v.estado !== filtros.estado) return false;
+    async function cargarVehiculos() {
+        const rutas = ["/data/vehiculos.json", "data/vehiculos.json"];
+        let error;
+        for (const ruta of rutas) {
+            try {
+                const resp = await fetch(ruta + "?v=" + Date.now(), { cache: "no-store" });
+                if (!resp.ok) throw new Error("HTTP " + resp.status);
+                const texto = (await resp.text()).replace(/^\uFEFF/, "").trim();
+                if (!texto || texto.startsWith("<")) throw new Error("La ruta no devolvió JSON.");
+                let datos = JSON.parse(texto);
+                if (!Array.isArray(datos) && Array.isArray(datos?.vehiculos)) datos = datos.vehiculos;
+                if (!Array.isArray(datos)) throw new Error("vehiculos.json no contiene una lista.");
+                vehiculos = datos.map(normalizar).filter(Boolean);
+                return true;
+            } catch (e) {
+                error = e;
+                console.error("[catalogo]", ruta, e);
+            }
         }
-        if (filtros.marcas.size > 0 && !filtros.marcas.has(v.marca)) return false;
-        if (filtros.busqueda) {
+        $("grillaVehiculos").innerHTML = "";
+        $("sinResultados").style.display = "block";
+        $("sinResultados").querySelector("h4").textContent = "No pudimos cargar el catálogo";
+        $("sinResultados").querySelector("p").textContent = "Revisá la conexión o intentá recargar la página.";
+        return false;
+    }
+
+    function poblarMarcas() {
+        const cont = $("marcasLista");
+        const marcas = [...new Set(vehiculos.map(v => v.marca).filter(Boolean))].sort((a,b) => a.localeCompare(b, "es"));
+        cont.innerHTML = marcas.map(m => {
+            const cant = vehiculos.filter(v => v.marca === m && !v.vendido).length;
+            return `<div class="marca_check"><label><input type="checkbox" class="chk-marca" value="${esc(m)}"> ${esc(m)}</label><span class="cant">${cant}</span></div>`;
+        }).join("");
+        cont.querySelectorAll(".chk-marca").forEach(chk => chk.addEventListener("change", () => {
+            chk.checked ? filtros.marcas.add(chk.value) : filtros.marcas.delete(chk.value);
+            actualizarURL(); render();
+        }));
+    }
+
+    function poblarRangos() {
+        const anios = vehiculos.map(v => v.anio).filter(Number.isFinite);
+        if (!anios.length) return;
+        const min = Math.min(...anios), max = Math.max(...anios);
+        $("anioDesde").innerHTML = '<option value="">Desde</option>';
+        $("anioHasta").innerHTML = '<option value="">Hasta</option>';
+        for (let y=max; y>=min; y--) {
+            $("anioDesde").insertAdjacentHTML("beforeend", `<option value="${y}">${y}</option>`);
+            $("anioHasta").insertAdjacentHTML("beforeend", `<option value="${y}">${y}</option>`);
+        }
+    }
+
+    function aplicarFiltros() {
+        return vehiculos.filter(v => {
+            if (filtros.estado === "vendido") { if (!v.vendido) return false; }
+            else {
+                if (v.vendido) return false;
+                if (filtros.estado !== "todos" && v.estado !== filtros.estado) return false;
+            }
+            if (filtros.marcas.size && !filtros.marcas.has(v.marca)) return false;
             const texto = (v.marca + " " + v.modelo).toLowerCase();
-            if (!texto.includes(filtros.busqueda.toLowerCase())) return false;
-        }
-        if (filtros.anioDesde && v.anio < parseInt(filtros.anioDesde)) return false;
-        if (filtros.anioHasta && v.anio > parseInt(filtros.anioHasta)) return false;
-        return true;
-    });
-}
-
-function ordenar(lista) {
-    const arr = [...lista];
-    switch (filtros.orden) {
-        case "relevancia": arr.reverse(); break; // lo último que se cargó, primero
-        case "anio_desc": arr.sort((a, b) => b.anio - a.anio); break;
-        case "km_asc": arr.sort((a, b) => (a.km ?? 9e9) - (b.km ?? 9e9)); break;
+            if (filtros.busqueda && !texto.includes(filtros.busqueda.toLowerCase())) return false;
+            if (filtros.anioDesde && (!Number.isFinite(v.anio) || v.anio < Number(filtros.anioDesde))) return false;
+            if (filtros.anioHasta && (!Number.isFinite(v.anio) || v.anio > Number(filtros.anioHasta))) return false;
+            return true;
+        });
     }
-    return arr;
-}
 
-function tarjetaHTML(v) {
-    const foto = (v.fotos && v.fotos[0]) || v.foto || "";
-    const imagen = foto || marcasInfo[v.marca] || "img/logo automovilessrl.png";
-    const enlace = esc(v.detalle || (v.id ? "/" + encodeURIComponent(v.id) : ""));
-    const estadoLabel = v.estado === "0km" ? "0km" : "Usado";
-    const badgeClass = v.estado === "0km" ? "nuevo" : "usado";
-    const kmTexto = v.km == null ? "" : (v.km === 0 ? "0 km" : v.km.toLocaleString("es-AR") + " km");
-    const specs = [v.anio, kmTexto, v.transmision, v.combustible].filter(x => x !== undefined && x !== null && x !== "").join(" · ");
-    const mensaje = encodeURIComponent(`Hola, me interesa el ${v.marca} ${v.modelo} (${v.anio}) que vi en el catálogo.`);
-    const nombre = esc(v.marca + " " + v.modelo);
-    const overlay = enlace ? `
-                <a href="${enlace}" class="vehiculo_img_overlay" aria-label="Ver ${nombre}">
-                    <span class="vehiculo_overlay_badge">
-                        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
-                            <circle cx="12" cy="12" r="3"></circle>
-                        </svg>
-                        Ver más
-                    </span>
-                </a>` : "";
-    return `
-    <div class="col-6 col-md-6 col-lg-4 mb-4">
-        <div class="vehiculo_card${v.vendido ? ' es_vendido' : ''}">
-            <div class="vehiculo_img${foto ? ' con_foto' : ''}">
-                ${v.vendido ? '<span class="vehiculo_tag_vendido">Vendido</span>' : ''}
-                <img src="${esc(imagen)}" alt="${nombre}" loading="lazy">${overlay}
+    function ordenar(lista) {
+        const arr=[...lista];
+        if (filtros.orden==="anio_desc") arr.sort((a,b)=>(b.anio??0)-(a.anio??0));
+        if (filtros.orden==="km_asc") arr.sort((a,b)=>(a.km??Infinity)-(b.km??Infinity));
+        return arr;
+    }
+
+    function tarjeta(v) {
+        const foto = v.fotos?.[0] || v.foto || marcasInfo[v.marca] || "img/logo automovilessrl.png";
+        const enlace = v.detalle || (v.id ? "/" + encodeURIComponent(v.id) : "");
+        const nombre = esc(v.marca + " " + v.modelo);
+        const km = v.km == null ? "" : (v.km === 0 ? "0 km" : Number(v.km).toLocaleString("es-AR") + " km");
+        const specs = [v.anio, km, v.transmision, v.combustible].filter(x => x !== "" && x != null).join(" · ");
+        const mensaje = encodeURIComponent(`Hola, me interesa el ${v.marca} ${v.modelo} (${v.anio ?? ""}) que vi en el catálogo.`);
+        return `<div class="col-6 col-md-6 col-lg-4 mb-4"><div class="vehiculo_card${v.vendido ? " es_vendido":""}">
+            <div class="vehiculo_img${v.fotos?.[0] || v.foto ? " con_foto":""}">
+                ${v.vendido ? '<span class="vehiculo_tag_vendido">Vendido</span>' : ""}
+                <img src="${esc(foto)}" alt="${nombre}" loading="lazy" onerror="this.onerror=null;this.src='img/logo automovilessrl.png';">
+                ${enlace ? `<a href="${esc(enlace)}" class="vehiculo_img_overlay" aria-label="Ver ${nombre}"><span class="vehiculo_overlay_badge">Ver más</span></a>` : ""}
             </div>
             <div class="vehiculo_body">
                 <div class="vehiculo_marca">${esc(v.marca)}</div>
                 <div class="vehiculo_titulo">${esc(v.modelo)}</div>
                 <div class="vehiculo_specs">${esc(specs)}</div>
                 <div class="vehiculo_footer">
-                    ${enlace
-                        ? `<a class="btn_consultar" href="${enlace}">Ver más detalles</a>`
-                        : `<a class="btn_consultar" href="https://wa.me/5493644220141?text=${mensaje}" target="_blank" rel="noopener">Consultar por WhatsApp</a>`}
+                    <a class="btn_consultar" href="${esc(enlace || `https://wa.me/${WHATSAPP}?text=${mensaje}`)}"${enlace ? "" : ' target="_blank" rel="noopener"'}>Ver más detalles</a>
                 </div>
             </div>
-        </div>
-    </div>`;
-}
-
-function render() {
-    const filtrados = ordenar(aplicarFiltros());
-    const grilla = document.getElementById("grillaVehiculos");
-    const sinResultados = document.getElementById("sinResultados");
-
-    document.getElementById("cantResultados").textContent = filtrados.length;
-
-    if (filtrados.length === 0) {
-        grilla.innerHTML = "";
-        sinResultados.style.display = "block";
-    } else {
-        sinResultados.style.display = "none";
-        grilla.innerHTML = filtrados.map(v => {
-            try { return tarjetaHTML(v); }
-            catch (e) { console.error("[catálogo] Vehículo con datos inválidos:", v, e); return ""; }
-        }).join("");
-    }
-}
-
-function actualizarURL() {
-    const params = new URLSearchParams();
-    if (filtros.marcas.size > 0) params.set("marca", [...filtros.marcas].join(","));
-    if (filtros.estado !== "todos") params.set("estado", filtros.estado);
-    if (filtros.busqueda) params.set("q", filtros.busqueda);
-    const nuevaURL = window.location.pathname + (params.toString() ? "?" + params.toString() : "");
-    window.history.replaceState({}, "", nuevaURL);
-}
-
-function limpiarFiltros() {
-    filtros.estado = "todos";
-    filtros.marcas.clear();
-    filtros.busqueda = "";
-    filtros.anioDesde = "";
-    filtros.anioHasta = "";
-    filtros.orden = "relevancia";
-
-    document.getElementById("buscador").value = "";
-    document.getElementById("anioDesde").value = "";
-    document.getElementById("anioHasta").value = "";
-    document.getElementById("ordenSelect").value = "relevancia";
-    document.querySelectorAll(".chk-marca").forEach(c => c.checked = false);
-    document.querySelectorAll(".estado_tab").forEach(t => t.classList.remove("active"));
-    document.querySelector('.estado_tab[data-estado="todos"]').classList.add("active");
-
-    actualizarURL();
-    render();
-}
-
-function inicializarDesdeURL() {
-    const params = new URLSearchParams(window.location.search);
-    const marcaParam = params.get("marca");
-    const estadoParam = params.get("estado");
-    const qParam = params.get("q");
-
-    if (marcaParam) {
-        marcaParam.split(",").forEach(m => {
-            const marcaLimpia = Object.keys(marcasInfo).find(k => k.toLowerCase() === m.toLowerCase());
-            if (marcaLimpia) {
-                filtros.marcas.add(marcaLimpia);
-                const chk = document.querySelector(`.chk-marca[value="${marcaLimpia}"]`);
-                if (chk) chk.checked = true;
-            }
-        });
-    }
-    if (estadoParam && ["0km", "usado", "vendido"].includes(estadoParam)) {
-        filtros.estado = estadoParam;
-        document.querySelectorAll(".estado_tab").forEach(t => t.classList.remove("active"));
-        document.querySelector(`.estado_tab[data-estado="${estadoParam}"]`).classList.add("active");
-    }
-    if (qParam) {
-        filtros.busqueda = qParam;
-        document.getElementById("buscador").value = qParam;
-    }
-}
-
-// ---- Carga de datos ----
-// Normaliza un vehículo: si el panel guardó números como texto ("2020", "45000")
-// los convierte, y descarta entradas vacías o rotas para que una sola no tire abajo todo el catálogo.
-function normalizarVehiculo(v) {
-    if (!v || typeof v !== "object") return null;
-    const num = (x) => {
-        if (x === null || x === undefined || x === "") return null;
-        if (typeof x === "number") return Number.isFinite(x) ? x : null;
-        let t = String(x).trim();
-        if (/^\d{1,3}([.,]\d{3})+$/.test(t)) t = t.replace(/[.,]/g, ""); // "45.000" -> 45000
-        const n = Number(t.replace(/[^\d.-]/g, ""));
-        return Number.isFinite(n) ? n : null;
-    };
-    v.marca = String(v.marca ?? "").trim();
-    v.modelo = String(v.modelo ?? "").trim();
-    v.anio = num(v.anio);
-    v.km = num(v.km);
-    v.estado = String(v.estado ?? "").toLowerCase().trim() === "0km" ? "0km" : "usado";
-    v.vendido = v.vendido === true || v.vendido === "true";
-    if (!v.marca && !v.modelo) return null;
-    return v;
-}
-
-async function cargarVehiculos() {
-    // Se prueba primero la ruta absoluta y después la relativa; ?v= evita que el navegador o la CDN sirvan una copia vieja.
-    const rutas = ["/data/vehiculos.json", "data/vehiculos.json"];
-    let ultimoError = null;
-
-    for (const ruta of rutas) {
-        try {
-            const resp = await fetch(ruta + "?v=" + Date.now(), { cache: "no-store" });
-            if (!resp.ok) throw new Error("HTTP " + resp.status + " en " + ruta);
-
-            let texto = (await resp.text()).replace(/^\uFEFF/, "").trim();
-            if (texto.startsWith("<")) {
-                throw new Error(ruta + " devolvió HTML en vez de JSON (probablemente una redirección o el archivo no existe)");
-            }
-
-            let datos = JSON.parse(texto);
-            if (!Array.isArray(datos) && datos && Array.isArray(datos.vehiculos)) datos = datos.vehiculos;
-            if (!Array.isArray(datos)) throw new Error("El JSON no es una lista de vehículos");
-
-            vehiculos = datos.map(normalizarVehiculo).filter(Boolean);
-            return;
-        } catch (e) {
-            ultimoError = e;
-            console.error("[catálogo] No se pudo cargar " + ruta + ":", e);
-        }
+        </div></div>`;
     }
 
-    vehiculos = [];
-    const sr = document.getElementById("sinResultados");
-    if (sr) {
-        sr.querySelector("h4").textContent = "No pudimos cargar el catálogo. Probá recargar la página.";
-        sr.querySelector("p").textContent = "Detalle técnico: " + (ultimoError ? ultimoError.message : "desconocido");
+    function render() {
+        const lista = ordenar(aplicarFiltros());
+        $("cantResultados").textContent = lista.length;
+        $("sinResultados").style.display = lista.length ? "none" : "block";
+        $("grillaVehiculos").innerHTML = lista.map(tarjeta).join("");
     }
-}
 
-// ---- Listeners ----
-document.addEventListener("DOMContentLoaded", async () => {
-    await cargarVehiculos();
-    if (vehiculos.some(v => v.vendido)) document.getElementById("tabVendidos").style.display = "";
-    poblarMarcas();
-    poblarRangos();
-    inicializarDesdeURL();
-    render();
+    function actualizarURL() {
+        const p=new URLSearchParams();
+        if(filtros.marcas.size) p.set("marca",[...filtros.marcas].join(","));
+        if(filtros.estado!=="todos") p.set("estado",filtros.estado);
+        if(filtros.busqueda) p.set("q",filtros.busqueda);
+        if(filtros.anioDesde) p.set("desde",filtros.anioDesde);
+        if(filtros.anioHasta) p.set("hasta",filtros.anioHasta);
+        history.replaceState({}, "", location.pathname + (p.toString() ? "?" + p : ""));
+    }
 
-    document.querySelectorAll(".estado_tab").forEach(tab => {
-        tab.addEventListener("click", () => {
-            document.querySelectorAll(".estado_tab").forEach(t => t.classList.remove("active"));
-            tab.classList.add("active");
-            filtros.estado = tab.dataset.estado;
-            actualizarURL();
-            render();
-        });
+    function leerURL() {
+        const p=new URLSearchParams(location.search);
+        const estado=p.get("estado"), q=p.get("q");
+        if(["0km","usado","vendido"].includes(estado)) filtros.estado=estado;
+        if(q) { filtros.busqueda=q; $("buscador").value=q; }
+        const desde=p.get("desde"), hasta=p.get("hasta");
+        if(desde){filtros.anioDesde=desde;$("anioDesde").value=desde;}
+        if(hasta){filtros.anioHasta=hasta;$("anioHasta").value=hasta;}
+        document.querySelectorAll(".estado_tab").forEach(t=>t.classList.toggle("active",t.dataset.estado===filtros.estado));
+    }
+
+    function limpiar() {
+        filtros.estado="todos"; filtros.marcas.clear(); filtros.busqueda=""; filtros.anioDesde=""; filtros.anioHasta=""; filtros.orden="relevancia";
+        $("buscador").value=""; $("anioDesde").value=""; $("anioHasta").value=""; $("ordenSelect").value="relevancia";
+        document.querySelectorAll(".chk-marca").forEach(c=>c.checked=false);
+        document.querySelectorAll(".estado_tab").forEach(t=>t.classList.toggle("active",t.dataset.estado==="todos"));
+        actualizarURL(); render();
+    }
+
+    document.addEventListener("DOMContentLoaded", async () => {
+        const ok=await cargarVehiculos();
+        if(!ok) return;
+        poblarMarcas(); poblarRangos(); leerURL(); render();
+        if(vehiculos.some(v=>v.vendido)) $("tabVendidos").style.display="";
+        document.querySelectorAll(".estado_tab").forEach(t=>t.addEventListener("click",()=>{document.querySelectorAll(".estado_tab").forEach(x=>x.classList.remove("active"));t.classList.add("active");filtros.estado=t.dataset.estado;actualizarURL();render();}));
+        $("buscador").addEventListener("input",e=>{filtros.busqueda=e.target.value;actualizarURL();render();});
+        $("anioDesde").addEventListener("change",e=>{filtros.anioDesde=e.target.value;render();});
+        $("anioHasta").addEventListener("change",e=>{filtros.anioHasta=e.target.value;render();});
+        $("ordenSelect").addEventListener("change",e=>{filtros.orden=e.target.value;render();});
+        $("btnLimpiar").addEventListener("click",limpiar); $("btnLimpiar2").addEventListener("click",limpiar);
+        $("btnFiltrosMobile").addEventListener("click",()=>$("filtrosCol").classList.toggle("abierto"));
     });
-
-    document.getElementById("buscador").addEventListener("input", (e) => {
-        filtros.busqueda = e.target.value;
-        actualizarURL();
-        render();
-    });
-
-    document.getElementById("anioDesde").addEventListener("change", (e) => { filtros.anioDesde = e.target.value; render(); });
-    document.getElementById("anioHasta").addEventListener("change", (e) => { filtros.anioHasta = e.target.value; render(); });
-    document.getElementById("ordenSelect").addEventListener("change", (e) => { filtros.orden = e.target.value; render(); });
-
-    document.getElementById("btnLimpiar").addEventListener("click", limpiarFiltros);
-    document.getElementById("btnLimpiar2").addEventListener("click", limpiarFiltros);
-
-    document.getElementById("btnFiltrosMobile").addEventListener("click", () => {
-        document.getElementById("filtrosCol").classList.toggle("abierto");
-    });
-
-    // Nota: el menú móvil ahora usa el botón hamburguesa propio (#mobileMenuBtn),
-    // ya no depende de slicknav.
-});
+})();
 </script>
 
 <a href="https://wa.me/5493644220141?text=Hola,%20me%20gustaría%20más%20información" class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Abrir chat de WhatsApp">
