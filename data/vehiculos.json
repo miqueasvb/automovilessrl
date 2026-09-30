@@ -20,5 +20,23 @@
       "img/vehiculos/ford-ranger-raptor-2026/foto-1790781740126-7.webp",
       "img/vehiculos/ford-ranger-raptor-2026/foto-1790781741513-8.webp"
     ]
+  },
+  {
+    "id": "volkswagen-bora-2-0-2013",
+    "marca": "Volkswagen",
+    "modelo": "Bora 2.0",
+    "anio": 2013,
+    "km": 105,
+    "estado": "usado",
+    "combustible": "Diesel",
+    "transmision": "Manual",
+    "descripcion": "Bueno",
+    "fotos": [
+      "img/vehiculos/volkswagen-bora-2-0-2013/foto-1790782923752-0.jpg",
+      "img/vehiculos/volkswagen-bora-2-0-2013/foto-1790782927064-1.jpg",
+      "img/vehiculos/volkswagen-bora-2-0-2013/foto-1790782929118-2.jpg",
+      "img/vehiculos/volkswagen-bora-2-0-2013/foto-1790782930992-3.jpg",
+      "img/vehiculos/volkswagen-bora-2-0-2013/foto-1790782932854-4.jpg"
+    ]
   }
 ]
