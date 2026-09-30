@@ -2,13 +2,13 @@
   {
     "id": "ford-ranger-raptor-2026",
     "marca": "Ford",
-    "modelo": "Ranger Raptor",
+    "modelo": "F-150 Raptor",
     "anio": 2026,
     "km": 0,
-    "estado": "usado",
+    "estado": "0km",
     "combustible": "Nafta",
     "transmision": "Automática",
-    "descripcion": "Nueva, impecable, sin detalles.",
+    "descripcion": "3.5L V6 Ecoboost Ho 4X4 AT",
     "fotos": [
       "img/vehiculos/ford-ranger-raptor-2026/foto-1790781727039-0.webp",
       "img/vehiculos/ford-ranger-raptor-2026/foto-1790781729875-1.webp",
