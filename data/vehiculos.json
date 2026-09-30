@@ -130,5 +130,19 @@
       "img/vehiculos/volkswagen-tera-1-6-msi-trend-mt-2026/foto-1790783833329-2.webp",
       "img/vehiculos/volkswagen-tera-1-6-msi-trend-mt-2026/foto-1790783835051-3.webp"
     ]
+  },
+  {
+    "id": "nissan-as-s-n",
+    "marca": "Nissan",
+    "modelo": "as",
+    "anio": null,
+    "km": null,
+    "estado": "usado",
+    "combustible": "asd",
+    "transmision": "asd",
+    "descripcion": "asd",
+    "fotos": [
+      "img/vehiculos/nissan-as-s-n/foto-1790811769580-0.webp"
+    ]
   }
 ]
