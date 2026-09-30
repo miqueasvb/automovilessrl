@@ -2022,7 +2022,12 @@
                 if (dt > 0) velocity = (x - lastX) / dt;
                 lastMoveTime = now;
 
-                moved += Math.abs(x - lastX);
+                // Importante: NO sumar cada micro-movimiento (eso hacía que
+                // con mouse, por el simple temblor de la mano al clickear,
+                // "moved" se disparara y el click se cancelara solo). Lo que
+                // importa es cuánto se alejó, como máximo, del punto donde
+                // arrancó el gesto.
+                moved = Math.max(moved, Math.abs(x - startX), Math.abs(y - startY));
                 lastX = x;
                 offset = startOffset + dx;
                 wrap();
