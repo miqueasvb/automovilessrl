@@ -40,4 +40,9 @@
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
+  <url>
+    <loc>https://www.automovilessrl.com.ar/toyota-yaris-cross-1-5-xli-cvt-2026</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
 </urlset>
