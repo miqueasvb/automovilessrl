@@ -59,5 +59,24 @@
       "img/vehiculos/ford-territory-1-8-ecoboost-titanium-2026/foto-1790783422502-5.webp",
       "img/vehiculos/ford-territory-1-8-ecoboost-titanium-2026/foto-1790783424047-6.webp"
     ]
+  },
+  {
+    "id": "ford-ranger-raptor-3-0l-v6-2026",
+    "marca": "Ford",
+    "modelo": "Ranger Raptor 3.0L V6",
+    "anio": 2026,
+    "km": 0,
+    "estado": "0km",
+    "combustible": "Nafta",
+    "transmision": "Automática",
+    "descripcion": "Ecoboost Biturbo Cabina Doble 4X4",
+    "fotos": [
+      "img/vehiculos/ford-ranger-raptor-3-0l-v6-2026/foto-1790783520844-0.webp",
+      "img/vehiculos/ford-ranger-raptor-3-0l-v6-2026/foto-1790783523821-1.webp",
+      "img/vehiculos/ford-ranger-raptor-3-0l-v6-2026/foto-1790783525563-2.webp",
+      "img/vehiculos/ford-ranger-raptor-3-0l-v6-2026/foto-1790783527099-3.webp",
+      "img/vehiculos/ford-ranger-raptor-3-0l-v6-2026/foto-1790783528708-4.webp",
+      "img/vehiculos/ford-ranger-raptor-3-0l-v6-2026/foto-1790783530260-5.webp"
+    ]
   }
 ]
