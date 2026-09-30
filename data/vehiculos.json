@@ -96,5 +96,23 @@
       "img/vehiculos/toyota-yaris-cross-1-5-xli-cvt-2026/foto-1790783612000-4.webp",
       "img/vehiculos/toyota-yaris-cross-1-5-xli-cvt-2026/foto-1790783613336-5.webp"
     ]
+  },
+  {
+    "id": "jeep-renegade-1-3t-sport-at6-fwd-2026",
+    "marca": "Jeep",
+    "modelo": "Renegade 1.3T Sport At6 Fwd",
+    "anio": 2026,
+    "km": 0,
+    "estado": "0km",
+    "combustible": "Nafta",
+    "transmision": "Automática",
+    "fotos": [
+      "img/vehiculos/jeep-renegade-1-3t-sport-at6-fwd-2026/foto-1790783681741-0.webp",
+      "img/vehiculos/jeep-renegade-1-3t-sport-at6-fwd-2026/foto-1790783684185-1.webp",
+      "img/vehiculos/jeep-renegade-1-3t-sport-at6-fwd-2026/foto-1790783685808-2.webp",
+      "img/vehiculos/jeep-renegade-1-3t-sport-at6-fwd-2026/foto-1790783687242-3.webp",
+      "img/vehiculos/jeep-renegade-1-3t-sport-at6-fwd-2026/foto-1790783688663-4.webp",
+      "img/vehiculos/jeep-renegade-1-3t-sport-at6-fwd-2026/foto-1790783690311-5.webp"
+    ]
   }
 ]
