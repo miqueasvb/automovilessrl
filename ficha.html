@@ -1052,34 +1052,6 @@
         overlay.classList.remove('active');
         btn.setAttribute('aria-expanded', 'false');
         document.body.style.position = '';
-  <script>
-(function(){
-const WHATSAPP="5493644220141";
-const marcasInfo={"Ford":"img/ford.png","Volkswagen":"img/volkswagen.png","Ram":"img/ram.png","Toyota":"img/toyota.png","Jeep":"img/jeep.png","Fiat":"img/fiat.webp","Chevrolet":"img/chevrolet.webp","Peugeot":"img/peugeot.png","BMW":"img/bmw.svg","Mercedes-Benz":"img/mercedes.svg","Nissan":"img/nissan.svg","Citroen":"img/Citroen-Logo.png","Honda":"img/honda.png"};
-const esc=v=>String(v??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
-const slugify=v=>`${v.marca}-${v.modelo}-${v.anio||"s-n"}`.toLowerCase().normalize("NFD").replace(/[\\u0300-\\u036f]/g,"").replace(/[^a-z0-9]+/g,"-").replace(/(^-|-$)/g,"");
-const idDe=v=>v.id||slugify(v);let vehicleImages=[],currentIndex=0;
-function updateGalleryView(){if(!vehicleImages.length)return;currentIndex=(currentIndex+vehicleImages.length)%vehicleImages.length;const main=document.getElementById("vehicle_main_img");main.style.opacity="0";setTimeout(()=>{main.src=vehicleImages[currentIndex];main.style.opacity="1"},120);document.querySelectorAll(".showcase_thumb_item").forEach((el,i)=>el.classList.toggle("active",i===currentIndex))}
-function setPhoto(i){if(!vehicleImages.length)return;currentIndex=i;updateGalleryView()}function changePhoto(d){if(!vehicleImages.length)return;currentIndex+=d;updateGalleryView()}window.setPhoto=setPhoto;window.changePhoto=changePhoto;
-function relatedCardHTML(v){const foto=(v.fotos&&v.fotos[0])||marcasInfo[v.marca]||"",nombre=`${v.marca} ${v.modelo}`,link="/"+encodeURIComponent(idDe(v)),km=v.km==null?"":(v.km===0?"0 km":Number(v.km).toLocaleString("es-AR")+" km"),specs=[v.anio,km,v.transmision,v.combustible].filter(x=>x!==undefined&&x!==null&&x!=="").join(" · ");return `<div class="mini_vehicle_card"><div class="mini_card_img"><a href="${link}" aria-label="Ver ${esc(nombre)}"><img src="${esc(foto)}" alt="${esc(nombre)}" loading="lazy"></a></div><div class="mini_card_body"><h4>${esc(nombre)}</h4><p style="font-size:13px;color:#666;margin:0;">${esc(specs)}</p></div><div class="mini_card_footer"><a href="${link}" class="view_details_btn">Ver más detalles</a></div></div>`}
-async function initVehicle(){
-const loading=document.getElementById("estadoCarga"),content=document.getElementById("contenidoFicha"),params=new URLSearchParams(location.search),path=location.pathname.replace(/^\\/+|\\/+$/g,""),id=params.get("id")||(path&&path!=="ficha.html"?decodeURIComponent(path):null);
-if(!id){loading.innerHTML='No se especificó ningún vehículo. <a href="catalogo.html">Volver al catálogo</a>';return}
-let vehiculos;try{const r=await fetch("data/vehiculos.json",{cache:"no-store"});if(!r.ok)throw new Error();vehiculos=await r.json()}catch(e){loading.textContent="No se pudo cargar la información del vehículo. Probá recargar la página.";return}
-const vehicle=vehiculos.find(v=>idDe(v)===id);if(!vehicle){loading.innerHTML='Este vehículo ya no está disponible. <a href="catalogo.html">Ver catálogo completo</a>';return}
-const nombre=`${vehicle.marca} ${vehicle.modelo}`,estado=vehicle.estado==="0km"?"0 km / Nuevo":"Usado",km=vehicle.km==null?"A confirmar":(vehicle.km===0?"0 km":Number(vehicle.km).toLocaleString("es-AR")+" km");
-document.title=`${nombre} ${vehicle.anio||""} | Automóviles SRL`;document.getElementById("pageDescription").setAttribute("content",`${nombre} ${vehicle.anio||""}. Venta en Automóviles SRL, Sáenz Peña, Chaco. Financiación y tasaciones.`);
-document.getElementById("brandBadge").textContent=vehicle.vendido?"Vendido":estado;document.getElementById("vehicleTitle").textContent=nombre;document.getElementById("vehicleDescription").textContent=vehicle.descripcion||"Consultá por disponibilidad, financiación y condiciones de esta unidad.";
-const specs=[["Año",vehicle.anio||"A confirmar"],["Kilometraje",km],["Combustible",vehicle.combustible||"Consultar"],["Transmisión",vehicle.transmision||"Consultar"]];document.getElementById("specsGrid").innerHTML=specs.map(([l,v])=>`<div class="spec_item_box"><span>${esc(l)}</span><span>${esc(v)}</span></div>`).join("");
-vehicleImages=(vehicle.fotos||[]).filter(Boolean);if(!vehicleImages.length)vehicleImages=[marcasInfo[vehicle.marca]||""].filter(Boolean);const main=document.getElementById("vehicle_main_img");main.src=vehicleImages[0]||"";main.alt=nombre;
-const thumbs=document.getElementById("showcaseThumbs");thumbs.innerHTML=vehicleImages.map((f,i)=>`<div class="showcase_thumb_item ${i===0?"active":""}" data-index="${i}"><img src="${esc(f)}" alt="${esc(nombre)} - foto ${i+1}" loading="lazy"></div>`).join("");thumbs.addEventListener("click",e=>{const item=e.target.closest(".showcase_thumb_item");if(item)setPhoto(Number(item.dataset.index))});document.getElementById("btnPrev").addEventListener("click",()=>changePhoto(-1));document.getElementById("btnNext").addEventListener("click",()=>changePhoto(1));if(vehicleImages.length<=1){document.getElementById("btnPrev").style.display="none";document.getElementById("btnNext").style.display="none"}
-const msg=encodeURIComponent(vehicle.vendido?`Hola, vi que el ${nombre} ya se vendió. ¿Tienen algo parecido?`:`Hola, quiero consultar por el ${nombre}${vehicle.anio?" "+vehicle.anio:""} que vi en la web`);document.getElementById("whatsappVehicleBtn").href=`https://wa.me/${WHATSAPP}?text=${msg}`;if(vehicle.vendido)document.getElementById("whatsappVehicleText").textContent="Consultar por uno similar";
-const otros=vehiculos.filter(v=>idDe(v)!==id&&!v.vendido),relacionados=[...otros.filter(v=>v.marca===vehicle.marca),...otros.filter(v=>v.marca!==vehicle.marca)].slice(0,6),section=document.getElementById("relatedVehiclesSection"),container=document.getElementById("relatedVehiclesContainer");if(!relacionados.length)section.style.display="none";else container.innerHTML=relacionados.map(relatedCardHTML).join("");
-loading.style.display="none";content.style.display="block";
-}document.addEventListener("DOMContentLoaded",initVehicle);
-})();
-</script>
-
       document.body.style.top = '';
         document.body.style.left = '';
         document.body.style.right = '';
@@ -1111,6 +1083,33 @@ loading.style.display="none";content.style.display="block";
             closeMenu();
         }
     });
+})();
+</script>
+<script>
+(function(){
+const WHATSAPP="5493644220141";
+const marcasInfo={"Ford":"img/ford.png","Volkswagen":"img/volkswagen.png","Ram":"img/ram.png","Toyota":"img/toyota.png","Jeep":"img/jeep.png","Fiat":"img/fiat.webp","Chevrolet":"img/chevrolet.webp","Peugeot":"img/peugeot.png","BMW":"img/bmw.svg","Mercedes-Benz":"img/mercedes.svg","Nissan":"img/nissan.svg","Citroen":"img/Citroen-Logo.png","Honda":"img/honda.png"};
+const esc=v=>String(v??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const slugify=v=>`${v.marca}-${v.modelo}-${v.anio||"s-n"}`.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"").replace(/[^a-z0-9]+/g,"-").replace(/(^-|-$)/g,"");
+const idDe=v=>v.id||slugify(v);let vehicleImages=[],currentIndex=0;
+function updateGalleryView(){if(!vehicleImages.length)return;currentIndex=(currentIndex+vehicleImages.length)%vehicleImages.length;const main=document.getElementById("vehicle_main_img");main.style.opacity="0";setTimeout(()=>{main.src=vehicleImages[currentIndex];main.style.opacity="1"},120);document.querySelectorAll(".showcase_thumb_item").forEach((el,i)=>el.classList.toggle("active",i===currentIndex))}
+function setPhoto(i){if(!vehicleImages.length)return;currentIndex=i;updateGalleryView()}function changePhoto(d){if(!vehicleImages.length)return;currentIndex+=d;updateGalleryView()}window.setPhoto=setPhoto;window.changePhoto=changePhoto;
+function relatedCardHTML(v){const foto=(v.fotos&&v.fotos[0])||marcasInfo[v.marca]||"",nombre=`${v.marca} ${v.modelo}`,link="/"+encodeURIComponent(idDe(v)),km=v.km==null?"":(v.km===0?"0 km":Number(v.km).toLocaleString("es-AR")+" km"),specs=[v.anio,km,v.transmision,v.combustible].filter(x=>x!==undefined&&x!==null&&x!=="").join(" · ");return `<div class="mini_vehicle_card"><div class="mini_card_img"><a href="${link}" aria-label="Ver ${esc(nombre)}"><img src="${esc(foto)}" alt="${esc(nombre)}" loading="lazy"></a></div><div class="mini_card_body"><h4>${esc(nombre)}</h4><p style="font-size:13px;color:#666;margin:0;">${esc(specs)}</p></div><div class="mini_card_footer"><a href="${link}" class="view_details_btn">Ver más detalles</a></div></div>`}
+async function initVehicle(){
+const loading=document.getElementById("estadoCarga"),content=document.getElementById("contenidoFicha"),params=new URLSearchParams(location.search),path=location.pathname.replace(/^\/+|\/+$/g,""),id=params.get("id")||(path&&path!=="ficha.html"?decodeURIComponent(path):null);
+if(!id){loading.innerHTML='No se especificó ningún vehículo. <a href="catalogo.html">Volver al catálogo</a>';return}
+let vehiculos;try{const r=await fetch("data/vehiculos.json",{cache:"no-store"});if(!r.ok)throw new Error();vehiculos=await r.json()}catch(e){loading.textContent="No se pudo cargar la información del vehículo. Probá recargar la página.";return}
+const vehicle=vehiculos.find(v=>idDe(v)===id);if(!vehicle){loading.innerHTML='Este vehículo ya no está disponible. <a href="catalogo.html">Ver catálogo completo</a>';return}
+const nombre=`${vehicle.marca} ${vehicle.modelo}`,estado=vehicle.estado==="0km"?"0 km / Nuevo":"Usado",km=vehicle.km==null?"A confirmar":(vehicle.km===0?"0 km":Number(vehicle.km).toLocaleString("es-AR")+" km");
+document.title=`${nombre} ${vehicle.anio||""} | Automóviles SRL`;document.getElementById("pageDescription").setAttribute("content",`${nombre} ${vehicle.anio||""}. Venta en Automóviles SRL, Sáenz Peña, Chaco. Financiación y tasaciones.`);
+document.getElementById("brandBadge").textContent=vehicle.vendido?"Vendido":estado;document.getElementById("vehicleTitle").textContent=nombre;document.getElementById("vehicleDescription").textContent=vehicle.descripcion||"Consultá por disponibilidad, financiación y condiciones de esta unidad.";
+const specs=[["Año",vehicle.anio||"A confirmar"],["Kilometraje",km],["Combustible",vehicle.combustible||"Consultar"],["Transmisión",vehicle.transmision||"Consultar"]];document.getElementById("specsGrid").innerHTML=specs.map(([l,v])=>`<div class="spec_item_box"><span>${esc(l)}</span><span>${esc(v)}</span></div>`).join("");
+vehicleImages=(vehicle.fotos||[]).filter(Boolean);if(!vehicleImages.length)vehicleImages=[marcasInfo[vehicle.marca]||""].filter(Boolean);const main=document.getElementById("vehicle_main_img");main.src=vehicleImages[0]||"";main.alt=nombre;
+const thumbs=document.getElementById("showcaseThumbs");thumbs.innerHTML=vehicleImages.map((f,i)=>`<div class="showcase_thumb_item ${i===0?"active":""}" data-index="${i}"><img src="${esc(f)}" alt="${esc(nombre)} - foto ${i+1}" loading="lazy"></div>`).join("");thumbs.addEventListener("click",e=>{const item=e.target.closest(".showcase_thumb_item");if(item)setPhoto(Number(item.dataset.index))});document.getElementById("btnPrev").addEventListener("click",()=>changePhoto(-1));document.getElementById("btnNext").addEventListener("click",()=>changePhoto(1));if(vehicleImages.length<=1){document.getElementById("btnPrev").style.display="none";document.getElementById("btnNext").style.display="none"}
+const msg=encodeURIComponent(vehicle.vendido?`Hola, vi que el ${nombre} ya se vendió. ¿Tienen algo parecido?`:`Hola, quiero consultar por el ${nombre}${vehicle.anio?" "+vehicle.anio:""} que vi en la web`);document.getElementById("whatsappVehicleBtn").href=`https://wa.me/${WHATSAPP}?text=${msg}`;if(vehicle.vendido)document.getElementById("whatsappVehicleText").textContent="Consultar por uno similar";
+const otros=vehiculos.filter(v=>idDe(v)!==id&&!v.vendido),relacionados=[...otros.filter(v=>v.marca===vehicle.marca),...otros.filter(v=>v.marca!==vehicle.marca)].slice(0,6),section=document.getElementById("relatedVehiclesSection"),container=document.getElementById("relatedVehiclesContainer");if(!relacionados.length)section.style.display="none";else container.innerHTML=relacionados.map(relatedCardHTML).join("");
+loading.style.display="none";content.style.display="block";
+}document.addEventListener("DOMContentLoaded",initVehicle);
 })();
 </script>
 
