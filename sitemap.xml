@@ -30,4 +30,9 @@
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
+  <url>
+    <loc>https://www.automovilessrl.com.ar/ford-territory-1-8-ecoboost-titanium-2026</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
 </urlset>
