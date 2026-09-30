@@ -1857,7 +1857,7 @@
             var estadoTexto = v.estado === "0km" ? "NUEVO" : "Usado";
             var km = v.km == null ? "A confirmar" : (v.km === 0 ? "0 km" : Number(v.km).toLocaleString("es-AR") + " km");
             return (
-                '<div class="single_vehicle">' +
+                '<div class="single_vehicle" data-link="' + esc(link) + '">' +
                     '<div class="vehicle_thumb">' +
                         '<img src="' + esc(foto) + '" alt="' + esc(nombre) + '" loading="lazy">' +
                         '<a href="' + link + '" class="vehicle_thumb_overlay">' +
@@ -2053,11 +2053,21 @@
                 e.preventDefault();
             });
 
-            // Si hubo arrastre real, que no se dispare el click de "Ver más"
+            // Si hubo arrastre real, que no se dispare ningún click (ni el
+            // de "Ver más" ni el de la tarjeta entera).
             marquee.addEventListener('click', function (e) {
                 if (moved > 8) {
                     e.preventDefault();
                     e.stopPropagation();
+                    return;
+                }
+                // Si ya se tocó un link (la foto o "Ver más"), que actúe normal.
+                if (e.target.closest('a')) return;
+                // Si no, pero se tocó dentro de la tarjeta, igual llevamos a la ficha:
+                // así toda la tarjeta queda clickeable, no solo la foto o el botón.
+                var card = e.target.closest('.single_vehicle');
+                if (card && card.dataset.link) {
+                    window.location.href = card.dataset.link;
                 }
             }, true);
         }
