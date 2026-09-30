@@ -78,5 +78,23 @@
       "img/vehiculos/ford-ranger-raptor-3-0l-v6-2026/foto-1790783528708-4.webp",
       "img/vehiculos/ford-ranger-raptor-3-0l-v6-2026/foto-1790783530260-5.webp"
     ]
+  },
+  {
+    "id": "toyota-yaris-cross-1-5-xli-cvt-2026",
+    "marca": "Toyota",
+    "modelo": "Yaris Cross 1.5 Xli Cvt",
+    "anio": 2026,
+    "km": 0,
+    "estado": "0km",
+    "combustible": "Nafta",
+    "transmision": "Automática",
+    "fotos": [
+      "img/vehiculos/toyota-yaris-cross-1-5-xli-cvt-2026/foto-1790783605962-0.webp",
+      "img/vehiculos/toyota-yaris-cross-1-5-xli-cvt-2026/foto-1790783608075-1.webp",
+      "img/vehiculos/toyota-yaris-cross-1-5-xli-cvt-2026/foto-1790783609471-2.webp",
+      "img/vehiculos/toyota-yaris-cross-1-5-xli-cvt-2026/foto-1790783610657-3.webp",
+      "img/vehiculos/toyota-yaris-cross-1-5-xli-cvt-2026/foto-1790783612000-4.webp",
+      "img/vehiculos/toyota-yaris-cross-1-5-xli-cvt-2026/foto-1790783613336-5.webp"
+    ]
   }
 ]
