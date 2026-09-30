@@ -114,5 +114,21 @@
       "img/vehiculos/jeep-renegade-1-3t-sport-at6-fwd-2026/foto-1790783688663-4.webp",
       "img/vehiculos/jeep-renegade-1-3t-sport-at6-fwd-2026/foto-1790783690311-5.webp"
     ]
+  },
+  {
+    "id": "volkswagen-tera-1-6-msi-trend-mt-2026",
+    "marca": "Volkswagen",
+    "modelo": "Tera 1.6 Msi Trend Mt",
+    "anio": 2026,
+    "km": 0,
+    "estado": "0km",
+    "combustible": "Nafta",
+    "transmision": "Manual",
+    "fotos": [
+      "img/vehiculos/volkswagen-tera-1-6-msi-trend-mt-2026/foto-1790783828924-0.webp",
+      "img/vehiculos/volkswagen-tera-1-6-msi-trend-mt-2026/foto-1790783831537-1.webp",
+      "img/vehiculos/volkswagen-tera-1-6-msi-trend-mt-2026/foto-1790783833329-2.webp",
+      "img/vehiculos/volkswagen-tera-1-6-msi-trend-mt-2026/foto-1790783835051-3.webp"
+    ]
   }
 ]
