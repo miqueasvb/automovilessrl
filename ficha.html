@@ -6,7 +6,7 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title id="pageTitle">Vehículo | Automóviles SRL</title>
     <meta id="pageDescription" name="description" content="Autos 0km y usados seleccionados. Financiación y tasaciones.">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
     <!-- Favicon -->
     <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
@@ -26,6 +26,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
      <style>
+    /* Evita el zoom por doble toque en celulares (el scroll sigue normal) */
+    html, body, body * { touch-action: manipulation; }
+
     /* ===== Smooth scroll (Lenis) ===== */
     html.lenis {
         height: auto;
