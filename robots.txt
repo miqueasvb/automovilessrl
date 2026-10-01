@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /admin.html
+Disallow: /error.html
+
+Sitemap: https://automovilessrl.com.ar/sitemap.xml

@@ -1,2 +1,13 @@
 [build]
-  functions = "netlify/functions"
+functions = "netlify/functions"
+
+# Páginas que no deben aparecer en Google
+[[headers]]
+  for = "/admin.html"
+  [headers.values]
+    X-Robots-Tag = "noindex, nofollow"
+
+[[headers]]
+  for = "/error.html"
+  [headers.values]
+    X-Robots-Tag = "noindex"
