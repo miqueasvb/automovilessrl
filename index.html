@@ -2090,7 +2090,12 @@
                 velocity = 0;
                 moved = 0;
                 directionLocked = null;
-                try { marquee.setPointerCapture(pointerId); } catch (err) {}
+                // Con mouse NO se captura el puntero: la captura redirige el click al
+                // contenedor y la tarjeta/enlace nunca recibe el click (por eso en
+                // computadora no llevaba a la ficha). En touch/lapiz se mantiene igual.
+                if (e.pointerType !== 'mouse') {
+                    try { marquee.setPointerCapture(pointerId); } catch (err) {}
+                }
             }
 
             function onMove(e) {
