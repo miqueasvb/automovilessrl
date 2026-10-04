@@ -1369,38 +1369,38 @@
     </style>
 <style>
 /* ===== Navbar flotante tipo "pastilla" (reemplaza la barra negra a lo ancho) ===== */
+.vision-inspired-header,
 .vision-inspired-header.vision-header-scrolled {
     background: transparent;
     -webkit-backdrop-filter: none;
     backdrop-filter: none;
     box-shadow: none;
 }
-.vision-inspired-header .vision-nav-row {
-    border: 1px solid transparent;
-    border-radius: 999px;
-    padding: 0 14px 0 24px;
-    transition: background .3s ease, border-color .3s ease, box-shadow .3s ease;
-}
+.vision-inspired-header .main-header-area,
 .vision-inspired-header.vision-header-scrolled .main-header-area {
-    padding: 12px 0 !important;
+    padding: 14px 0 !important;
 }
-.vision-inspired-header.vision-header-scrolled .vision-nav-row {
+.vision-inspired-header .vision-nav-row {
+    min-height: 62px;
+    padding: 0 14px 0 24px;
+    border-radius: 999px;
     background: rgba(18, 18, 18, .62);
     -webkit-backdrop-filter: blur(16px) saturate(140%);
     backdrop-filter: blur(16px) saturate(140%);
-    border-color: rgba(255, 255, 255, .14);
+    border: 1px solid rgba(255, 255, 255, .14);
     box-shadow: 0 10px 30px rgba(0, 0, 0, .28), inset 0 1px 0 rgba(255, 255, 255, .08);
 }
 .vision-desktop-nav .vision-nav-contact {
     border-radius: 999px;
 }
 @media (max-width: 991px) {
+    .vision-inspired-header .main-header-area,
+    .vision-inspired-header.vision-header-scrolled .main-header-area {
+        padding: 10px 0 !important;
+    }
     .vision-inspired-header .vision-nav-row {
         min-height: 58px;
         padding: 0 10px 0 18px;
-    }
-    .vision-inspired-header.vision-header-scrolled .main-header-area {
-        padding: 10px 0 !important;
     }
 }
 </style>
