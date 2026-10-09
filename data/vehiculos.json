@@ -132,19 +132,5 @@
       "img/vehiculos/volkswagen-tera-1-6-msi-trend-mt-2026/foto-1790783835051-3.webp"
     ],
     "vendido": false
-  },
-  {
-    "id": "ford-asd-s-n",
-    "marca": "Ford",
-    "modelo": "ASD",
-    "anio": null,
-    "km": null,
-    "estado": "usado",
-    "combustible": "Nafta/GNC",
-    "descripcion": "ASD",
-    "fotos": [
-      "img/vehiculos/ford-asd-s-n/foto-1791507958553-0.png"
-    ],
-    "vendido": true
   }
 ]
