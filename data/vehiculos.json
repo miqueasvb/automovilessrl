@@ -102,12 +102,13 @@
   {
     "id": "jeep-renegade-1-3t-sport-at6-fwd-2026",
     "marca": "Jeep",
-    "modelo": "Renegade 1.3T Sport At6 Fwd",
+    "modelo": "Renegade Sport 1.3T",
     "anio": 2026,
     "km": 0,
     "estado": "0km",
     "combustible": "Nafta",
     "transmision": "Automática",
+    "descripcion": "Jeep Renegade Sport 1.3 turbo caja automatica \nConsulta por financiacion promocional disponible",
     "fotos": [
       "img/vehiculos/jeep-renegade-1-3t-sport-at6-fwd-2026/foto-1790783681741-0.webp",
       "img/vehiculos/jeep-renegade-1-3t-sport-at6-fwd-2026/foto-1790783684185-1.webp",
@@ -115,8 +116,7 @@
       "img/vehiculos/jeep-renegade-1-3t-sport-at6-fwd-2026/foto-1790783687242-3.webp",
       "img/vehiculos/jeep-renegade-1-3t-sport-at6-fwd-2026/foto-1790783688663-4.webp",
       "img/vehiculos/jeep-renegade-1-3t-sport-at6-fwd-2026/foto-1790783690311-5.webp"
-    ],
-    "vendido": false
+    ]
   },
   {
     "id": "volkswagen-tera-1-6-msi-trend-mt-2026",
