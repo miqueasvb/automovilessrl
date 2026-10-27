@@ -155,5 +155,24 @@
       "img/vehiculos/volkswagen-amarok-trendline-2-0-4x2-2026/foto-1793111400375-5.jpeg",
       "img/vehiculos/volkswagen-amarok-trendline-2-0-4x2-2026/foto-1793111401920-6.jpeg"
     ]
+  },
+  {
+    "id": "volkswagen-tera-1-0-comfortline-2026",
+    "marca": "Volkswagen",
+    "modelo": "Tera 1.0 Comfortline",
+    "anio": 2026,
+    "km": 0,
+    "estado": "0km",
+    "combustible": "Nafta",
+    "transmision": "Automática",
+    "descripcion": "Volkswagen Tera 1.0 Comfortline 170tsi caja automatica- 0KM\nConsultar disponibilidad de colores.\nFinanciación promocional en cuotas fijas tasa 0%.",
+    "fotos": [
+      "img/vehiculos/volkswagen-tera-1-0-comfortline-2026/foto-1793112827988-0.jpeg",
+      "img/vehiculos/volkswagen-tera-1-0-comfortline-2026/foto-1793112830725-1.jpeg",
+      "img/vehiculos/volkswagen-tera-1-0-comfortline-2026/foto-1793112832485-2.jpeg",
+      "img/vehiculos/volkswagen-tera-1-0-comfortline-2026/foto-1793112834209-3.jpeg",
+      "img/vehiculos/volkswagen-tera-1-0-comfortline-2026/foto-1793112835921-4.jpeg",
+      "img/vehiculos/volkswagen-tera-1-0-comfortline-2026/foto-1793112837575-5.jpeg"
+    ]
   }
 ]
