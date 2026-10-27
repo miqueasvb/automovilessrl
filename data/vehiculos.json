@@ -134,5 +134,25 @@
       "img/vehiculos/volkswagen-tera-1-6-msi-trend-mt-2026/foto-1790783833329-2.webp",
       "img/vehiculos/volkswagen-tera-1-6-msi-trend-mt-2026/foto-1790783835051-3.webp"
     ]
+  },
+  {
+    "id": "volkswagen-amarok-trendline-2-0-4x2-2026",
+    "marca": "Volkswagen",
+    "modelo": "Amarok Trendline 2.0 4x2",
+    "anio": 2026,
+    "km": 0,
+    "estado": "0km",
+    "combustible": "Diesel",
+    "transmision": "Manual",
+    "descripcion": "Amarok Trendline 2.0 TDI 4x2 - 140cv- Caja manual - 0KM\nEntrega inmediata. Consultar disponibilidad de colores\nFinanciación en cuotas fijas.",
+    "fotos": [
+      "img/vehiculos/volkswagen-amarok-trendline-2-0-4x2-2026/foto-1793111389253-0.jpeg",
+      "img/vehiculos/volkswagen-amarok-trendline-2-0-4x2-2026/foto-1793111393168-1.jpeg",
+      "img/vehiculos/volkswagen-amarok-trendline-2-0-4x2-2026/foto-1793111395059-2.jpeg",
+      "img/vehiculos/volkswagen-amarok-trendline-2-0-4x2-2026/foto-1793111396926-3.jpeg",
+      "img/vehiculos/volkswagen-amarok-trendline-2-0-4x2-2026/foto-1793111398632-4.jpeg",
+      "img/vehiculos/volkswagen-amarok-trendline-2-0-4x2-2026/foto-1793111400375-5.jpeg",
+      "img/vehiculos/volkswagen-amarok-trendline-2-0-4x2-2026/foto-1793111401920-6.jpeg"
+    ]
   }
 ]
