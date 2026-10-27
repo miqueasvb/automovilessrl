@@ -174,5 +174,22 @@
       "img/vehiculos/volkswagen-tera-1-0-comfortline-2026/foto-1793112835921-4.jpeg",
       "img/vehiculos/volkswagen-tera-1-0-comfortline-2026/foto-1793112837575-5.jpeg"
     ]
+  },
+  {
+    "id": "volkswagen-amarok-3-0-comfortline-v6-2026",
+    "marca": "Volkswagen",
+    "modelo": "Amarok 3.0 Comfortline V6",
+    "anio": 2026,
+    "km": 0,
+    "estado": "0km",
+    "combustible": "Diesel",
+    "transmision": "Automática",
+    "descripcion": "Volkswagen Amarok 3.0 V6 Comfortline 4x4 caja automatica- 0KM\nConsultar disponibilidad de colores.\nFinanciación promocional en cuotas fijas tasa 0%.",
+    "fotos": [
+      "img/vehiculos/volkswagen-amarok-3-0-comfortline-v6-2026/foto-1793112998236-0.jpeg",
+      "img/vehiculos/volkswagen-amarok-3-0-comfortline-v6-2026/foto-1793113001638-1.jpeg",
+      "img/vehiculos/volkswagen-amarok-3-0-comfortline-v6-2026/foto-1793113003276-2.jpeg",
+      "img/vehiculos/volkswagen-amarok-3-0-comfortline-v6-2026/foto-1793113005001-3.jpeg"
+    ]
   }
 ]
