@@ -209,5 +209,22 @@
       "img/vehiculos/volkswagen-amarok-3-0-highline-v6-2026/foto-1793113178789-3.jpeg",
       "img/vehiculos/volkswagen-amarok-3-0-highline-v6-2026/foto-1793113180718-4.jpeg"
     ]
+  },
+  {
+    "id": "fiat-fastback-1-3-turbo-270-2026",
+    "marca": "Fiat",
+    "modelo": "Fastback 1.3 Turbo 270",
+    "anio": 2026,
+    "km": 0,
+    "estado": "0km",
+    "combustible": "Nafta",
+    "transmision": "Automática",
+    "descripcion": "Fiat Fastback 1.3 Tubo 270- Caja automatica 4x2- 0KM\nConsultar disponibilidad de colores.\nFinanciación promocional en cuotas fijas tasa 0%.",
+    "fotos": [
+      "img/vehiculos/fiat-fastback-1-3-turbo-270-2026/foto-1793113561556-0.jpeg",
+      "img/vehiculos/fiat-fastback-1-3-turbo-270-2026/foto-1793113564390-1.jpeg",
+      "img/vehiculos/fiat-fastback-1-3-turbo-270-2026/foto-1793113566320-2.jpeg",
+      "img/vehiculos/fiat-fastback-1-3-turbo-270-2026/foto-1793113567987-3.jpeg"
+    ]
   }
 ]
