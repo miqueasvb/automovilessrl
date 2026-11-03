@@ -261,5 +261,22 @@
       "img/vehiculos/fiat-cronos-drive-cvt-2026/foto-1793712397240-3.jpeg",
       "img/vehiculos/fiat-cronos-drive-cvt-2026/foto-1793712398971-4.jpeg"
     ]
+  },
+  {
+    "id": "volkswagen-nivus-trendline-1-0-at-2026",
+    "marca": "Volkswagen",
+    "modelo": "Nivus Trendline 1.0 AT",
+    "anio": 2026,
+    "km": 0,
+    "estado": "0km",
+    "combustible": "Nafta",
+    "transmision": "Automática",
+    "descripcion": "Nivus Trendline 1.0 200tsi Caja automatica - 0KM\nFinanciacion exclusiva tasa 0% fija.\nConsultar disponibilidad y colores.",
+    "fotos": [
+      "img/vehiculos/volkswagen-nivus-trendline-1-0-at-2026/foto-1793712615882-0.jpeg",
+      "img/vehiculos/volkswagen-nivus-trendline-1-0-at-2026/foto-1793712619574-1.jpeg",
+      "img/vehiculos/volkswagen-nivus-trendline-1-0-at-2026/foto-1793712621272-2.jpeg",
+      "img/vehiculos/volkswagen-nivus-trendline-1-0-at-2026/foto-1793712623030-3.jpeg"
+    ]
   }
 ]
