@@ -243,5 +243,23 @@
       "img/vehiculos/fiat-strada-freedom-1-3-2026/foto-1793113689424-2.jpeg",
       "img/vehiculos/fiat-strada-freedom-1-3-2026/foto-1793113691018-3.jpeg"
     ]
+  },
+  {
+    "id": "fiat-cronos-drive-cvt-2026",
+    "marca": "Fiat",
+    "modelo": "Cronos Drive CVT",
+    "anio": 2026,
+    "km": 0,
+    "estado": "0km",
+    "combustible": "Nafta",
+    "transmision": "Automática",
+    "descripcion": "Fiat Cronos Drive Pack Caja automatica- 0KM\nConsultar disponibilidad y colores\nFinanciacion exclusiva tasa 0% fija",
+    "fotos": [
+      "img/vehiculos/fiat-cronos-drive-cvt-2026/foto-1793712389529-0.jpeg",
+      "img/vehiculos/fiat-cronos-drive-cvt-2026/foto-1793712393646-1.jpeg",
+      "img/vehiculos/fiat-cronos-drive-cvt-2026/foto-1793712395575-2.jpeg",
+      "img/vehiculos/fiat-cronos-drive-cvt-2026/foto-1793712397240-3.jpeg",
+      "img/vehiculos/fiat-cronos-drive-cvt-2026/foto-1793712398971-4.jpeg"
+    ]
   }
 ]
