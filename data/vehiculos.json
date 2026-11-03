@@ -296,5 +296,22 @@
       "img/vehiculos/ford-ranger-2-0-biturbo-xlt-4x2-at-2026/foto-1793712767112-2.jpeg",
       "img/vehiculos/ford-ranger-2-0-biturbo-xlt-4x2-at-2026/foto-1793712768858-3.jpeg"
     ]
+  },
+  {
+    "id": "toyota-yaris-cross-1-5-seg-2026",
+    "marca": "Toyota",
+    "modelo": "Yaris Cross 1.5 SEG",
+    "anio": 2026,
+    "km": 0,
+    "estado": "0km",
+    "combustible": "Nafta",
+    "transmision": "Automática",
+    "descripcion": "Yaris Cross 1.5 SEG Caja automatica- 0KM\nConsultar disponibilidad y colores. \nFinanciacion en cuotas fijas.",
+    "fotos": [
+      "img/vehiculos/toyota-yaris-cross-1-5-seg-2026/foto-1793716683912-0.jpeg",
+      "img/vehiculos/toyota-yaris-cross-1-5-seg-2026/foto-1793716687484-1.jpeg",
+      "img/vehiculos/toyota-yaris-cross-1-5-seg-2026/foto-1793716689236-2.jpeg",
+      "img/vehiculos/toyota-yaris-cross-1-5-seg-2026/foto-1793716691124-3.jpeg"
+    ]
   }
 ]
