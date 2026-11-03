@@ -279,5 +279,22 @@
       "img/vehiculos/volkswagen-nivus-trendline-1-0-at-2026/foto-1793712623030-3.jpeg",
       "img/vehiculos/volkswagen-nivus-trendline-1-0-at-2026/foto-1793712640914-4.jpeg"
     ]
+  },
+  {
+    "id": "ford-ranger-2-0-biturbo-xlt-4x2-at-2026",
+    "marca": "Ford",
+    "modelo": "Ranger 2.0 Biturbo XLT 4x2 AT",
+    "anio": 2026,
+    "km": 0,
+    "estado": "0km",
+    "combustible": "Diesel",
+    "transmision": "Automática",
+    "descripcion": "Ford Ranger 2.0 Biturbo XLT 4x2 Automatica- 0KM\nConsultar otras versiones disponibles y colores.\nFinanciacion exclusiva tasa 0% fija.",
+    "fotos": [
+      "img/vehiculos/ford-ranger-2-0-biturbo-xlt-4x2-at-2026/foto-1793712762067-0.jpeg",
+      "img/vehiculos/ford-ranger-2-0-biturbo-xlt-4x2-at-2026/foto-1793712765271-1.jpeg",
+      "img/vehiculos/ford-ranger-2-0-biturbo-xlt-4x2-at-2026/foto-1793712767112-2.jpeg",
+      "img/vehiculos/ford-ranger-2-0-biturbo-xlt-4x2-at-2026/foto-1793712768858-3.jpeg"
+    ]
   }
 ]
