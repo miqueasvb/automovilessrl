@@ -313,5 +313,23 @@
       "img/vehiculos/toyota-yaris-cross-1-5-seg-2026/foto-1793716689236-2.jpeg",
       "img/vehiculos/toyota-yaris-cross-1-5-seg-2026/foto-1793716691124-3.jpeg"
     ]
+  },
+  {
+    "id": "ford-territory-1-5-trend-hibrida-2027",
+    "marca": "Ford",
+    "modelo": "Territory 1.5 Trend Hibrida",
+    "anio": 2027,
+    "km": 0,
+    "estado": "0km",
+    "combustible": "Híbrido",
+    "transmision": "Automática",
+    "descripcion": "Ford Territory Trend Hibrida 1.5 - 0km\nConsultar disponibilidad de colores\nFinanciación exclusiva sin intereses",
+    "fotos": [
+      "img/vehiculos/ford-territory-1-5-trend-hibrida-2027/foto-1795099852707-0.jpeg",
+      "img/vehiculos/ford-territory-1-5-trend-hibrida-2027/foto-1795099855548-1.jpeg",
+      "img/vehiculos/ford-territory-1-5-trend-hibrida-2027/foto-1795099857216-2.jpeg",
+      "img/vehiculos/ford-territory-1-5-trend-hibrida-2027/foto-1795099858944-3.jpeg",
+      "img/vehiculos/ford-territory-1-5-trend-hibrida-2027/foto-1795099860702-4.jpeg"
+    ]
   }
 ]
